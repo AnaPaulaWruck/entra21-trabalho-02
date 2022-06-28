@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             this.dataGridViewAlergias = new System.Windows.Forms.DataGridView();
+            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCausa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCodigoTratamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelListaAlergias = new System.Windows.Forms.Label();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonApagar = new System.Windows.Forms.Button();
             this.labelNome = new System.Windows.Forms.Label();
             this.labelCodigoTratamento = new System.Windows.Forms.Label();
             this.labelCausa = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
             this.textBoxCausa = new System.Windows.Forms.TextBox();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.maskedTextBoxCodigoTratamento = new System.Windows.Forms.MaskedTextBox();
-            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCausa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCodigoTratamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonVoltarParaMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlergias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +66,34 @@
             this.dataGridViewAlergias.Size = new System.Drawing.Size(660, 340);
             this.dataGridViewAlergias.TabIndex = 0;
             // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.HeaderText = "COD";
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
+            this.ColumnCodigo.Width = 40;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "NOME";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            this.ColumnNome.Width = 150;
+            // 
+            // ColumnCausa
+            // 
+            this.ColumnCausa.HeaderText = "CAUSA";
+            this.ColumnCausa.Name = "ColumnCausa";
+            this.ColumnCausa.ReadOnly = true;
+            this.ColumnCausa.Width = 276;
+            // 
+            // ColumnCodigoTratamento
+            // 
+            this.ColumnCodigoTratamento.HeaderText = "COD TRATAMENTO";
+            this.ColumnCodigoTratamento.Name = "ColumnCodigoTratamento";
+            this.ColumnCodigoTratamento.ReadOnly = true;
+            this.ColumnCodigoTratamento.Width = 150;
+            // 
             // labelListaAlergias
             // 
             this.labelListaAlergias.AutoSize = true;
@@ -84,6 +113,7 @@
             this.buttonEditar.TabIndex = 2;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonApagar
             // 
@@ -94,6 +124,7 @@
             this.buttonApagar.TabIndex = 3;
             this.buttonApagar.Text = "Apagar";
             this.buttonApagar.UseVisualStyleBackColor = true;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // labelNome
             // 
@@ -125,13 +156,13 @@
             this.labelCausa.TabIndex = 6;
             this.labelCausa.Text = "Causa da Alergia";
             // 
-            // textBox1
+            // textBoxNome
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(689, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 27);
-            this.textBox1.TabIndex = 7;
+            this.textBoxNome.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxNome.Location = new System.Drawing.Point(689, 45);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(282, 27);
+            this.textBoxNome.TabIndex = 7;
             // 
             // textBoxCausa
             // 
@@ -150,6 +181,7 @@
             this.buttonCancelar.TabIndex = 10;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonSalvar
             // 
@@ -160,54 +192,39 @@
             this.buttonSalvar.TabIndex = 11;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // maskedTextBoxCodigoTratamento
             // 
             this.maskedTextBoxCodigoTratamento.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.maskedTextBoxCodigoTratamento.Location = new System.Drawing.Point(689, 178);
-            this.maskedTextBoxCodigoTratamento.Mask = "0.00.00.00-0";
+            this.maskedTextBoxCodigoTratamento.Mask = "9.99.99.99-9";
             this.maskedTextBoxCodigoTratamento.Name = "maskedTextBoxCodigoTratamento";
             this.maskedTextBoxCodigoTratamento.Size = new System.Drawing.Size(282, 27);
             this.maskedTextBoxCodigoTratamento.TabIndex = 12;
             // 
-            // ColumnCodigo
+            // buttonVoltarParaMenu
             // 
-            this.ColumnCodigo.HeaderText = "COD";
-            this.ColumnCodigo.Name = "ColumnCodigo";
-            this.ColumnCodigo.ReadOnly = true;
-            this.ColumnCodigo.Width = 40;
-            // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "NOME";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
-            this.ColumnNome.Width = 150;
-            // 
-            // ColumnCausa
-            // 
-            this.ColumnCausa.HeaderText = "CAUSA";
-            this.ColumnCausa.Name = "ColumnCausa";
-            this.ColumnCausa.ReadOnly = true;
-            this.ColumnCausa.Width = 276;
-            // 
-            // ColumnCodigoTratamento
-            // 
-            this.ColumnCodigoTratamento.HeaderText = "COD TRATAMENTO";
-            this.ColumnCodigoTratamento.Name = "ColumnCodigoTratamento";
-            this.ColumnCodigoTratamento.ReadOnly = true;
-            this.ColumnCodigoTratamento.Width = 150;
+            this.buttonVoltarParaMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonVoltarParaMenu.Location = new System.Drawing.Point(881, 369);
+            this.buttonVoltarParaMenu.Name = "buttonVoltarParaMenu";
+            this.buttonVoltarParaMenu.Size = new System.Drawing.Size(90, 70);
+            this.buttonVoltarParaMenu.TabIndex = 13;
+            this.buttonVoltarParaMenu.Text = "Voltar ao Menu";
+            this.buttonVoltarParaMenu.UseVisualStyleBackColor = true;
+            this.buttonVoltarParaMenu.Click += new System.EventHandler(this.buttonVoltarParaMenu_Click);
             // 
             // AlergiasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 451);
+            this.Controls.Add(this.buttonVoltarParaMenu);
             this.Controls.Add(this.maskedTextBoxCodigoTratamento);
             this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.textBoxCausa);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.labelCausa);
             this.Controls.Add(this.labelCodigoTratamento);
             this.Controls.Add(this.labelNome);
@@ -218,6 +235,7 @@
             this.Name = "AlergiasForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Alergias";
+            this.Load += new System.EventHandler(this.AlergiasForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlergias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -233,7 +251,7 @@
         private Label labelNome;
         private Label labelCodigoTratamento;
         private Label labelCausa;
-        private TextBox textBox1;
+        private TextBox textBoxNome;
         private TextBox textBoxCausa;
         private Button buttonCancelar;
         private Button buttonSalvar;
@@ -242,5 +260,6 @@
         private DataGridViewTextBoxColumn ColumnCausa;
         private DataGridViewTextBoxColumn ColumnCodigoTratamento;
         private MaskedTextBox maskedTextBoxCodigoTratamento;
+        private Button buttonVoltarParaMenu;
     }
 }

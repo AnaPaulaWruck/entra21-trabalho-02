@@ -5,6 +5,6 @@
         public int Codigo;
         public string Nome;
         public string Causa;
-        public int CodigoTratamento;
+        public string CodigoTratamento;
     }
 }

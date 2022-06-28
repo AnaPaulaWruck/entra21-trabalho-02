@@ -33,8 +33,8 @@
 
         private void buttonAlergias_Click(object sender, EventArgs e)
         {
-            //var alergiasForm = new AlergiasForm();
-            //alergiasForm.ShowDialog();
+            var alergiasForm = new AlergiasForm();
+            alergiasForm.ShowDialog();
         }
 
         private void buttonEnderecos_Click(object sender, EventArgs e)
