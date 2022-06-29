@@ -93,7 +93,7 @@
             this.ColumnPeso,
             this.ColumnVacinas,
             this.ColumnAlergias});
-            this.dataGridViewPets.Location = new System.Drawing.Point(12, 45);
+            this.dataGridViewPets.Location = new System.Drawing.Point(12, 42);
             this.dataGridViewPets.Name = "dataGridViewPets";
             this.dataGridViewPets.ReadOnly = true;
             this.dataGridViewPets.RowTemplate.Height = 25;

@@ -16,5 +16,10 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

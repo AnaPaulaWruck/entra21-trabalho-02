@@ -8,5 +8,8 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 {
     internal class Endereco
     {
+        public int Cep;
+        public string EnderecoCompleto;
+        public int Numero;
     }
 }
