@@ -80,6 +80,8 @@
             var causa = textBoxCausa.Text.Trim();
             var codigoTratamento = maskedTextBoxCodigoTratamento.Text.Trim();
 
+            // TODO Validar dados
+
             if (dataGridViewAlergias.SelectedRows.Count == 0)
             {
                 AdicionarAlergia(nome, causa, codigoTratamento);
