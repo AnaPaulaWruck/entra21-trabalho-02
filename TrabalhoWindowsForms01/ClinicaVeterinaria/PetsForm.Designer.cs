@@ -46,8 +46,6 @@
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.labelNomeTutor = new System.Windows.Forms.Label();
             this.comboBoxTutor = new System.Windows.Forms.ComboBox();
-            this.radioButtonCao = new System.Windows.Forms.RadioButton();
-            this.radioButtonGato = new System.Windows.Forms.RadioButton();
             this.labelEspecie = new System.Windows.Forms.Label();
             this.labelSexo = new System.Windows.Forms.Label();
             this.radioButtonFeminino = new System.Windows.Forms.RadioButton();
@@ -70,7 +68,13 @@
             this.checkBoxVacinaQuadrupla = new System.Windows.Forms.CheckBox();
             this.textBoxPeso = new System.Windows.Forms.TextBox();
             this.labelKg = new System.Windows.Forms.Label();
+            this.radioButtonGato = new System.Windows.Forms.RadioButton();
+            this.radioButtonCao = new System.Windows.Forms.RadioButton();
+            this.panelEspecie = new System.Windows.Forms.Panel();
+            this.panelSexo = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPets)).BeginInit();
+            this.panelEspecie.SuspendLayout();
+            this.panelSexo.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewPets
@@ -218,7 +222,7 @@
             // 
             this.labelNomeTutor.AutoSize = true;
             this.labelNomeTutor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNomeTutor.Location = new System.Drawing.Point(689, 84);
+            this.labelNomeTutor.Location = new System.Drawing.Point(689, 82);
             this.labelNomeTutor.Name = "labelNomeTutor";
             this.labelNomeTutor.Size = new System.Drawing.Size(116, 21);
             this.labelNomeTutor.TabIndex = 6;
@@ -228,40 +232,16 @@
             // 
             this.comboBoxTutor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxTutor.FormattingEnabled = true;
-            this.comboBoxTutor.Location = new System.Drawing.Point(689, 111);
+            this.comboBoxTutor.Location = new System.Drawing.Point(689, 109);
             this.comboBoxTutor.Name = "comboBoxTutor";
             this.comboBoxTutor.Size = new System.Drawing.Size(282, 28);
             this.comboBoxTutor.TabIndex = 7;
-            // 
-            // radioButtonCao
-            // 
-            this.radioButtonCao.AutoSize = true;
-            this.radioButtonCao.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonCao.Location = new System.Drawing.Point(772, 147);
-            this.radioButtonCao.Name = "radioButtonCao";
-            this.radioButtonCao.Size = new System.Drawing.Size(53, 24);
-            this.radioButtonCao.TabIndex = 8;
-            this.radioButtonCao.TabStop = true;
-            this.radioButtonCao.Text = "Cão";
-            this.radioButtonCao.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonGato
-            // 
-            this.radioButtonGato.AutoSize = true;
-            this.radioButtonGato.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonGato.Location = new System.Drawing.Point(861, 147);
-            this.radioButtonGato.Name = "radioButtonGato";
-            this.radioButtonGato.Size = new System.Drawing.Size(59, 24);
-            this.radioButtonGato.TabIndex = 9;
-            this.radioButtonGato.TabStop = true;
-            this.radioButtonGato.Text = "Gato";
-            this.radioButtonGato.UseVisualStyleBackColor = true;
             // 
             // labelEspecie
             // 
             this.labelEspecie.AutoSize = true;
             this.labelEspecie.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelEspecie.Location = new System.Drawing.Point(689, 149);
+            this.labelEspecie.Location = new System.Drawing.Point(689, 150);
             this.labelEspecie.Name = "labelEspecie";
             this.labelEspecie.Size = new System.Drawing.Size(64, 21);
             this.labelEspecie.TabIndex = 10;
@@ -281,7 +261,7 @@
             // 
             this.radioButtonFeminino.AutoSize = true;
             this.radioButtonFeminino.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonFeminino.Location = new System.Drawing.Point(753, 246);
+            this.radioButtonFeminino.Location = new System.Drawing.Point(10, 5);
             this.radioButtonFeminino.Name = "radioButtonFeminino";
             this.radioButtonFeminino.Size = new System.Drawing.Size(88, 24);
             this.radioButtonFeminino.TabIndex = 12;
@@ -293,7 +273,7 @@
             // 
             this.radioButtonMasculino.AutoSize = true;
             this.radioButtonMasculino.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonMasculino.Location = new System.Drawing.Point(861, 246);
+            this.radioButtonMasculino.Location = new System.Drawing.Point(119, 5);
             this.radioButtonMasculino.Name = "radioButtonMasculino";
             this.radioButtonMasculino.Size = new System.Drawing.Size(94, 24);
             this.radioButtonMasculino.TabIndex = 13;
@@ -324,7 +304,7 @@
             // 
             this.dateTimePickerDataNascimento.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(845, 280);
+            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(845, 285);
             this.dateTimePickerDataNascimento.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
             this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(126, 27);
@@ -334,7 +314,7 @@
             // 
             this.labelDataNascimento.AutoSize = true;
             this.labelDataNascimento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelDataNascimento.Location = new System.Drawing.Point(689, 283);
+            this.labelDataNascimento.Location = new System.Drawing.Point(689, 288);
             this.labelDataNascimento.Name = "labelDataNascimento";
             this.labelDataNascimento.Size = new System.Drawing.Size(153, 21);
             this.labelDataNascimento.TabIndex = 17;
@@ -344,7 +324,7 @@
             // 
             this.labelPeso.AutoSize = true;
             this.labelPeso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPeso.Location = new System.Drawing.Point(689, 324);
+            this.labelPeso.Location = new System.Drawing.Point(689, 327);
             this.labelPeso.Name = "labelPeso";
             this.labelPeso.Size = new System.Drawing.Size(45, 21);
             this.labelPeso.TabIndex = 18;
@@ -354,7 +334,7 @@
             // 
             this.labelVacinas.AutoSize = true;
             this.labelVacinas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelVacinas.Location = new System.Drawing.Point(689, 358);
+            this.labelVacinas.Location = new System.Drawing.Point(689, 361);
             this.labelVacinas.Name = "labelVacinas";
             this.labelVacinas.Size = new System.Drawing.Size(65, 21);
             this.labelVacinas.TabIndex = 20;
@@ -364,7 +344,7 @@
             // 
             this.checkBoxVacinaAntirrabica.AutoSize = true;
             this.checkBoxVacinaAntirrabica.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxVacinaAntirrabica.Location = new System.Drawing.Point(704, 385);
+            this.checkBoxVacinaAntirrabica.Location = new System.Drawing.Point(704, 388);
             this.checkBoxVacinaAntirrabica.Name = "checkBoxVacinaAntirrabica";
             this.checkBoxVacinaAntirrabica.Size = new System.Drawing.Size(101, 24);
             this.checkBoxVacinaAntirrabica.TabIndex = 21;
@@ -375,7 +355,7 @@
             // 
             this.checkBoxVacinaV8.AutoSize = true;
             this.checkBoxVacinaV8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxVacinaV8.Location = new System.Drawing.Point(704, 412);
+            this.checkBoxVacinaV8.Location = new System.Drawing.Point(704, 415);
             this.checkBoxVacinaV8.Name = "checkBoxVacinaV8";
             this.checkBoxVacinaV8.Size = new System.Drawing.Size(45, 24);
             this.checkBoxVacinaV8.TabIndex = 22;
@@ -386,7 +366,7 @@
             // 
             this.checkBoxVacinaV10.AutoSize = true;
             this.checkBoxVacinaV10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxVacinaV10.Location = new System.Drawing.Point(704, 439);
+            this.checkBoxVacinaV10.Location = new System.Drawing.Point(704, 442);
             this.checkBoxVacinaV10.Name = "checkBoxVacinaV10";
             this.checkBoxVacinaV10.Size = new System.Drawing.Size(53, 24);
             this.checkBoxVacinaV10.TabIndex = 23;
@@ -436,7 +416,7 @@
             // 
             this.checkBoxVacinaQuintupla.AutoSize = true;
             this.checkBoxVacinaQuintupla.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxVacinaQuintupla.Location = new System.Drawing.Point(831, 445);
+            this.checkBoxVacinaQuintupla.Location = new System.Drawing.Point(831, 448);
             this.checkBoxVacinaQuintupla.Name = "checkBoxVacinaQuintupla";
             this.checkBoxVacinaQuintupla.Size = new System.Drawing.Size(134, 24);
             this.checkBoxVacinaQuintupla.TabIndex = 28;
@@ -447,7 +427,7 @@
             // 
             this.checkBoxVacinaGiardiase.AutoSize = true;
             this.checkBoxVacinaGiardiase.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxVacinaGiardiase.Location = new System.Drawing.Point(831, 385);
+            this.checkBoxVacinaGiardiase.Location = new System.Drawing.Point(831, 388);
             this.checkBoxVacinaGiardiase.Name = "checkBoxVacinaGiardiase";
             this.checkBoxVacinaGiardiase.Size = new System.Drawing.Size(90, 24);
             this.checkBoxVacinaGiardiase.TabIndex = 29;
@@ -458,7 +438,7 @@
             // 
             this.checkBoxVacinaQuadrupla.AutoSize = true;
             this.checkBoxVacinaQuadrupla.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxVacinaQuadrupla.Location = new System.Drawing.Point(831, 415);
+            this.checkBoxVacinaQuadrupla.Location = new System.Drawing.Point(831, 418);
             this.checkBoxVacinaQuadrupla.Name = "checkBoxVacinaQuadrupla";
             this.checkBoxVacinaQuadrupla.Size = new System.Drawing.Size(139, 24);
             this.checkBoxVacinaQuadrupla.TabIndex = 30;
@@ -468,7 +448,7 @@
             // textBoxPeso
             // 
             this.textBoxPeso.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPeso.Location = new System.Drawing.Point(740, 321);
+            this.textBoxPeso.Location = new System.Drawing.Point(740, 324);
             this.textBoxPeso.Name = "textBoxPeso";
             this.textBoxPeso.Size = new System.Drawing.Size(199, 27);
             this.textBoxPeso.TabIndex = 32;
@@ -477,17 +457,61 @@
             // 
             this.labelKg.AutoSize = true;
             this.labelKg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelKg.Location = new System.Drawing.Point(943, 324);
+            this.labelKg.Location = new System.Drawing.Point(943, 327);
             this.labelKg.Name = "labelKg";
             this.labelKg.Size = new System.Drawing.Size(28, 21);
             this.labelKg.TabIndex = 33;
             this.labelKg.Text = "Kg";
+            // 
+            // radioButtonGato
+            // 
+            this.radioButtonGato.AutoSize = true;
+            this.radioButtonGato.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonGato.Location = new System.Drawing.Point(101, 5);
+            this.radioButtonGato.Name = "radioButtonGato";
+            this.radioButtonGato.Size = new System.Drawing.Size(59, 24);
+            this.radioButtonGato.TabIndex = 9;
+            this.radioButtonGato.TabStop = true;
+            this.radioButtonGato.Text = "Gato";
+            this.radioButtonGato.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonCao
+            // 
+            this.radioButtonCao.AutoSize = true;
+            this.radioButtonCao.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonCao.Location = new System.Drawing.Point(10, 5);
+            this.radioButtonCao.Name = "radioButtonCao";
+            this.radioButtonCao.Size = new System.Drawing.Size(53, 24);
+            this.radioButtonCao.TabIndex = 8;
+            this.radioButtonCao.TabStop = true;
+            this.radioButtonCao.Text = "Cão";
+            this.radioButtonCao.UseVisualStyleBackColor = true;
+            // 
+            // panelEspecie
+            // 
+            this.panelEspecie.Controls.Add(this.radioButtonCao);
+            this.panelEspecie.Controls.Add(this.radioButtonGato);
+            this.panelEspecie.Location = new System.Drawing.Point(759, 144);
+            this.panelEspecie.Name = "panelEspecie";
+            this.panelEspecie.Size = new System.Drawing.Size(212, 34);
+            this.panelEspecie.TabIndex = 34;
+            // 
+            // panelSexo
+            // 
+            this.panelSexo.Controls.Add(this.radioButtonFeminino);
+            this.panelSexo.Controls.Add(this.radioButtonMasculino);
+            this.panelSexo.Location = new System.Drawing.Point(741, 241);
+            this.panelSexo.Name = "panelSexo";
+            this.panelSexo.Size = new System.Drawing.Size(230, 34);
+            this.panelSexo.TabIndex = 35;
             // 
             // PetsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 597);
+            this.Controls.Add(this.panelSexo);
+            this.Controls.Add(this.panelEspecie);
             this.Controls.Add(this.labelKg);
             this.Controls.Add(this.textBoxPeso);
             this.Controls.Add(this.checkBoxVacinaQuadrupla);
@@ -506,12 +530,8 @@
             this.Controls.Add(this.dateTimePickerDataNascimento);
             this.Controls.Add(this.comboBoxRaca);
             this.Controls.Add(this.labelRaca);
-            this.Controls.Add(this.radioButtonMasculino);
-            this.Controls.Add(this.radioButtonFeminino);
             this.Controls.Add(this.labelSexo);
             this.Controls.Add(this.labelEspecie);
-            this.Controls.Add(this.radioButtonGato);
-            this.Controls.Add(this.radioButtonCao);
             this.Controls.Add(this.comboBoxTutor);
             this.Controls.Add(this.labelNomeTutor);
             this.Controls.Add(this.textBoxNome);
@@ -524,6 +544,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pets";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPets)).EndInit();
+            this.panelEspecie.ResumeLayout(false);
+            this.panelEspecie.PerformLayout();
+            this.panelSexo.ResumeLayout(false);
+            this.panelSexo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -539,8 +563,6 @@
         private TextBox textBoxNome;
         private Label labelNomeTutor;
         private ComboBox comboBoxTutor;
-        private RadioButton radioButtonCao;
-        private RadioButton radioButtonGato;
         private Label labelEspecie;
         private Label labelSexo;
         private RadioButton radioButtonFeminino;
@@ -573,5 +595,9 @@
         private CheckBox checkBoxVacinaQuadrupla;
         private TextBox textBoxPeso;
         private Label labelKg;
+        private RadioButton radioButtonGato;
+        private RadioButton radioButtonCao;
+        private Panel panelEspecie;
+        private Panel panelSexo;
     }
 }
