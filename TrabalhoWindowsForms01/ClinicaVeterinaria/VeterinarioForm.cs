@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace TrabalhoWindowsForms01.ClinicaVeterinaria
+﻿namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 {
     public partial class VeterinarioForm : Form
     {
-        private VeterinarioServico vaterinarioServico;
+        private VeterinarioServico veterinarioServico;
         public VeterinarioForm()
         {
             InitializeComponent();
 
-        }
+            veterinarioServico = new VeterinarioServico();
 
+            ListarVeterinarios();
+
+        }
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             var nomeVeterinario = textBoxNomeCompleto.Text.Trim();
@@ -32,23 +25,23 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 return;
             }
 
-            //EditarDados();
+            EditarDados(nomeVeterinario, especializacao, crmv);
         }
         private void AdicionarVeterinario(string nomeVeterinario, string especializacao, int crmv)
         {
             var veterinario = new Veterinario
             {
-                //Codigo = veterinarioServico.ObterPorCodigo() + 1;
+                Codigo = veterinarioServico.ObterUltimoCodigo() + 1,
                 NomeVeterinario = nomeVeterinario,
                 Especializacao = especializacao,
                 Crmv = crmv
             };
 
-            //veterinarioServico.Cadastrar(veterinario);
+            veterinarioServico.Cadastrar(veterinario);
 
             LimparCampos();
 
-            //ListarVeterinarios();
+            ListarVeterinarios();
 
         }
         private void buttonEditar_Click(object sender, EventArgs e)
@@ -89,11 +82,11 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
             veterinario.Codigo = codigo;
 
-            //veterinario.Editar(veterinario);
+            veterinarioServico.Editar(veterinario);
 
             LimparCampos();
 
-            //ListarVeterinarios();
+            ListarVeterinarios();
         }
         private void buttonApagar_Click(object sender, EventArgs e)
         {
@@ -113,10 +106,34 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 var linhaSelecionada = dataGridView1.SelectedRows[0];
                 var codigoSelecionado = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
 
-                //veterinarioServico.Apagar(codigoSelecionado);
+                veterinarioServico.Apagar(codigoSelecionado);
 
-                //ListarVeterinarios();
+                ListarVeterinarios();
             }
+        }
+        private void ListarVeterinarios()
+        {
+            var veterinarios = veterinarioServico.ObterTodos();
+
+            dataGridView1.Rows.Clear();
+
+            for (int i = 0; i < veterinarios.Count; i++)
+            {
+                var veterinario = veterinarios[i];
+
+                dataGridView1.Rows.Add(new Object[]
+                {
+                    veterinario.Codigo, veterinario.NomeVeterinario, veterinario.Especializacao, veterinario.Crmv
+
+                });
+                                
+            }
+
+            dataGridView1.ClearSelection();
+        }
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
         }
     }
 }

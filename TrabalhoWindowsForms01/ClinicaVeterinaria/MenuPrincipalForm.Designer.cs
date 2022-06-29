@@ -38,9 +38,10 @@
             // 
             // buttonConsultas
             // 
-            this.buttonConsultas.Location = new System.Drawing.Point(19, 18);
+            this.buttonConsultas.Location = new System.Drawing.Point(22, 24);
+            this.buttonConsultas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonConsultas.Name = "buttonConsultas";
-            this.buttonConsultas.Size = new System.Drawing.Size(125, 125);
+            this.buttonConsultas.Size = new System.Drawing.Size(143, 167);
             this.buttonConsultas.TabIndex = 0;
             this.buttonConsultas.Text = "CONSULTAS";
             this.buttonConsultas.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // buttonPets
             // 
-            this.buttonPets.Location = new System.Drawing.Point(160, 18);
+            this.buttonPets.Location = new System.Drawing.Point(183, 24);
+            this.buttonPets.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonPets.Name = "buttonPets";
-            this.buttonPets.Size = new System.Drawing.Size(125, 125);
+            this.buttonPets.Size = new System.Drawing.Size(143, 167);
             this.buttonPets.TabIndex = 1;
             this.buttonPets.Text = "PETS";
             this.buttonPets.UseVisualStyleBackColor = true;
@@ -58,9 +60,10 @@
             // 
             // buttonClientes
             // 
-            this.buttonClientes.Location = new System.Drawing.Point(301, 18);
+            this.buttonClientes.Location = new System.Drawing.Point(344, 24);
+            this.buttonClientes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonClientes.Name = "buttonClientes";
-            this.buttonClientes.Size = new System.Drawing.Size(125, 125);
+            this.buttonClientes.Size = new System.Drawing.Size(143, 167);
             this.buttonClientes.TabIndex = 2;
             this.buttonClientes.Text = "CLIENTES";
             this.buttonClientes.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // buttonVeterinarios
             // 
-            this.buttonVeterinarios.Location = new System.Drawing.Point(19, 163);
+            this.buttonVeterinarios.Location = new System.Drawing.Point(22, 217);
+            this.buttonVeterinarios.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonVeterinarios.Name = "buttonVeterinarios";
-            this.buttonVeterinarios.Size = new System.Drawing.Size(125, 125);
+            this.buttonVeterinarios.Size = new System.Drawing.Size(143, 167);
             this.buttonVeterinarios.TabIndex = 3;
             this.buttonVeterinarios.Text = "VETERINÁRIOS";
             this.buttonVeterinarios.UseVisualStyleBackColor = true;
@@ -78,9 +82,10 @@
             // 
             // buttonAlergias
             // 
-            this.buttonAlergias.Location = new System.Drawing.Point(160, 163);
+            this.buttonAlergias.Location = new System.Drawing.Point(183, 217);
+            this.buttonAlergias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAlergias.Name = "buttonAlergias";
-            this.buttonAlergias.Size = new System.Drawing.Size(125, 125);
+            this.buttonAlergias.Size = new System.Drawing.Size(143, 167);
             this.buttonAlergias.TabIndex = 4;
             this.buttonAlergias.Text = "ALERGIAS";
             this.buttonAlergias.UseVisualStyleBackColor = true;
@@ -88,9 +93,10 @@
             // 
             // buttonEnderecos
             // 
-            this.buttonEnderecos.Location = new System.Drawing.Point(301, 163);
+            this.buttonEnderecos.Location = new System.Drawing.Point(344, 217);
+            this.buttonEnderecos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEnderecos.Name = "buttonEnderecos";
-            this.buttonEnderecos.Size = new System.Drawing.Size(125, 125);
+            this.buttonEnderecos.Size = new System.Drawing.Size(143, 167);
             this.buttonEnderecos.TabIndex = 5;
             this.buttonEnderecos.Text = "ENDEREÇOS";
             this.buttonEnderecos.UseVisualStyleBackColor = true;
@@ -98,19 +104,19 @@
             // 
             // MenuPrincipalForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 309);
+            this.ClientSize = new System.Drawing.Size(512, 412);
             this.Controls.Add(this.buttonEnderecos);
             this.Controls.Add(this.buttonAlergias);
             this.Controls.Add(this.buttonVeterinarios);
             this.Controls.Add(this.buttonClientes);
             this.Controls.Add(this.buttonPets);
             this.Controls.Add(this.buttonConsultas);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MenuPrincipalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
-            this.TopMost = true;
             this.ResumeLayout(false);
 
         }
