@@ -35,15 +35,15 @@
             this.labelCep = new System.Windows.Forms.Label();
             this.labelNumero = new System.Windows.Forms.Label();
             this.dataGridViewEnderecoCliente = new System.Windows.Forms.DataGridView();
+            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEnderecoCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonApagar = new System.Windows.Forms.Button();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonMenuPrincipal = new System.Windows.Forms.Button();
-            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEnderecoCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEnderecoCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,8 +110,36 @@
             this.dataGridViewEnderecoCliente.Name = "dataGridViewEnderecoCliente";
             this.dataGridViewEnderecoCliente.ReadOnly = true;
             this.dataGridViewEnderecoCliente.RowTemplate.Height = 25;
+            this.dataGridViewEnderecoCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEnderecoCliente.Size = new System.Drawing.Size(491, 219);
             this.dataGridViewEnderecoCliente.TabIndex = 6;
+            // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.HeaderText = "Codigo";
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
+            // 
+            // ColumnEnderecoCompleto
+            // 
+            this.ColumnEnderecoCompleto.HeaderText = "Endereço Completo";
+            this.ColumnEnderecoCompleto.Name = "ColumnEnderecoCompleto";
+            this.ColumnEnderecoCompleto.ReadOnly = true;
+            this.ColumnEnderecoCompleto.Width = 200;
+            // 
+            // ColumnNumero
+            // 
+            this.ColumnNumero.HeaderText = "Numero";
+            this.ColumnNumero.Name = "ColumnNumero";
+            this.ColumnNumero.ReadOnly = true;
+            this.ColumnNumero.Width = 200;
+            // 
+            // ColumnCep
+            // 
+            this.ColumnCep.HeaderText = "CEP";
+            this.ColumnCep.Name = "ColumnCep";
+            this.ColumnCep.ReadOnly = true;
+            this.ColumnCep.Width = 170;
             // 
             // buttonCancelar
             // 
@@ -162,33 +190,6 @@
             this.buttonMenuPrincipal.Text = "MENU PRINCIPAL";
             this.buttonMenuPrincipal.UseVisualStyleBackColor = true;
             this.buttonMenuPrincipal.Click += new System.EventHandler(this.buttonMenuPrincipal_Click);
-            // 
-            // ColumnCodigo
-            // 
-            this.ColumnCodigo.HeaderText = "Codigo";
-            this.ColumnCodigo.Name = "ColumnCodigo";
-            this.ColumnCodigo.ReadOnly = true;
-            // 
-            // ColumnEnderecoCompleto
-            // 
-            this.ColumnEnderecoCompleto.HeaderText = "Endereço Completo";
-            this.ColumnEnderecoCompleto.Name = "ColumnEnderecoCompleto";
-            this.ColumnEnderecoCompleto.ReadOnly = true;
-            this.ColumnEnderecoCompleto.Width = 200;
-            // 
-            // ColumnNumero
-            // 
-            this.ColumnNumero.HeaderText = "Numero";
-            this.ColumnNumero.Name = "ColumnNumero";
-            this.ColumnNumero.ReadOnly = true;
-            this.ColumnNumero.Width = 200;
-            // 
-            // ColumnCep
-            // 
-            this.ColumnCep.HeaderText = "CEP";
-            this.ColumnCep.Name = "ColumnCep";
-            this.ColumnCep.ReadOnly = true;
-            this.ColumnCep.Width = 170;
             // 
             // EnderecoForm
             // 

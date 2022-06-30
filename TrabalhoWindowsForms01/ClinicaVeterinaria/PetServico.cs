@@ -61,7 +61,6 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 }
             }
         }
-
         public List<Pet> ObterTodos()
         {
             return pets;

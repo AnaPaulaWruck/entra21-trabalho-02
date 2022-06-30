@@ -24,6 +24,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         private void AdicionarEndereco(int numero, int cep, string enderecocompleto)
         {
             var endereco = new Endereco();
+            endereco.Codigo = enderecoServico.ObterUltimoCodigo() + 1;
             endereco.Numero = numero;
             endereco.Cep = cep;
             endereco.EnderecoCompleto = enderecocompleto;
@@ -63,7 +64,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
                 dataGridViewEnderecoCliente.Rows.Add(new object[]
                 {
-                    endereco.Codigo, endereco.Numero, endereco.Cep, endereco.EnderecoCompleto
+                    endereco.Codigo, endereco.EnderecoCompleto, endereco.Numero, endereco.Cep
                 });
             }
 
