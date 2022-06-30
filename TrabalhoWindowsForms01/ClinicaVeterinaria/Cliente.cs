@@ -16,6 +16,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         public int Cpf;
         public string Pet;
         public int Telefone;
+        private List<Cliente> clientes;
 
     }
 }

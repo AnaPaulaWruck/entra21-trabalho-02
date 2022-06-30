@@ -11,5 +11,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         public int Cep;
         public string EnderecoCompleto;
         public int Numero;
+        public int Codigo;
+        
     }
 }
