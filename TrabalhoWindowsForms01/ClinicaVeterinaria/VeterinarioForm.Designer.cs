@@ -54,10 +54,11 @@
             this.buttonCancelar.TabIndex = 0;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(184, 236);
+            this.buttonSalvar.Location = new System.Drawing.Point(284, 236);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(130, 29);
             this.buttonSalvar.TabIndex = 1;
@@ -78,21 +79,21 @@
             // 
             this.textBoxNomeCompleto.Location = new System.Drawing.Point(12, 67);
             this.textBoxNomeCompleto.Name = "textBoxNomeCompleto";
-            this.textBoxNomeCompleto.Size = new System.Drawing.Size(302, 27);
+            this.textBoxNomeCompleto.Size = new System.Drawing.Size(402, 27);
             this.textBoxNomeCompleto.TabIndex = 3;
             // 
             // textBoxEspecializacao
             // 
             this.textBoxEspecializacao.Location = new System.Drawing.Point(12, 126);
             this.textBoxEspecializacao.Name = "textBoxEspecializacao";
-            this.textBoxEspecializacao.Size = new System.Drawing.Size(302, 27);
+            this.textBoxEspecializacao.Size = new System.Drawing.Size(402, 27);
             this.textBoxEspecializacao.TabIndex = 4;
             // 
             // textBoxCrmv
             // 
             this.textBoxCrmv.Location = new System.Drawing.Point(12, 184);
             this.textBoxCrmv.Name = "textBoxCrmv";
-            this.textBoxCrmv.Size = new System.Drawing.Size(212, 27);
+            this.textBoxCrmv.Size = new System.Drawing.Size(402, 27);
             this.textBoxCrmv.TabIndex = 5;
             // 
             // labelEspecializacao
@@ -115,17 +116,20 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnCodigo,
             this.ColumnNomeCompleto,
             this.ColumnEspecializacao,
             this.ColumnCrmv});
-            this.dataGridView1.Location = new System.Drawing.Point(320, 67);
+            this.dataGridView1.Location = new System.Drawing.Point(442, 67);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(468, 343);
+            this.dataGridView1.Size = new System.Drawing.Size(921, 450);
             this.dataGridView1.TabIndex = 8;
             // 
             // ColumnCodigo
@@ -133,32 +137,36 @@
             this.ColumnCodigo.HeaderText = "Código";
             this.ColumnCodigo.MinimumWidth = 6;
             this.ColumnCodigo.Name = "ColumnCodigo";
-            this.ColumnCodigo.Width = 125;
+            this.ColumnCodigo.ReadOnly = true;
+            this.ColumnCodigo.Width = 150;
             // 
             // ColumnNomeCompleto
             // 
             this.ColumnNomeCompleto.HeaderText = "Veterinario (a)";
             this.ColumnNomeCompleto.MinimumWidth = 6;
             this.ColumnNomeCompleto.Name = "ColumnNomeCompleto";
-            this.ColumnNomeCompleto.Width = 125;
+            this.ColumnNomeCompleto.ReadOnly = true;
+            this.ColumnNomeCompleto.Width = 300;
             // 
             // ColumnEspecializacao
             // 
             this.ColumnEspecializacao.HeaderText = "Especialização";
             this.ColumnEspecializacao.MinimumWidth = 6;
             this.ColumnEspecializacao.Name = "ColumnEspecializacao";
-            this.ColumnEspecializacao.Width = 125;
+            this.ColumnEspecializacao.ReadOnly = true;
+            this.ColumnEspecializacao.Width = 300;
             // 
             // ColumnCrmv
             // 
             this.ColumnCrmv.HeaderText = "CRMV";
             this.ColumnCrmv.MinimumWidth = 6;
             this.ColumnCrmv.Name = "ColumnCrmv";
-            this.ColumnCrmv.Width = 125;
+            this.ColumnCrmv.ReadOnly = true;
+            this.ColumnCrmv.Width = 150;
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Location = new System.Drawing.Point(320, 32);
+            this.buttonEditar.Location = new System.Drawing.Point(736, 32);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(94, 29);
             this.buttonEditar.TabIndex = 9;
@@ -168,7 +176,7 @@
             // 
             // buttonApagar
             // 
-            this.buttonApagar.Location = new System.Drawing.Point(442, 32);
+            this.buttonApagar.Location = new System.Drawing.Point(853, 32);
             this.buttonApagar.Name = "buttonApagar";
             this.buttonApagar.Size = new System.Drawing.Size(94, 29);
             this.buttonApagar.TabIndex = 10;
@@ -180,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1375, 540);
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.dataGridView1);
@@ -211,11 +219,11 @@
         private Label labelEspecializacao;
         private Label labelCrmv;
         private DataGridView dataGridView1;
+        private Button buttonEditar;
+        private Button buttonApagar;
         private DataGridViewTextBoxColumn ColumnCodigo;
         private DataGridViewTextBoxColumn ColumnNomeCompleto;
         private DataGridViewTextBoxColumn ColumnEspecializacao;
         private DataGridViewTextBoxColumn ColumnCrmv;
-        private Button buttonEditar;
-        private Button buttonApagar;
     }
 }

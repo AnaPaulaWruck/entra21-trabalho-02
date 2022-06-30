@@ -27,8 +27,8 @@
 
         private void buttonVeterinarios_Click(object sender, EventArgs e)
         {
-            //var veterinariosForm = new VeterinariosForm();
-            //veterinariosForm.ShowDialog();
+            var veterinariosForm = new VeterinarioForm();
+            veterinariosForm.ShowDialog();
         }
 
         private void buttonAlergias_Click(object sender, EventArgs e)
