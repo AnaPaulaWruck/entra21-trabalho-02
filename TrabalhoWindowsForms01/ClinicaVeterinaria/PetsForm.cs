@@ -170,31 +170,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            var nome = textBoxNome.Text;
-            var cliente = Convert.ToString(comboBoxCliente.SelectedItem);
-            var especie = ObterRacaPet();
-            var sexo = ObterSexoPet();
-            var raca = textBoxRaca.Text;
-            var peso = textBoxPeso.Text;
-            var dataNascimento = dateTimePickerDataNascimento.Text;
-            //var vacinas = // TODO
-            var nomeAlergia = Convert.ToString(comboBoxAlergia.SelectedItem);
 
-            var dadosValidos = ValidarDados(nome, cliente, especie, raca, sexo, dataNascimento, peso, vacinas, nomeAlergia);
-
-            if (dadosValidos == false)
-            {
-                return;
-            }
-
-            if (dataGridViewPets.SelectedRows.Count == 0)
-                CadastrarPet(nome, cliente, especie, raca, sexo, dataNascimento, peso, vacinas, nomeAlergia);
-            else
-                EditarPet(nome, cliente, especie, raca, sexo, dataNascimento, peso, vacinas, nomeAlergia);
-
-            PreencherDataGridViewComPets();
-
-            LimparCampos();
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)
