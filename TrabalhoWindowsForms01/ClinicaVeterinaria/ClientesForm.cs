@@ -21,5 +21,25 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         {
 
         }
+
+        private void ClientesForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelGenero_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
