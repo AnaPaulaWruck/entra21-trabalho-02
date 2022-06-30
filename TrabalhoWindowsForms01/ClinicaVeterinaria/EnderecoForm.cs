@@ -83,8 +83,8 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         }
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            var numero = textBoxNumero.Text.Trim();
-            var cep = textBoxCep.Text.Trim();
+            var numero = Convert.ToInt32(textBoxNumero.Text.Trim());
+            var cep = Convert.ToInt32(textBoxCep.Text.Trim());
             var enderecoCompleto = textBoxEnderecoCompleto.Text.Trim();
 
             if (dataGridViewEnderecoCliente.SelectedRows.Count == 0)
@@ -102,12 +102,6 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         {
             throw new NotImplementedException();
         }
-
-        private void AdicionarEndereco(string numero, string cep, string enderecoCompleto)
-        {
-            throw new NotImplementedException();
-        }
-
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             LimparCampos();
@@ -123,9 +117,10 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             }
             var linhaSelecionada = dataGridViewEnderecoCliente.SelectedRows[0];
 
-            var numero = linhaSelecionada.Cells[1].Value.ToString();
-            var cep = linhaSelecionada.Cells[2].Value.ToString();
-            var enderecoCompleto = linhaSelecionada.Cells[3].Value.ToString();
+            var enderecoCompleto = linhaSelecionada.Cells[1].Value.ToString();
+            var numero = linhaSelecionada.Cells[2].Value.ToString();
+            var cep = linhaSelecionada.Cells[3].Value.ToString();
+          
 
             textBoxNumero.Text = numero;
             textBoxCep.Text = cep;
@@ -148,7 +143,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 var linhaSelecionada = dataGridViewEnderecoCliente.SelectedRows[0];
                 var codigoSelecionado = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
 
-                //var endereco = enderecoServico.ObterPorCodigo(Codigo);
+                enderecoServico.Apagar(codigoSelecionado);
 
                 ListarEndereco();
             }

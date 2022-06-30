@@ -39,8 +39,8 @@
 
         private void buttonEnderecos_Click(object sender, EventArgs e)
         {
-            //var enderecosForm = new EnderecosForm();
-            //enderecosForm.ShowDialog();
+            var enderecosForm = new EnderecoForm();
+            enderecosForm.ShowDialog();
         }
     }
 }

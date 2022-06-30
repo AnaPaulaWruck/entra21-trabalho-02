@@ -35,19 +35,20 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                     endereco.Cep = enderecoParaEditar.Cep;
                     endereco.Numero = enderecoParaEditar.Numero;
 
+
                     SalvarArquivo();
 
                     return;
                 }
             }
         }
-        public void Apagar(Endereco enderecoParaApagar)
+        public void Apagar(int codigo)
         {
             for (var i = 0; i < enderecos.Count; i++)
             {
                 var endereco = enderecos[i];
 
-                if (endereco.Codigo == enderecoParaApagar.Codigo)
+                if (endereco.Codigo == codigo)
                 {
                     enderecos.Remove(endereco);
 

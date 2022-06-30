@@ -19,7 +19,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         }
         public void Adicionar(Cliente cliente)
         {
-            cliente.Add(cliente);
+            //cliente.Add(cliente);
 
             SalvarArquivo();
 
@@ -32,12 +32,12 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             }
 
             var clienteEmJson = File.ReadAllText("cliente.json");
-            cliente = JsonConvert.DeserializeObject<List<Cliente>>(clienteEmJson);
+            //cliente = JsonConvert.DeserializeObject<List<Cliente>>(clienteEmJson);
         }
         public void SalvarArquivo()
         {
-            var clienteEmJson = JsonConvert.SerializeObject(cliente);
-            File.WriteAllText("cliente.json", clienteEmJson);
+            //var clienteEmJson = JsonConvert.SerializeObject(cliente);
+            //File.WriteAllText("cliente.json", clienteEmJson);
         }
 
     }
