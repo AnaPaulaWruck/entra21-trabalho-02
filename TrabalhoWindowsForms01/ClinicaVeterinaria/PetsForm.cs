@@ -158,7 +158,66 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
+            var nome = textBoxNome.Text;
+            var tutor = Convert.ToString(comboBoxTutor.SelectedItem);
+            //var especie = Convert.ToString();// TODO
+            var raca = textBoxRaca.Text;
+            //var sexo = // TODO
+            //var dataNascimento = dateTimePickerDataNascimento // TODO
+            var peso = textBoxPeso.Text;
+            //var vacinas = // TODO
+            var nomeAlergia = Convert.ToString(comboBoxAlergia.SelectedItem);
 
+            //var dadosValidos = ValidarDados(cep, enderecocompleto, nomePaciente);
+
+            //if (dadosValidos == false)
+            //{
+            //    return;
+            //}
+
+            if (dataGridViewPets.SelectedRows.Count == 0)
+                CadastrarPet(nome, tutor, especie, raca, sexo, dataNascimento, peso, vacinas, nomeAlergia);
+            else
+                EditarPet(nome, tutor, especie, raca, sexo, dataNascimento, peso, vacinas, nomeAlergia);
+
+            PreencherDataGridViewComPets();
+
+            LimparCampos();
+        }
+
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewPets.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Selecione um Pet da lista para remover");
+
+                return;
+            }
+
+            var resposta = MessageBox.Show(
+                "Deseja realmente apagar o registro do Pet?", "Aviso",
+                MessageBoxButtons.YesNo);
+
+            if (resposta != DialogResult.Yes)
+            {
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Registro apagado com sucesso!");
+            }
+
+            var linhaSelecionada = dataGridViewPets.SelectedRows[0];
+
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var pet = petServico.ObterPorCodigo(codigo);
+
+            petServico.Apagar(pet);
+
+            PreencherDataGridViewComPets();
+
+            dataGridViewPets.ClearSelection();
         }
     }
 }
