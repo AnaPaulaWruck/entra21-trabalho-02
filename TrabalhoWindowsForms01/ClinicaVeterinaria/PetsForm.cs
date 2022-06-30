@@ -6,7 +6,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
     {
         private PetServico petServico;
         private AlergiaServico alergiaServico;
-        //private ClienteServico clienteServico; // TODO
+        private ClienteServico clienteServico;
 
         public PetsForm()
         {
@@ -20,7 +20,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
             PreencherComboBoxcomOsNomesDasAlergias();
 
-            //PreencherComboBoxcomOsNomesDosTutores(); // TODO
+            //PreencherComboBoxcomOsNomesDosClientes(); // TODO
         }
 
         private void PreencherComboBoxcomOsNomesDasAlergias()
@@ -33,6 +33,18 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 comboBoxAlergia.Items.Add(alergia.Nome);
             }
         }
+
+        // TODO
+        //private void PreencherComboBoxcomOsNomesDosClientes()
+        //{
+        //    var clientes = clienteServico.ObterTodos();
+
+        //    for (int i = 0; i < clientes.Count; i++)
+        //    {
+        //        var cliente = clientes[i];
+        //        comboBoxCliente.Items.Add(cliente.Nome);
+        //    }
+        //}
 
         private void PreencherDataGridViewComPets()
         {
@@ -48,7 +60,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 {
                     pet.Codigo,
                     pet.Nome,
-                    pet.Tutor, // pet.Cliente.Nome // Tutor TODO
+                    pet.Cliente, // pet.Cliente.Nome // TODO
                     pet.Especie,
                     pet.Raca,
                     pet.Sexo,
@@ -65,12 +77,12 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         private void LimparCampos()
         {
             textBoxNome.Clear();
-            comboBoxTutor.SelectedIndex = -1;
+            comboBoxCliente.SelectedIndex = -1;
             radioButtonCao.Checked = false;
             radioButtonGato.Checked = false;
             textBoxRaca.Clear();
-            radioButtonFeminino.Checked = false;
-            radioButtonMasculino.Checked = false;
+            radioButtonFemea.Checked = false;
+            radioButtonMacho.Checked = false;
             //dateTimePickerDataNascimento // TODO
             textBoxPeso.Clear();
             checkBoxVacinaAntirrabica.Checked = false;
@@ -85,13 +97,13 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         }
 
         private void CadastrarPet(
-            string nome, string tutor, string especie, string raca, string sexo, DateTime dataNascimento,
+            string nome, string cliente, string especie, string raca, string sexo, DateTime dataNascimento,
             double peso, List<string> vacinas, string? nomeAlergia)
         {
             var pet = new Pet();
             pet.Codigo = petServico.ObterUltimoCodigo() + 1;
             pet.Nome = nome;
-            pet.Tutor = tutor;
+            pet.Cliente = cliente;
             pet.Especie = especie;
             pet.Raca = raca;
             pet.Sexo = sexo;
@@ -119,17 +131,17 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             var pet = petServico.ObterPorCodigo(codigo);
 
             textBoxNome.Text = pet.Nome;
-            comboBoxTutor.SelectedItem = pet.Tutor; //comboBoxTutor.SelectedItem = pet.Cliente.Nome; // TODO
+            comboBoxCliente.SelectedItem = pet.Cliente; //comboBoxCliente.SelectedItem = pet.Cliente.Nome; // TODO
             // TODO radioButton Especie
             textBoxRaca.Text = pet.Raca;
             // TODO radioButton Sexo
-            //dateTimePickerDataNascimento TODO
+            dateTimePickerDataNascimento.Text = pet.DataNascimento.ToString();
             textBoxPeso.Text = pet.Peso.ToString();
             // TODO checkboxes
             comboBoxAlergia.SelectedItem = pet.Alergia.Nome;
         }
 
-        private void EditarPet(string nome, string tutor, string especie, string raca, string sexo, DateTime dataNascimento,
+        private void EditarPet(string nome, string cliente, string especie, string raca, string sexo, DateTime dataNascimento,
             double peso, List<string> vacinas, string nomeAlergia)
         {
             var linhaSelecionada = dataGridViewPets.SelectedRows[0];
@@ -139,7 +151,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             var pet = new Pet();
             pet.Codigo = codigoSelecionado;
             pet.Nome = nome;
-            pet.Tutor = tutor; // pet.Tutor = clienteServico.ObterPorNomeCliente(tutor); TODO
+            pet.Cliente = cliente; // pet.Tutor = clienteServico.ObterPorNomeCliente(tutor); TODO
             pet.Especie = especie;
             pet.Raca = raca;
             pet.Sexo = sexo;
@@ -159,26 +171,26 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
             var nome = textBoxNome.Text;
-            var tutor = Convert.ToString(comboBoxTutor.SelectedItem);
-            //var especie = Convert.ToString();// TODO
+            var cliente = Convert.ToString(comboBoxCliente.SelectedItem);
+            var especie = ObterRacaPet();
+            var sexo = ObterSexoPet();
             var raca = textBoxRaca.Text;
-            //var sexo = // TODO
-            //var dataNascimento = dateTimePickerDataNascimento // TODO
             var peso = textBoxPeso.Text;
+            var dataNascimento = dateTimePickerDataNascimento.Text;
             //var vacinas = // TODO
             var nomeAlergia = Convert.ToString(comboBoxAlergia.SelectedItem);
 
-            //var dadosValidos = ValidarDados(cep, enderecocompleto, nomePaciente);
+            var dadosValidos = ValidarDados(nome, cliente, especie, raca, sexo, dataNascimento, peso, vacinas, nomeAlergia);
 
-            //if (dadosValidos == false)
-            //{
-            //    return;
-            //}
+            if (dadosValidos == false)
+            {
+                return;
+            }
 
             if (dataGridViewPets.SelectedRows.Count == 0)
-                CadastrarPet(nome, tutor, especie, raca, sexo, dataNascimento, peso, vacinas, nomeAlergia);
+                CadastrarPet(nome, cliente, especie, raca, sexo, dataNascimento, peso, vacinas, nomeAlergia);
             else
-                EditarPet(nome, tutor, especie, raca, sexo, dataNascimento, peso, vacinas, nomeAlergia);
+                EditarPet(nome, cliente, especie, raca, sexo, dataNascimento, peso, vacinas, nomeAlergia);
 
             PreencherDataGridViewComPets();
 
@@ -218,6 +230,116 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             PreencherDataGridViewComPets();
 
             dataGridViewPets.ClearSelection();
+        }
+
+        private bool ValidarDados(string nome, string cliente, string especie, string raca, string sexo, DateTime dataNascimento,
+            double peso, List<string> vacinas, string nomeAlergia)
+        {
+            if (nome.Trim().Length < 2)
+            {
+                MessageBox.Show("Nome do animal inválido");
+
+                textBoxNome.Focus();
+
+                return false;
+            }
+
+            if (comboBoxCliente.SelectedIndex == -1)
+            {
+                MessageBox.Show("Escolha um Tutor");
+
+                comboBoxCliente.DroppedDown = true;
+
+                return false;
+            }
+
+            if (raca.Trim().Length < 5)
+            {
+                MessageBox.Show("Digite um valor válido para Raça do animal");
+
+                textBoxRaca.Focus();
+
+                return false;
+            }
+
+            try
+            {
+                if (peso <= 0)
+                {
+                    MessageBox.Show("Peso não pode ser um valor menor ou igual a zero.");
+
+                    textBoxRaca.Focus();
+
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Digite um valor válido para peso.");
+
+                textBoxRaca.Focus();
+
+                return false;
+            }
+
+            if (comboBoxAlergia.SelectedIndex == -1)
+            {
+                var resposta = MessageBox.Show(
+                "O animal possui alguma alergia?", "Aviso",
+                MessageBoxButtons.YesNo);
+
+                if (resposta != DialogResult.No)
+                {
+                    MessageBox.Show("Escolha a Alergia");
+
+                    comboBoxAlergia.DroppedDown = true;
+
+                    return false;
+                }
+            }
+
+            if (radioButtonCao.Checked == false && radioButtonGato.Checked == false)
+            {
+                MessageBox.Show("Selecione a espécie do animal.");
+
+                groupBoxEspecie.Focus();
+
+                return false;
+            }
+
+            if (radioButtonFemea.Checked == false && radioButtonMacho.Checked == false)
+            {
+                MessageBox.Show("Selecione o sexo do animal.");
+
+                groupBoxSexo.Focus();
+
+                return false;
+            }
+
+            // TODO dataNascimento
+            // TODO vacinas
+
+            return true;
+        }
+
+        private string ObterRacaPet()
+        {
+            if (radioButtonCao.Checked == true)
+            {
+                return "Cão";
+            }
+
+            return "Gato";
+        }
+
+        private string ObterSexoPet()
+        {
+            if (radioButtonFemea.Checked == true)
+            {
+                return "Fêmea";
+            }
+
+            return "Macho";
         }
     }
 }

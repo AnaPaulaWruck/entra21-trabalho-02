@@ -29,7 +29,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 if (pet.Codigo == petParaAlterar.Codigo)
                 {
                     pet.Nome = petParaAlterar.Nome;
-                    pet.Tutor = petParaAlterar.Tutor;
+                    pet.Cliente = petParaAlterar.Cliente;
                     pet.Especie = petParaAlterar.Especie;
                     pet.Raca = petParaAlterar.Raca;
                     pet.Sexo = petParaAlterar.Sexo;
