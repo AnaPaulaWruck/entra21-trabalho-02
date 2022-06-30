@@ -110,7 +110,6 @@
             this.Name = "MenuPrincipalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
-            this.TopMost = true;
             this.ResumeLayout(false);
 
         }

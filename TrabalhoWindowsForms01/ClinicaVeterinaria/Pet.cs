@@ -9,8 +9,8 @@
         public string Raca;
         public string Sexo;
         public DateTime DataNascimento;
-        public bool Peso;
-        public string Vacina;
+        public double Peso;
+        public List<string> Vacinas;
         public Alergia Alergia;
     }
 }
