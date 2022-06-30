@@ -35,7 +35,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                     pet.Sexo = petParaAlterar.Sexo;
                     pet.DataNascimento = petParaAlterar.DataNascimento;
                     pet.Peso = petParaAlterar.Peso;
-                    pet.Vacina = petParaAlterar.Vacina;
+                    pet.Vacinas = petParaAlterar.Vacinas;
                     pet.Alergia = petParaAlterar.Alergia;
 
                     SalvarArquivo();
@@ -103,9 +103,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         public void LerArquivo()
         {
             if (File.Exists("pets.json") == false)
-            {
                 return;
-            }
 
             var petsEmJson = File.ReadAllText("pets.json");
             pets = JsonConvert.DeserializeObject<List<Pet>>(petsEmJson);
