@@ -51,7 +51,6 @@
             this.radioButtonFeminino = new System.Windows.Forms.RadioButton();
             this.radioButtonMasculino = new System.Windows.Forms.RadioButton();
             this.labelRaca = new System.Windows.Forms.Label();
-            this.comboBoxRaca = new System.Windows.Forms.ComboBox();
             this.dateTimePickerDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.labelDataNascimento = new System.Windows.Forms.Label();
             this.labelPeso = new System.Windows.Forms.Label();
@@ -70,11 +69,12 @@
             this.labelKg = new System.Windows.Forms.Label();
             this.radioButtonGato = new System.Windows.Forms.RadioButton();
             this.radioButtonCao = new System.Windows.Forms.RadioButton();
-            this.panelEspecie = new System.Windows.Forms.Panel();
-            this.panelSexo = new System.Windows.Forms.Panel();
+            this.groupBoxSexo = new System.Windows.Forms.GroupBox();
+            this.groupBoxEspecie = new System.Windows.Forms.GroupBox();
+            this.textBoxRaca = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPets)).BeginInit();
-            this.panelEspecie.SuspendLayout();
-            this.panelSexo.SuspendLayout();
+            this.groupBoxSexo.SuspendLayout();
+            this.groupBoxEspecie.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewPets
@@ -93,7 +93,7 @@
             this.ColumnPeso,
             this.ColumnVacinas,
             this.ColumnAlergias});
-            this.dataGridViewPets.Location = new System.Drawing.Point(12, 42);
+            this.dataGridViewPets.Location = new System.Drawing.Point(12, 45);
             this.dataGridViewPets.Name = "dataGridViewPets";
             this.dataGridViewPets.ReadOnly = true;
             this.dataGridViewPets.RowTemplate.Height = 25;
@@ -222,7 +222,7 @@
             // 
             this.labelNomeTutor.AutoSize = true;
             this.labelNomeTutor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelNomeTutor.Location = new System.Drawing.Point(689, 82);
+            this.labelNomeTutor.Location = new System.Drawing.Point(689, 80);
             this.labelNomeTutor.Name = "labelNomeTutor";
             this.labelNomeTutor.Size = new System.Drawing.Size(116, 21);
             this.labelNomeTutor.TabIndex = 6;
@@ -232,7 +232,7 @@
             // 
             this.comboBoxTutor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxTutor.FormattingEnabled = true;
-            this.comboBoxTutor.Location = new System.Drawing.Point(689, 109);
+            this.comboBoxTutor.Location = new System.Drawing.Point(689, 107);
             this.comboBoxTutor.Name = "comboBoxTutor";
             this.comboBoxTutor.Size = new System.Drawing.Size(282, 28);
             this.comboBoxTutor.TabIndex = 7;
@@ -241,7 +241,7 @@
             // 
             this.labelEspecie.AutoSize = true;
             this.labelEspecie.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelEspecie.Location = new System.Drawing.Point(689, 150);
+            this.labelEspecie.Location = new System.Drawing.Point(689, 151);
             this.labelEspecie.Name = "labelEspecie";
             this.labelEspecie.Size = new System.Drawing.Size(64, 21);
             this.labelEspecie.TabIndex = 10;
@@ -251,7 +251,7 @@
             // 
             this.labelSexo.AutoSize = true;
             this.labelSexo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelSexo.Location = new System.Drawing.Point(689, 248);
+            this.labelSexo.Location = new System.Drawing.Point(689, 251);
             this.labelSexo.Name = "labelSexo";
             this.labelSexo.Size = new System.Drawing.Size(46, 21);
             this.labelSexo.TabIndex = 11;
@@ -261,7 +261,7 @@
             // 
             this.radioButtonFeminino.AutoSize = true;
             this.radioButtonFeminino.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonFeminino.Location = new System.Drawing.Point(10, 5);
+            this.radioButtonFeminino.Location = new System.Drawing.Point(10, 15);
             this.radioButtonFeminino.Name = "radioButtonFeminino";
             this.radioButtonFeminino.Size = new System.Drawing.Size(88, 24);
             this.radioButtonFeminino.TabIndex = 12;
@@ -273,7 +273,7 @@
             // 
             this.radioButtonMasculino.AutoSize = true;
             this.radioButtonMasculino.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonMasculino.Location = new System.Drawing.Point(119, 5);
+            this.radioButtonMasculino.Location = new System.Drawing.Point(117, 15);
             this.radioButtonMasculino.Name = "radioButtonMasculino";
             this.radioButtonMasculino.Size = new System.Drawing.Size(94, 24);
             this.radioButtonMasculino.TabIndex = 13;
@@ -291,20 +291,11 @@
             this.labelRaca.TabIndex = 14;
             this.labelRaca.Text = "Raça";
             // 
-            // comboBoxRaca
-            // 
-            this.comboBoxRaca.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBoxRaca.FormattingEnabled = true;
-            this.comboBoxRaca.Location = new System.Drawing.Point(689, 206);
-            this.comboBoxRaca.Name = "comboBoxRaca";
-            this.comboBoxRaca.Size = new System.Drawing.Size(282, 28);
-            this.comboBoxRaca.TabIndex = 15;
-            // 
             // dateTimePickerDataNascimento
             // 
             this.dateTimePickerDataNascimento.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(845, 285);
+            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(845, 289);
             this.dateTimePickerDataNascimento.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
             this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(126, 27);
@@ -314,7 +305,7 @@
             // 
             this.labelDataNascimento.AutoSize = true;
             this.labelDataNascimento.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelDataNascimento.Location = new System.Drawing.Point(689, 288);
+            this.labelDataNascimento.Location = new System.Drawing.Point(689, 292);
             this.labelDataNascimento.Name = "labelDataNascimento";
             this.labelDataNascimento.Size = new System.Drawing.Size(153, 21);
             this.labelDataNascimento.TabIndex = 17;
@@ -324,7 +315,7 @@
             // 
             this.labelPeso.AutoSize = true;
             this.labelPeso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPeso.Location = new System.Drawing.Point(689, 327);
+            this.labelPeso.Location = new System.Drawing.Point(689, 330);
             this.labelPeso.Name = "labelPeso";
             this.labelPeso.Size = new System.Drawing.Size(45, 21);
             this.labelPeso.TabIndex = 18;
@@ -401,6 +392,7 @@
             this.buttonCancelar.TabIndex = 26;
             this.buttonCancelar.Text = "Cancelar";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonSalvar
             // 
@@ -411,6 +403,7 @@
             this.buttonSalvar.TabIndex = 27;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // checkBoxVacinaQuintupla
             // 
@@ -448,7 +441,7 @@
             // textBoxPeso
             // 
             this.textBoxPeso.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPeso.Location = new System.Drawing.Point(740, 324);
+            this.textBoxPeso.Location = new System.Drawing.Point(740, 327);
             this.textBoxPeso.Name = "textBoxPeso";
             this.textBoxPeso.Size = new System.Drawing.Size(199, 27);
             this.textBoxPeso.TabIndex = 32;
@@ -457,7 +450,7 @@
             // 
             this.labelKg.AutoSize = true;
             this.labelKg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelKg.Location = new System.Drawing.Point(943, 327);
+            this.labelKg.Location = new System.Drawing.Point(943, 330);
             this.labelKg.Name = "labelKg";
             this.labelKg.Size = new System.Drawing.Size(28, 21);
             this.labelKg.TabIndex = 33;
@@ -467,7 +460,7 @@
             // 
             this.radioButtonGato.AutoSize = true;
             this.radioButtonGato.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonGato.Location = new System.Drawing.Point(101, 5);
+            this.radioButtonGato.Location = new System.Drawing.Point(103, 14);
             this.radioButtonGato.Name = "radioButtonGato";
             this.radioButtonGato.Size = new System.Drawing.Size(59, 24);
             this.radioButtonGato.TabIndex = 9;
@@ -479,7 +472,7 @@
             // 
             this.radioButtonCao.AutoSize = true;
             this.radioButtonCao.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.radioButtonCao.Location = new System.Drawing.Point(10, 5);
+            this.radioButtonCao.Location = new System.Drawing.Point(10, 14);
             this.radioButtonCao.Name = "radioButtonCao";
             this.radioButtonCao.Size = new System.Drawing.Size(53, 24);
             this.radioButtonCao.TabIndex = 8;
@@ -487,31 +480,41 @@
             this.radioButtonCao.Text = "Cão";
             this.radioButtonCao.UseVisualStyleBackColor = true;
             // 
-            // panelEspecie
+            // groupBoxSexo
             // 
-            this.panelEspecie.Controls.Add(this.radioButtonCao);
-            this.panelEspecie.Controls.Add(this.radioButtonGato);
-            this.panelEspecie.Location = new System.Drawing.Point(759, 144);
-            this.panelEspecie.Name = "panelEspecie";
-            this.panelEspecie.Size = new System.Drawing.Size(212, 34);
-            this.panelEspecie.TabIndex = 34;
+            this.groupBoxSexo.Controls.Add(this.radioButtonMasculino);
+            this.groupBoxSexo.Controls.Add(this.radioButtonFeminino);
+            this.groupBoxSexo.Location = new System.Drawing.Point(741, 235);
+            this.groupBoxSexo.Name = "groupBoxSexo";
+            this.groupBoxSexo.Size = new System.Drawing.Size(230, 45);
+            this.groupBoxSexo.TabIndex = 36;
+            this.groupBoxSexo.TabStop = false;
             // 
-            // panelSexo
+            // groupBoxEspecie
             // 
-            this.panelSexo.Controls.Add(this.radioButtonFeminino);
-            this.panelSexo.Controls.Add(this.radioButtonMasculino);
-            this.panelSexo.Location = new System.Drawing.Point(741, 241);
-            this.panelSexo.Name = "panelSexo";
-            this.panelSexo.Size = new System.Drawing.Size(230, 34);
-            this.panelSexo.TabIndex = 35;
+            this.groupBoxEspecie.Controls.Add(this.radioButtonCao);
+            this.groupBoxEspecie.Controls.Add(this.radioButtonGato);
+            this.groupBoxEspecie.Location = new System.Drawing.Point(759, 136);
+            this.groupBoxEspecie.Name = "groupBoxEspecie";
+            this.groupBoxEspecie.Size = new System.Drawing.Size(212, 45);
+            this.groupBoxEspecie.TabIndex = 37;
+            this.groupBoxEspecie.TabStop = false;
+            // 
+            // textBoxRaca
+            // 
+            this.textBoxRaca.Location = new System.Drawing.Point(689, 207);
+            this.textBoxRaca.Name = "textBoxRaca";
+            this.textBoxRaca.Size = new System.Drawing.Size(282, 23);
+            this.textBoxRaca.TabIndex = 38;
             // 
             // PetsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 597);
-            this.Controls.Add(this.panelSexo);
-            this.Controls.Add(this.panelEspecie);
+            this.Controls.Add(this.textBoxRaca);
+            this.Controls.Add(this.groupBoxEspecie);
+            this.Controls.Add(this.groupBoxSexo);
             this.Controls.Add(this.labelKg);
             this.Controls.Add(this.textBoxPeso);
             this.Controls.Add(this.checkBoxVacinaQuadrupla);
@@ -528,7 +531,6 @@
             this.Controls.Add(this.labelPeso);
             this.Controls.Add(this.labelDataNascimento);
             this.Controls.Add(this.dateTimePickerDataNascimento);
-            this.Controls.Add(this.comboBoxRaca);
             this.Controls.Add(this.labelRaca);
             this.Controls.Add(this.labelSexo);
             this.Controls.Add(this.labelEspecie);
@@ -544,10 +546,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pets";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPets)).EndInit();
-            this.panelEspecie.ResumeLayout(false);
-            this.panelEspecie.PerformLayout();
-            this.panelSexo.ResumeLayout(false);
-            this.panelSexo.PerformLayout();
+            this.groupBoxSexo.ResumeLayout(false);
+            this.groupBoxSexo.PerformLayout();
+            this.groupBoxEspecie.ResumeLayout(false);
+            this.groupBoxEspecie.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -568,7 +570,6 @@
         private RadioButton radioButtonFeminino;
         private RadioButton radioButtonMasculino;
         private Label labelRaca;
-        private ComboBox comboBoxRaca;
         private DateTimePicker dateTimePickerDataNascimento;
         private Label labelDataNascimento;
         private Label labelPeso;
@@ -597,7 +598,8 @@
         private Label labelKg;
         private RadioButton radioButtonGato;
         private RadioButton radioButtonCao;
-        private Panel panelEspecie;
-        private Panel panelSexo;
+        private GroupBox groupBoxSexo;
+        private GroupBox groupBoxEspecie;
+        private TextBox textBoxRaca;
     }
 }
