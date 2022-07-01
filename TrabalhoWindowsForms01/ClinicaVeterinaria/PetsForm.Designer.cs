@@ -29,16 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridViewPets = new System.Windows.Forms.DataGridView();
-            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEspecie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnVacinas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAlergias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelListaPets = new System.Windows.Forms.Label();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonApagar = new System.Windows.Forms.Button();
@@ -70,6 +60,16 @@
             this.checkBoxVacinaQuintupla = new System.Windows.Forms.CheckBox();
             this.checkBoxVacinaGiardiase = new System.Windows.Forms.CheckBox();
             this.checkBoxVacinaQuadrupla = new System.Windows.Forms.CheckBox();
+            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEspecie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnVacinas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAlergias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPets)).BeginInit();
             this.groupBoxSexo.SuspendLayout();
             this.groupBoxEspecie.SuspendLayout();
@@ -99,75 +99,6 @@
             this.dataGridViewPets.Size = new System.Drawing.Size(660, 418);
             this.dataGridViewPets.TabIndex = 0;
             // 
-            // ColumnCodigo
-            // 
-            this.ColumnCodigo.HeaderText = "COD";
-            this.ColumnCodigo.Name = "ColumnCodigo";
-            this.ColumnCodigo.ReadOnly = true;
-            this.ColumnCodigo.Visible = false;
-            // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "NOME";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
-            this.ColumnNome.Width = 150;
-            // 
-            // ColumnTutor
-            // 
-            this.ColumnTutor.HeaderText = "TUTOR";
-            this.ColumnTutor.Name = "ColumnTutor";
-            this.ColumnTutor.ReadOnly = true;
-            this.ColumnTutor.Width = 150;
-            // 
-            // ColumnEspecie
-            // 
-            this.ColumnEspecie.HeaderText = "ESPÉCIE";
-            this.ColumnEspecie.Name = "ColumnEspecie";
-            this.ColumnEspecie.ReadOnly = true;
-            // 
-            // ColumnSexo
-            // 
-            this.ColumnSexo.HeaderText = "SEXO";
-            this.ColumnSexo.Name = "ColumnSexo";
-            this.ColumnSexo.ReadOnly = true;
-            this.ColumnSexo.Width = 90;
-            // 
-            // ColumnRaca
-            // 
-            this.ColumnRaca.HeaderText = "RAÇA";
-            this.ColumnRaca.Name = "ColumnRaca";
-            this.ColumnRaca.ReadOnly = true;
-            this.ColumnRaca.Width = 150;
-            // 
-            // ColumnDataNascimento
-            // 
-            this.ColumnDataNascimento.HeaderText = "DATA NASCIMENTO";
-            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
-            this.ColumnDataNascimento.ReadOnly = true;
-            this.ColumnDataNascimento.Width = 150;
-            // 
-            // ColumnPeso
-            // 
-            this.ColumnPeso.HeaderText = "PESO";
-            this.ColumnPeso.Name = "ColumnPeso";
-            this.ColumnPeso.ReadOnly = true;
-            this.ColumnPeso.Width = 75;
-            // 
-            // ColumnVacinas
-            // 
-            this.ColumnVacinas.HeaderText = "VACINAS";
-            this.ColumnVacinas.Name = "ColumnVacinas";
-            this.ColumnVacinas.ReadOnly = true;
-            this.ColumnVacinas.Width = 150;
-            // 
-            // ColumnAlergias
-            // 
-            this.ColumnAlergias.HeaderText = "ALERGIAS";
-            this.ColumnAlergias.Name = "ColumnAlergias";
-            this.ColumnAlergias.ReadOnly = true;
-            this.ColumnAlergias.Width = 150;
-            // 
             // labelListaPets
             // 
             this.labelListaPets.AutoSize = true;
@@ -187,6 +118,7 @@
             this.buttonEditar.TabIndex = 2;
             this.buttonEditar.Text = "Editar";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonApagar
             // 
@@ -276,8 +208,9 @@
             // 
             // dateTimePickerDataNascimento
             // 
+            this.dateTimePickerDataNascimento.CustomFormat = "dd/MM/yyyy";
             this.dateTimePickerDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(813, 252);
             this.dateTimePickerDataNascimento.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
@@ -386,6 +319,7 @@
             this.buttonSalvar.TabIndex = 27;
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // textBoxPeso
             // 
@@ -492,6 +426,75 @@
             this.checkBoxVacinaQuadrupla.Text = "Quádrupla felina";
             this.checkBoxVacinaQuadrupla.UseVisualStyleBackColor = true;
             // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.HeaderText = "COD";
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
+            this.ColumnCodigo.Width = 50;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "NOME";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            this.ColumnNome.Width = 150;
+            // 
+            // ColumnTutor
+            // 
+            this.ColumnTutor.HeaderText = "TUTOR";
+            this.ColumnTutor.Name = "ColumnTutor";
+            this.ColumnTutor.ReadOnly = true;
+            this.ColumnTutor.Width = 150;
+            // 
+            // ColumnEspecie
+            // 
+            this.ColumnEspecie.HeaderText = "ESPÉCIE";
+            this.ColumnEspecie.Name = "ColumnEspecie";
+            this.ColumnEspecie.ReadOnly = true;
+            // 
+            // ColumnSexo
+            // 
+            this.ColumnSexo.HeaderText = "SEXO";
+            this.ColumnSexo.Name = "ColumnSexo";
+            this.ColumnSexo.ReadOnly = true;
+            this.ColumnSexo.Width = 90;
+            // 
+            // ColumnRaca
+            // 
+            this.ColumnRaca.HeaderText = "RAÇA";
+            this.ColumnRaca.Name = "ColumnRaca";
+            this.ColumnRaca.ReadOnly = true;
+            this.ColumnRaca.Width = 150;
+            // 
+            // ColumnDataNascimento
+            // 
+            this.ColumnDataNascimento.HeaderText = "DATA NASCIMENTO";
+            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
+            this.ColumnDataNascimento.ReadOnly = true;
+            this.ColumnDataNascimento.Width = 150;
+            // 
+            // ColumnPeso
+            // 
+            this.ColumnPeso.HeaderText = "PESO";
+            this.ColumnPeso.Name = "ColumnPeso";
+            this.ColumnPeso.ReadOnly = true;
+            this.ColumnPeso.Width = 75;
+            // 
+            // ColumnVacinas
+            // 
+            this.ColumnVacinas.HeaderText = "VACINAS";
+            this.ColumnVacinas.Name = "ColumnVacinas";
+            this.ColumnVacinas.ReadOnly = true;
+            this.ColumnVacinas.Width = 150;
+            // 
+            // ColumnAlergias
+            // 
+            this.ColumnAlergias.HeaderText = "ALERGIAS";
+            this.ColumnAlergias.Name = "ColumnAlergias";
+            this.ColumnAlergias.ReadOnly = true;
+            this.ColumnAlergias.Width = 150;
+            // 
             // PetsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -569,6 +572,9 @@
         private GroupBox groupBoxSexo;
         private GroupBox groupBoxEspecie;
         private TextBox textBoxRaca;
+        private CheckBox checkBoxVacinaQuintupla;
+        private CheckBox checkBoxVacinaGiardiase;
+        private CheckBox checkBoxVacinaQuadrupla;
         private DataGridViewTextBoxColumn ColumnCodigo;
         private DataGridViewTextBoxColumn ColumnNome;
         private DataGridViewTextBoxColumn ColumnTutor;
@@ -579,8 +585,5 @@
         private DataGridViewTextBoxColumn ColumnPeso;
         private DataGridViewTextBoxColumn ColumnVacinas;
         private DataGridViewTextBoxColumn ColumnAlergias;
-        private CheckBox checkBoxVacinaQuintupla;
-        private CheckBox checkBoxVacinaGiardiase;
-        private CheckBox checkBoxVacinaQuadrupla;
     }
 }

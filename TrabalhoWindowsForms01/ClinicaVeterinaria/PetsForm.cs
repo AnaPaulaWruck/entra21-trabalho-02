@@ -108,7 +108,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             pet.Sexo = sexo;
             pet.DataNascimento = dataNascimento;
             pet.Peso = peso;
-            pet.Vacinas = GerarListaVacinasSelecionadas();
+            pet.Vacinas = vacinas;
             pet.Alergia = alergiaServico.ObterPorNomeAlergia(nomeAlergia);
 
             petServico.Adicionar(pet);
@@ -131,12 +131,36 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
             textBoxNome.Text = pet.Nome;
             comboBoxCliente.SelectedItem = pet.Cliente; //comboBoxCliente.SelectedItem = pet.Cliente.Nome; // TODO
-            //radioButtonCao.Checked = VerificarSeRadioButtonSelecionado(radioButtonCao);
+
+            if (pet.Especie == radioButtonCao.Text)
+                radioButtonCao.Checked = true;
+            else
+                radioButtonGato.Checked = true;
+
+            if (pet.Sexo == radioButtonFemea.Text)
+                radioButtonFemea.Checked = true;
+            else
+                radioButtonMacho.Checked = true;
+
+            for (int i = 0; i < pet.Vacinas.Count; i++)
+            {
+                if (pet.Vacinas.Contains(checkBoxVacinaAntirrabica.Text))
+                    checkBoxVacinaAntirrabica.Checked = true;
+                if (pet.Vacinas.Contains(checkBoxVacinaGiardiase.Text))
+                    checkBoxVacinaGiardiase.Checked = true;
+                if (pet.Vacinas.Contains(checkBoxVacinaQuadrupla.Text))
+                    checkBoxVacinaQuadrupla.Checked = true;
+                if (pet.Vacinas.Contains(checkBoxVacinaQuintupla.Text))
+                    checkBoxVacinaQuintupla.Checked = true;
+                if (pet.Vacinas.Contains(checkBoxVacinaV10.Text))
+                    checkBoxVacinaV10.Checked = true;
+                if (pet.Vacinas.Contains(checkBoxVacinaV8.Text))
+                    checkBoxVacinaV8.Checked = true;
+            }
+
             textBoxRaca.Text = pet.Raca;
-            // TODO radioButton Sexo
             dateTimePickerDataNascimento.Value = pet.DataNascimento;
             textBoxPeso.Text = pet.Peso.ToString();
-            // TODO checkboxes vacinas
             comboBoxAlergia.SelectedItem = pet.Alergia.Nome;
         }
 
@@ -156,7 +180,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             pet.Sexo = sexo;
             pet.DataNascimento = dataNascimento;
             pet.Peso = peso;
-            pet.Vacinas = GerarListaVacinasSelecionadas();
+            pet.Vacinas = vacinas;
             pet.Alergia = alergiaServico.ObterPorNomeAlergia(nomeAlergia);
 
             petServico.Editar(pet);
@@ -179,7 +203,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             var vacinas = GerarListaVacinasSelecionadas();
             var nomeAlergia = Convert.ToString(comboBoxAlergia.SelectedItem);
 
-            var dadosValidos = ValidarDados(nome, nomeCliente, especie, sexo, raca, peso, nomeAlergia);
+            var dadosValidos = ValidarDados(nome, raca, peso);
 
             if (dadosValidos == false)
             {
@@ -191,6 +215,9 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             else
                 EditarPet(nome, nomeCliente, especie, sexo, raca, dataNascimento, peso, vacinas, nomeAlergia);
 
+            PreencherDataGridViewComPets();
+
+            LimparCampos();
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)
@@ -228,8 +255,12 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             dataGridViewPets.ClearSelection();
         }
 
-        private bool ValidarDados(string nome, string nomeCliente, string especie, string sexo, string raca,
-            double peso, string nomeAlergia)
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            ApresentarDadosParaEdicao();
+        }
+
+        private bool ValidarDados(string nome, string raca, double peso)
         {
             if (nome.Trim().Length < 2)
             {
@@ -336,16 +367,6 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
             return radioButtonMacho.Text;
         }
-
-        //private bool VerificarSeRadioButtonSelecionado(bool botao)
-        //{
-        //    if (botao == true)
-        //    {
-        //        return true;
-        //    }
-
-        //    return false;
-        //}
 
         private List<string> GerarListaVacinasSelecionadas()
         {
