@@ -176,18 +176,20 @@
             // 
             // dateTimePickerDia
             // 
+            this.dateTimePickerDia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDia.Location = new System.Drawing.Point(10, 236);
             this.dateTimePickerDia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerDia.Name = "dateTimePickerDia";
-            this.dateTimePickerDia.Size = new System.Drawing.Size(219, 23);
+            this.dateTimePickerDia.Size = new System.Drawing.Size(132, 23);
             this.dateTimePickerDia.TabIndex = 11;
             // 
             // dateTimePickerHorario
             // 
+            this.dateTimePickerHorario.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePickerHorario.Location = new System.Drawing.Point(10, 276);
             this.dateTimePickerHorario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePickerHorario.Name = "dateTimePickerHorario";
-            this.dateTimePickerHorario.Size = new System.Drawing.Size(219, 23);
+            this.dateTimePickerHorario.Size = new System.Drawing.Size(132, 23);
             this.dateTimePickerHorario.TabIndex = 12;
             // 
             // labelData

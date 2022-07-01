@@ -60,9 +60,6 @@
             this.comboBoxAlergia = new System.Windows.Forms.ComboBox();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
-            this.checkBoxVacinaQuintupla = new System.Windows.Forms.CheckBox();
-            this.checkBoxVacinaGiardiase = new System.Windows.Forms.CheckBox();
-            this.checkBoxVacinaQuadrupla = new System.Windows.Forms.CheckBox();
             this.textBoxPeso = new System.Windows.Forms.TextBox();
             this.labelKg = new System.Windows.Forms.Label();
             this.radioButtonGato = new System.Windows.Forms.RadioButton();
@@ -70,6 +67,9 @@
             this.groupBoxSexo = new System.Windows.Forms.GroupBox();
             this.groupBoxEspecie = new System.Windows.Forms.GroupBox();
             this.textBoxRaca = new System.Windows.Forms.TextBox();
+            this.checkBoxVacinaQuintupla = new System.Windows.Forms.CheckBox();
+            this.checkBoxVacinaGiardiase = new System.Windows.Forms.CheckBox();
+            this.checkBoxVacinaQuadrupla = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPets)).BeginInit();
             this.groupBoxSexo.SuspendLayout();
             this.groupBoxEspecie.SuspendLayout();
@@ -384,39 +384,6 @@
             this.buttonSalvar.Text = "Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
             // 
-            // checkBoxVacinaQuintupla
-            // 
-            this.checkBoxVacinaQuintupla.AutoSize = true;
-            this.checkBoxVacinaQuintupla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxVacinaQuintupla.Location = new System.Drawing.Point(831, 390);
-            this.checkBoxVacinaQuintupla.Name = "checkBoxVacinaQuintupla";
-            this.checkBoxVacinaQuintupla.Size = new System.Drawing.Size(99, 17);
-            this.checkBoxVacinaQuintupla.TabIndex = 28;
-            this.checkBoxVacinaQuintupla.Text = "Quintupla felina";
-            this.checkBoxVacinaQuintupla.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxVacinaGiardiase
-            // 
-            this.checkBoxVacinaGiardiase.AutoSize = true;
-            this.checkBoxVacinaGiardiase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxVacinaGiardiase.Location = new System.Drawing.Point(831, 334);
-            this.checkBoxVacinaGiardiase.Name = "checkBoxVacinaGiardiase";
-            this.checkBoxVacinaGiardiase.Size = new System.Drawing.Size(72, 17);
-            this.checkBoxVacinaGiardiase.TabIndex = 29;
-            this.checkBoxVacinaGiardiase.Text = "Giardíase";
-            this.checkBoxVacinaGiardiase.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxVacinaQuadrupla
-            // 
-            this.checkBoxVacinaQuadrupla.AutoSize = true;
-            this.checkBoxVacinaQuadrupla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxVacinaQuadrupla.Location = new System.Drawing.Point(831, 362);
-            this.checkBoxVacinaQuadrupla.Name = "checkBoxVacinaQuadrupla";
-            this.checkBoxVacinaQuadrupla.Size = new System.Drawing.Size(103, 17);
-            this.checkBoxVacinaQuadrupla.TabIndex = 30;
-            this.checkBoxVacinaQuadrupla.Text = "Quádrupla felina";
-            this.checkBoxVacinaQuadrupla.UseVisualStyleBackColor = true;
-            // 
             // textBoxPeso
             // 
             this.textBoxPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -461,6 +428,7 @@
             // 
             // groupBoxSexo
             // 
+            this.groupBoxSexo.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
             this.groupBoxSexo.Controls.Add(this.radioButtonMacho);
             this.groupBoxSexo.Controls.Add(this.radioButtonFemea);
             this.groupBoxSexo.Location = new System.Drawing.Point(833, 119);
@@ -487,6 +455,39 @@
             this.textBoxRaca.Name = "textBoxRaca";
             this.textBoxRaca.Size = new System.Drawing.Size(282, 23);
             this.textBoxRaca.TabIndex = 38;
+            // 
+            // checkBoxVacinaQuintupla
+            // 
+            this.checkBoxVacinaQuintupla.AutoSize = true;
+            this.checkBoxVacinaQuintupla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxVacinaQuintupla.Location = new System.Drawing.Point(831, 390);
+            this.checkBoxVacinaQuintupla.Name = "checkBoxVacinaQuintupla";
+            this.checkBoxVacinaQuintupla.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxVacinaQuintupla.TabIndex = 28;
+            this.checkBoxVacinaQuintupla.Text = "Quintupla felina";
+            this.checkBoxVacinaQuintupla.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxVacinaGiardiase
+            // 
+            this.checkBoxVacinaGiardiase.AutoSize = true;
+            this.checkBoxVacinaGiardiase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxVacinaGiardiase.Location = new System.Drawing.Point(831, 334);
+            this.checkBoxVacinaGiardiase.Name = "checkBoxVacinaGiardiase";
+            this.checkBoxVacinaGiardiase.Size = new System.Drawing.Size(72, 17);
+            this.checkBoxVacinaGiardiase.TabIndex = 29;
+            this.checkBoxVacinaGiardiase.Text = "Giardíase";
+            this.checkBoxVacinaGiardiase.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxVacinaQuadrupla
+            // 
+            this.checkBoxVacinaQuadrupla.AutoSize = true;
+            this.checkBoxVacinaQuadrupla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxVacinaQuadrupla.Location = new System.Drawing.Point(831, 362);
+            this.checkBoxVacinaQuadrupla.Name = "checkBoxVacinaQuadrupla";
+            this.checkBoxVacinaQuadrupla.Size = new System.Drawing.Size(103, 17);
+            this.checkBoxVacinaQuadrupla.TabIndex = 30;
+            this.checkBoxVacinaQuadrupla.Text = "Quádrupla felina";
+            this.checkBoxVacinaQuadrupla.UseVisualStyleBackColor = true;
             // 
             // PetsForm
             // 
@@ -558,9 +559,6 @@
         private ComboBox comboBoxAlergia;
         private Button buttonCancelar;
         private Button buttonSalvar;
-        private CheckBox checkBoxVacinaQuintupla;
-        private CheckBox checkBoxVacinaGiardiase;
-        private CheckBox checkBoxVacinaQuadrupla;
         private TextBox textBoxPeso;
         private Label labelKg;
         private RadioButton radioButtonGato;
@@ -578,5 +576,8 @@
         private DataGridViewTextBoxColumn ColumnPeso;
         private DataGridViewTextBoxColumn ColumnVacinas;
         private DataGridViewTextBoxColumn ColumnAlergias;
+        private CheckBox checkBoxVacinaQuintupla;
+        private CheckBox checkBoxVacinaGiardiase;
+        private CheckBox checkBoxVacinaQuadrupla;
     }
 }

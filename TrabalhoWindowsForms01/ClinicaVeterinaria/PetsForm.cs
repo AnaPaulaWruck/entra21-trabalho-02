@@ -62,8 +62,8 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                     pet.Nome,
                     pet.Cliente, // pet.Cliente.Nome // TODO
                     pet.Especie,
-                    pet.Raca,
                     pet.Sexo,
+                    pet.Raca,
                     pet.DataNascimento,
                     pet.Peso,
                     pet.Vacinas,
@@ -83,7 +83,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             textBoxRaca.Clear();
             radioButtonFemea.Checked = false;
             radioButtonMacho.Checked = false;
-            //dateTimePickerDataNascimento // TODO
+            dateTimePickerDataNascimento.ResetText();
             textBoxPeso.Clear();
             checkBoxVacinaAntirrabica.Checked = false;
             checkBoxVacinaGiardiase.Checked = false;
@@ -97,19 +97,19 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         }
 
         private void CadastrarPet(
-            string nome, string cliente, string especie, string raca, string sexo, DateTime dataNascimento,
-            double peso, List<string> vacinas, string? nomeAlergia)
+            string nome, string nomeCliente, string especie, string sexo, string raca, DateTime dataNascimento,
+            double peso, List<string> vacinas, string nomeAlergia)
         {
             var pet = new Pet();
             pet.Codigo = petServico.ObterUltimoCodigo() + 1;
             pet.Nome = nome;
-            pet.Cliente = cliente;
+            pet.Cliente = nomeCliente; // clienteServico.ObterPorNomeCliente(nomeCliente); TODO
             pet.Especie = especie;
             pet.Raca = raca;
             pet.Sexo = sexo;
             pet.DataNascimento = dataNascimento;
             pet.Peso = peso;
-            pet.Vacinas = vacinas;
+            pet.Vacinas = GerarListaVacinasSelecionadas();
             pet.Alergia = alergiaServico.ObterPorNomeAlergia(nomeAlergia);
 
             petServico.Adicionar(pet);
@@ -132,16 +132,16 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
             textBoxNome.Text = pet.Nome;
             comboBoxCliente.SelectedItem = pet.Cliente; //comboBoxCliente.SelectedItem = pet.Cliente.Nome; // TODO
-            // TODO radioButton Especie
+            //radioButtonCao.Checked = VerificarSeRadioButtonSelecionado(radioButtonCao);
             textBoxRaca.Text = pet.Raca;
             // TODO radioButton Sexo
-            dateTimePickerDataNascimento.Text = pet.DataNascimento.ToString();
+            dateTimePickerDataNascimento.Value = pet.DataNascimento;
             textBoxPeso.Text = pet.Peso.ToString();
-            // TODO checkboxes
+            // TODO checkboxes vacinas
             comboBoxAlergia.SelectedItem = pet.Alergia.Nome;
         }
 
-        private void EditarPet(string nome, string cliente, string especie, string raca, string sexo, DateTime dataNascimento,
+        private void EditarPet(string nome, string nomeCliente, string especie, string sexo, string raca, DateTime dataNascimento,
             double peso, List<string> vacinas, string nomeAlergia)
         {
             var linhaSelecionada = dataGridViewPets.SelectedRows[0];
@@ -151,13 +151,13 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             var pet = new Pet();
             pet.Codigo = codigoSelecionado;
             pet.Nome = nome;
-            pet.Cliente = cliente; // pet.Tutor = clienteServico.ObterPorNomeCliente(tutor); TODO
+            pet.Cliente = nomeCliente; // pet.Cliente = clienteServico.ObterPorNomeCliente(nomeCliente); TODO
             pet.Especie = especie;
             pet.Raca = raca;
             pet.Sexo = sexo;
             pet.DataNascimento = dataNascimento;
             pet.Peso = peso;
-            pet.Vacinas = vacinas; // TODO
+            pet.Vacinas = GerarListaVacinasSelecionadas();
             pet.Alergia = alergiaServico.ObterPorNomeAlergia(nomeAlergia);
 
             petServico.Editar(pet);
@@ -170,6 +170,27 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
+            var nome = textBoxNome.Text;
+            var nomeCliente = Convert.ToString(comboBoxCliente.SelectedItem);
+            var especie = ObterTextoRacaPet();
+            var sexo = ObterTextoSexoPet();
+            var raca = textBoxRaca.Text;
+            var peso = Convert.ToDouble(textBoxPeso.Text);
+            var dataNascimento = dateTimePickerDataNascimento.Value;
+            var vacinas = GerarListaVacinasSelecionadas();
+            var nomeAlergia = Convert.ToString(comboBoxAlergia.SelectedItem);
+
+            var dadosValidos = ValidarDados(nome, nomeCliente, especie, sexo, raca, peso, nomeAlergia);
+
+            if (dadosValidos == false)
+            {
+                return;
+            }
+
+            if (dataGridViewPets.SelectedRows.Count == 0)
+                CadastrarPet(nome, nomeCliente, especie, sexo, raca, dataNascimento, peso, vacinas, nomeAlergia);
+            else
+                EditarPet(nome, nomeCliente, especie, sexo, raca, dataNascimento, peso, vacinas, nomeAlergia);
 
         }
 
@@ -208,8 +229,8 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             dataGridViewPets.ClearSelection();
         }
 
-        private bool ValidarDados(string nome, string cliente, string especie, string raca, string sexo, DateTime dataNascimento,
-            double peso, List<string> vacinas, string nomeAlergia)
+        private bool ValidarDados(string nome, string nomeCliente, string especie, string sexo, string raca,
+            double peso, string nomeAlergia)
         {
             if (nome.Trim().Length < 2)
             {
@@ -298,24 +319,61 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             return true;
         }
 
-        private string ObterRacaPet()
+        private string ObterTextoRacaPet()
         {
             if (radioButtonCao.Checked == true)
             {
-                return "Cão";
+                return radioButtonCao.Text;
             }
 
-            return "Gato";
+            return radioButtonGato.Text;
         }
 
-        private string ObterSexoPet()
+        private string ObterTextoSexoPet()
         {
             if (radioButtonFemea.Checked == true)
             {
-                return "Fêmea";
+                return radioButtonFemea.Text;
             }
 
-            return "Macho";
+            return radioButtonMacho.Text;
+        }
+
+        //private bool VerificarSeRadioButtonSelecionado(bool botao)
+        //{
+        //    if (botao == true)
+        //    {
+        //        return true;
+        //    }
+
+        //    return false;
+        //}
+
+        private List<string> GerarListaVacinasSelecionadas()
+        {
+            var vacinas = new List<string>();
+
+            vacinas.Clear();
+
+            if (checkBoxVacinaAntirrabica.Checked == true)
+                vacinas.Add(checkBoxVacinaAntirrabica.Text);
+
+            if (checkBoxVacinaGiardiase.Checked == true)
+                vacinas.Add(checkBoxVacinaGiardiase.Text);
+
+            if (checkBoxVacinaQuadrupla.Checked == true)
+                vacinas.Add(checkBoxVacinaQuadrupla.Text);
+
+            if (checkBoxVacinaQuintupla.Checked == true)
+                vacinas.Add(checkBoxVacinaQuintupla.Text);
+
+            if (checkBoxVacinaV10.Checked == true)
+                vacinas.Add(checkBoxVacinaV10.Text);
+
+            if (checkBoxVacinaV8.Checked == true)
+                vacinas.Add(checkBoxVacinaV8.Text);
+
+            return vacinas;
         }
     }
 }
