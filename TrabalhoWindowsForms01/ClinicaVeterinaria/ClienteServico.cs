@@ -80,6 +80,8 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
             return null;
         }
+
+
         public Cliente ObterPorCodigo(int codigo)
         {
 

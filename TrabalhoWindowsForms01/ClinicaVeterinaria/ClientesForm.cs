@@ -23,6 +23,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             petServico = new PetServico();
             enderecoServico = new EnderecoServico();
 
+            PreencherDataGridViewComClientes();
             PreencherComboBoxcomOsEnderecos();
             PreencherComboBoxcomOsPets();
         }
@@ -62,14 +63,13 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                     cliente.Codigo,
                     cliente.Nome,
                     cliente.DataAdesao,
-                    cliente.Endereco,
+                    cliente.Endereco.EnderecoCompleto,
                     cliente.DataNascimento,
                     cliente.Genero,
                     cliente.Cpf,
-                    cliente.Pet,
+                    cliente.Pet.Nome,
                     cliente.Telefone,
                     cliente.ComoDeseja
-
                 });
             }
 
@@ -88,21 +88,20 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             checkBoxSms.Checked = false;
             checkBoxWhatsApp.Checked = false;
         }
-        private void AdicionarCliente(string Nome, DateTime DataAdesao, string Endereco, DateTime DataNascimento
-                                      , string Genero, int Cpf, string Pet, int Telefone, string ComoDeseja, int Codigo)
+        private void AdicionarCliente(string Nome, DateTime DataAdesao, string enderecoCompleto, DateTime DataNascimento
+                                      , string Genero, int Cpf, string nomePet, int Telefone, string ComoDeseja)
         {
             var cliente = new Cliente();
             cliente.Codigo = clienteServico.ObterUltimoCodigo() + 1;
             cliente.Nome = Nome;
             cliente.DataAdesao = DataAdesao;
-            cliente.Endereco = Endereco;
+            cliente.Endereco = enderecoServico.ObterPorEnderecoCompleto(enderecoCompleto);
             cliente.DataNascimento = DataNascimento;
             cliente.Genero = Genero;
             cliente.Cpf = Cpf;
-            cliente.Pet = Pet;
+            cliente.Pet = petServico.ObterPorNomePet(nomePet);
             cliente.Telefone = Telefone;
             cliente.ComoDeseja = ComoDeseja;
-            cliente.Codigo = Codigo;
 
             clienteServico.Adicionar(cliente);
         }
@@ -146,8 +145,8 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 checkBoxSms.Checked = true;
             }
         }
-        private void EditarCliente(string Nome, DateTime DataAdesao, string Endereco, DateTime DataNascimento
-                                      , string Genero, int Cpf, string Pet, int Telefone, string ComoDeseja, int Codigo)
+        private void EditarCliente(string Nome, DateTime DataAdesao, string enderecoCompleto, DateTime DataNascimento
+                                      , string Genero, int Cpf, string nomePet, int Telefone, string ComoDeseja)
         {
 
             var linhaSelecionada = dataGridViewClientes.SelectedRows[0];
@@ -158,14 +157,13 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             cliente.Codigo = clienteServico.ObterUltimoCodigo() + 1;
             cliente.Nome = Nome;
             cliente.DataAdesao = DataAdesao;
-            cliente.Endereco = Endereco;
+            cliente.Endereco = enderecoServico.ObterPorEnderecoCompleto(enderecoCompleto);
             cliente.DataNascimento = DataNascimento;
             cliente.Genero = Genero;
             cliente.Cpf = Cpf;
-            cliente.Pet = Pet;
+            cliente.Pet = petServico.ObterPorNomePet(nomePet);
             cliente.Telefone = Telefone;
             cliente.ComoDeseja = ComoDeseja;
-            cliente.Codigo = Codigo;
 
             clienteServico.Editar(cliente);
         }
@@ -182,7 +180,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             var cpf = Convert.ToInt32(maskedTextBoxCpf);
             var telefone = Convert.ToInt32(maskedTextBoxTelefone);
             var pet = Convert.ToString(comboBoxPet.SelectedItem);
-            var genero = Convert.ToString(groupBoxGenero);
+            var genero = ObterGeneroCliente();
             var comoDeseja = Convert.ToString(groupBoxComoDeseja);
 
 
@@ -194,22 +192,22 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             //    return;
             //}
 
-            //if (dataGridViewClientes.SelectedRows.Count == 0)
-            //{
-            //    AdicionarCliente(nome, dataAdesao, endereco, dataNascimento, genero
-            //    , cpf, pet, telefone, comoDeseja, codigo);
+            if (dataGridViewClientes.SelectedRows.Count == 0)
+            {
+                AdicionarCliente(nome, dataAdesao, endereco, dataNascimento, genero
+                , cpf, pet, telefone, comoDeseja);
 
 
-            //}
-            //else
-            //{
-            //    EditarCliente(nome, dataAdesao, endereco, dataNascimento, genero
-            //    , cpf, pet, telefone, comoDeseja, codigo);
+            }
+            else
+            {
+                EditarCliente(nome, dataAdesao, endereco, dataNascimento, genero
+                , cpf, pet, telefone, comoDeseja);
 
-            //    PreencherDataGridViewComClientes();
+                PreencherDataGridViewComClientes();
 
-            //    LimparCampos();
-            //}
+                LimparCampos();
+            }
         }
         private void buttonApagar_Click(object sender, EventArgs e)
         {
@@ -251,105 +249,105 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             ApresentarDadosParaEdicao();
         }
 
-        private bool ValidarDados(string Nome, DateTime DataAdesao, string Endereco, DateTime DataNascimento
-                                      , string Genero, int Cpf, string Pet, int Telefone, string ComoDeseja, int Codigo)
-        {
-            if (Nome.Trim().Length < 2)
-            {
-                MessageBox.Show("Nome de Cliente Invalido");
+        //private bool ValidarDados(string nome, DateTime dataAdesao, string enderecoCompleto, DateTime dataNascimento
+        //                              , string genero, int cpf, string nomePet, int telefone, string comoDeseja, int codigo)
+        //{
+        //    if (nome.Trim().Length < 2)
+        //    {
+        //        MessageBox.Show("Nome de Cliente Invalido");
 
-                textBoxNome.Focus();
+        //        textBoxNome.Focus();
 
-                return false;
-            }
-            if (dateTimePickerDataNascimento.Value > DateTime.Now)
-            {
-                MessageBox.Show("Data inválida.");
+        //        return false;
+        //    }
+        //    if (dateTimePickerDataNascimento.Value > DateTime.Now)
+        //    {
+        //        MessageBox.Show("Data inválida.");
 
-                dateTimePickerDataNascimento.Focus();
+        //        dateTimePickerDataNascimento.Focus();
 
-                return false;
-            }
+        //        return false;
+        //    }
 
-            if (comboBoxEndereco.SelectedIndex == -1)
-            {
-                MessageBox.Show("Escolha um Endereço");
+        //    if (comboBoxEndereco.SelectedIndex == -1)
+        //    {
+        //        MessageBox.Show("Escolha um Endereço");
 
-                comboBoxEndereco.DroppedDown = true;
+        //        comboBoxEndereco.DroppedDown = true;
 
-                return false;
-            }
-            if (dateTimePickerDataAdesao.Value > DateTime.Now)
-            {
-                MessageBox.Show("Data inválida.");
+        //        return false;
+        //    }
+        //    if (dateTimePickerDataAdesao.Value > DateTime.Now)
+        //    {
+        //        MessageBox.Show("Data inválida.");
 
-                dateTimePickerDataAdesao.Focus();
+        //        dateTimePickerDataAdesao.Focus();
 
-                return false;
-            }
-            if (comboBoxPet.SelectedIndex == -1)
-            {
-                MessageBox.Show("Selecione o Pet");
+        //        return false;
+        //    }
+        //    if (comboBoxPet.SelectedIndex == -1)
+        //    {
+        //        MessageBox.Show("Selecione o Pet");
 
-                comboBoxEndereco.DroppedDown = true;
+        //        comboBoxEndereco.DroppedDown = true;
 
-                return false;
-            }
-            if (checkBoxEmail.Checked == false && checkBoxSms.Checked == false && checkBoxWhatsApp.Checked == false)
-            {
-                MessageBox.Show("Selecione ao menos uma forma de envio.");
+        //        return false;
+        //    }
+        //    if (checkBoxEmail.Checked == false && checkBoxSms.Checked == false && checkBoxWhatsApp.Checked == false)
+        //    {
+        //        MessageBox.Show("Selecione ao menos uma forma de envio.");
 
-                groupBoxComoDeseja.Focus();
+        //        groupBoxComoDeseja.Focus();
 
-                return false;
-            }
-            if (radioButtonMasculino.Checked == false && radioButtonFeminino.Checked == false)
-            {
-                MessageBox.Show("Selecione o Genero do Cliente.");
+        //        return false;
+        //    }
+        //    if (radioButtonMasculino.Checked == false && radioButtonFeminino.Checked == false)
+        //    {
+        //        MessageBox.Show("Selecione o Genero do Cliente.");
 
-                groupBoxGenero.Focus();
+        //        groupBoxGenero.Focus();
 
-                return false;
-            }
-            //try
-            //{
-            //    if (Cpf == )
-            //    {
-            //        MessageBox.Show("Peso não pode ser um valor menor ou igual a zero.");
+        //        return false;
+        //    }
+        //    //try
+        //    //{
+        //    //    if (Cpf == )
+        //    //    {
+        //    //        MessageBox.Show("Peso não pode ser um valor menor ou igual a zero.");
 
-            //        maskedTextBoxCpf.Focus();
+        //    //        maskedTextBoxCpf.Focus();
 
-            //        return false;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Digite um valor válido para peso.");
+        //    //        return false;
+        //    //    }
+        //    //}
+        //    //catch (Exception ex)
+        //    //{
+        //    //    MessageBox.Show("Digite um valor válido para peso.");
 
-            //    textBoxRaca.Focus();
+        //    //    textBoxRaca.Focus();
 
-            //    return false;
-            //}
+        //    //    return false;
+        //    //}
 
-            //if (cpf.Replace(".").Replace(".").Replace("-")Trim().Length != 0)
-            {
-                MessageBox.Show("Digite o CPF válido.");
+        //    //if (cpf.Replace(".").Replace(".").Replace("-")Trim().Length != 0)
+        //    {
+        //        MessageBox.Show("Digite o CPF válido.");
 
-                maskedTextBoxCpf.Focus();
+        //        maskedTextBoxCpf.Focus();
 
-                return false;
-            }
-            //if (telefone.Replace(".").Replace(".").Replace("-")Trim().Length != 0)
-            {
-                MessageBox.Show("Digite o Telefone válido.");
+        //        return false;
+        //    }
+        //    //if (telefone.Replace(".").Replace(".").Replace("-")Trim().Length != 0)
+        //    {
+        //        MessageBox.Show("Digite o Telefone válido.");
 
-                maskedTextBoxTelefone.Focus();
+        //        maskedTextBoxTelefone.Focus();
 
-                return false;
-            }
-            return true;
+        //        return false;
+        //    }
+        //    return true;
 
-        }
+        //}
         private string ObterGeneroCliente()
         {
             if (radioButtonMasculino.Checked == true)

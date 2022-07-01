@@ -22,7 +22,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             enderecos.Add(endereco);
 
             SalvarArquivo();
-        }     
+        }
         public void Editar(Endereco enderecoParaEditar)
         {
             for (var i = 0; i < enderecos.Count; i++)
@@ -64,13 +64,12 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         }
         public Endereco ObterPorCodigo(int codigo)
         {
-
             for (var i = 0; i < enderecos.Count; i++)
             {
-                var cliente = enderecos[i];
+                var endereco = enderecos[i];
 
-                if (cliente.Codigo == codigo)
-                    return cliente;
+                if (endereco.Codigo == codigo)
+                    return endereco;
             }
             return null;
         }
@@ -93,13 +92,28 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         {
             int ultimoCodigo = 0;
 
-            for(int i = 0; i < enderecos.Count; i++)
+            for (int i = 0; i < enderecos.Count; i++)
             {
                 var endereco = enderecos[i];
 
                 ultimoCodigo = endereco.Codigo;
             }
             return ultimoCodigo;
+        }
+
+        public Endereco ObterPorEnderecoCompleto(string enderecoCompleto)
+        {
+            for (int i = 0; i < enderecos.Count; i++)
+            {
+                var endereco = enderecos[i];
+
+                if (endereco.EnderecoCompleto == enderecoCompleto)
+                {
+                    return endereco;
+                }
+            }
+
+            return null;
         }
     }
 }

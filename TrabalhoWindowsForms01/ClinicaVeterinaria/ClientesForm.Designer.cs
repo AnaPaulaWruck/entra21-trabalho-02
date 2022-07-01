@@ -280,6 +280,8 @@
             // comboBoxPet
             // 
             this.comboBoxPet.FormattingEnabled = true;
+            this.comboBoxPet.Items.AddRange(new object[] {
+            "dwasdasd"});
             this.comboBoxPet.Location = new System.Drawing.Point(407, 464);
             this.comboBoxPet.Name = "comboBoxPet";
             this.comboBoxPet.Size = new System.Drawing.Size(121, 23);
@@ -377,7 +379,6 @@
             this.buttonMenu.TabIndex = 37;
             this.buttonMenu.Text = "Menu";
             this.buttonMenu.UseVisualStyleBackColor = true;
-           
             // 
             // ClientesForm
             // 

@@ -10,11 +10,11 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
     {
         public string Nome;
         public DateTime DataAdesao;
-        public string Endereco;
+        public Endereco Endereco;
         public DateTime DataNascimento;
         public string Genero;
         public int Cpf;
-        public string Pet;
+        public Pet Pet;
         public int Telefone;
         public string ComoDeseja;
         public int Codigo;
