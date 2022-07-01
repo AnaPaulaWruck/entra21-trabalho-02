@@ -76,7 +76,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 if (consultas.Codigo == consultaParaAlterar.Codigo)
                 {
                     consultas.Pet.Nome = consultaParaAlterar.Pet.Nome;
-                    consultas.Cliente.Nome = consultaParaAlterar.Cliente.Nome;
+                    consultas.Cliente /*.Nome*/ = consultaParaAlterar.Cliente;//.Nome
                     consultas.Veterinario.NomeVeterinario = consultaParaAlterar.Veterinario.NomeVeterinario;
                     consultas.TipoConsulta = consultaParaAlterar.TipoConsulta;
                     consultas.Data = consultaParaAlterar.Data;

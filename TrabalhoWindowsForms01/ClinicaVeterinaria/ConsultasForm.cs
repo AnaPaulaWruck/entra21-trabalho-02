@@ -39,7 +39,7 @@
                 {
                     consulta.Codigo,
                     consulta.Pet.Nome,
-                    consulta.Cliente.Nome,
+                    consulta.Cliente, //.Nome
                     consulta.Veterinario.NomeVeterinario,
                     consulta.TipoConsulta,
                     consulta.Data,
@@ -139,7 +139,7 @@
 
             var consultas = new Consultas();
             consultas.Codigo = codigoSelecionado;
-            consultas.Pet = pet;
+            consultas.Pet = petServico.ObterPorNomePet(pet);
             consultas.Cliente = cliente;
             consultas.Veterinario = veterinarioServico.ObterPorNomeVeterinario(veterinario);
             consultas.TipoConsulta = tipoConsulta;
@@ -152,7 +152,7 @@
         {
             var consultas = new Consultas();
             consultas.Codigo = consultasServico.ObterUltimoCodigo() + 1;
-            //consultas.Pet = pet;
+            consultas.Pet = petServico.ObterPorNomePet(pet);
             consultas.Cliente = cliente;
             consultas.Veterinario = veterinarioServico.ObterPorNomeVeterinario(veterinario);
             consultas.TipoConsulta = tipoConsulta;
@@ -182,7 +182,7 @@
             var consulta = consultasServico.ObterPorCodigo(codigo);
 
             comboBoxPet.SelectedItem = consulta.Pet.Nome;
-            comboBoxCliente.SelectedItem = consulta.Cliente.Nome;
+            comboBoxCliente.SelectedItem = consulta.Cliente;//.Nome
             comboBoxVeterinario.SelectedItem = consulta.Veterinario.NomeVeterinario;
 
         }
@@ -247,6 +247,13 @@
                 MessageBox.Show("Data invalida.");
 
                 dateTimePickerDia.Value = DateTime.Now;
+
+                return false;
+            }
+
+            if (radioButtonUrgente.Checked == false && radioButtonRotina.Checked == false)
+            {
+                MessageBox.Show("Selecione um tipo de consulta.");
 
                 return false;
             }

@@ -15,8 +15,8 @@
 
         private void buttonPets_Click(object sender, EventArgs e)
         {
-            //var petsForm = new PetsForm();
-            //petsForm.ShowDialog();
+            var petsForm = new PetsForm();
+            petsForm.ShowDialog();
         }
 
         private void buttonClientes_Click(object sender, EventArgs e)
