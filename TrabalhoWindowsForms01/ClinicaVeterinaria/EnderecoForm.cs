@@ -24,6 +24,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         private void AdicionarEndereco(int numero, int cep, string enderecocompleto)
         {
             var endereco = new Endereco();
+            endereco.Codigo = enderecoServico.ObterUltimoCodigo() + 1;
             endereco.Numero = numero;
             endereco.Cep = cep;
             endereco.EnderecoCompleto = enderecocompleto;
@@ -63,7 +64,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
                 dataGridViewEnderecoCliente.Rows.Add(new object[]
                 {
-                    endereco.Codigo, endereco.Numero, endereco.Cep, endereco.EnderecoCompleto
+                    endereco.Codigo, endereco.EnderecoCompleto, endereco.Numero, endereco.Cep
                 });
             }
 
@@ -83,8 +84,8 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         }
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            var numero = textBoxNumero.Text.Trim();
-            var cep = textBoxCep.Text.Trim();
+            var numero = Convert.ToInt32(textBoxNumero.Text.Trim());
+            var cep = Convert.ToInt32(textBoxCep.Text.Trim());
             var enderecoCompleto = textBoxEnderecoCompleto.Text.Trim();
 
             if (dataGridViewEnderecoCliente.SelectedRows.Count == 0)
@@ -102,12 +103,6 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         {
             throw new NotImplementedException();
         }
-
-        private void AdicionarEndereco(string numero, string cep, string enderecoCompleto)
-        {
-            throw new NotImplementedException();
-        }
-
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             LimparCampos();
@@ -123,9 +118,10 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             }
             var linhaSelecionada = dataGridViewEnderecoCliente.SelectedRows[0];
 
-            var numero = linhaSelecionada.Cells[1].Value.ToString();
-            var cep = linhaSelecionada.Cells[2].Value.ToString();
-            var enderecoCompleto = linhaSelecionada.Cells[3].Value.ToString();
+            var enderecoCompleto = linhaSelecionada.Cells[1].Value.ToString();
+            var numero = linhaSelecionada.Cells[2].Value.ToString();
+            var cep = linhaSelecionada.Cells[3].Value.ToString();
+          
 
             textBoxNumero.Text = numero;
             textBoxCep.Text = cep;
@@ -148,7 +144,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 var linhaSelecionada = dataGridViewEnderecoCliente.SelectedRows[0];
                 var codigoSelecionado = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
 
-                //var endereco = enderecoServico.ObterPorCodigo(Codigo);
+                enderecoServico.Apagar(codigoSelecionado);
 
                 ListarEndereco();
             }

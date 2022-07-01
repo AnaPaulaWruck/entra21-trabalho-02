@@ -192,9 +192,6 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             else
                 EditarPet(nome, nomeCliente, especie, sexo, raca, dataNascimento, peso, vacinas, nomeAlergia);
 
-            PreencherDataGridViewComPets();
-
-            LimparCampos();
         }
 
         private void buttonApagar_Click(object sender, EventArgs e)

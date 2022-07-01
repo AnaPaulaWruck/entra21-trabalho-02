@@ -35,19 +35,20 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                     endereco.Cep = enderecoParaEditar.Cep;
                     endereco.Numero = enderecoParaEditar.Numero;
 
+
                     SalvarArquivo();
 
                     return;
                 }
             }
         }
-        public void Apagar(Endereco enderecoParaApagar)
+        public void Apagar(int codigo)
         {
             for (var i = 0; i < enderecos.Count; i++)
             {
                 var endereco = enderecos[i];
 
-                if (endereco.Codigo == enderecoParaApagar.Codigo)
+                if (endereco.Codigo == codigo)
                 {
                     enderecos.Remove(endereco);
 
@@ -66,10 +67,10 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
             for (var i = 0; i < enderecos.Count; i++)
             {
-                var endereco = enderecos[i];
+                var cliente = enderecos[i];
 
-                if (endereco.Codigo == codigo)
-                    return endereco;
+                if (cliente.Codigo == codigo)
+                    return cliente;
             }
             return null;
         }
@@ -87,6 +88,18 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             var enderecosJson = File.ReadAllText("enderecos.json");
 
             enderecos = JsonConvert.DeserializeObject<List<Endereco>>(enderecosJson);
+        }
+        public int ObterUltimoCodigo()
+        {
+            int ultimoCodigo = 0;
+
+            for(int i = 0; i < enderecos.Count; i++)
+            {
+                var endereco = enderecos[i];
+
+                ultimoCodigo = endereco.Codigo;
+            }
+            return ultimoCodigo;
         }
     }
 }
