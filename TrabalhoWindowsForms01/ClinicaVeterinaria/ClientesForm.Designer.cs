@@ -62,6 +62,7 @@
             this.checkBoxWhatsApp = new System.Windows.Forms.CheckBox();
             this.groupBoxGenero = new System.Windows.Forms.GroupBox();
             this.groupBoxComoDeseja = new System.Windows.Forms.GroupBox();
+            this.buttonMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             this.groupBoxGenero.SuspendLayout();
             this.groupBoxComoDeseja.SuspendLayout();
@@ -75,7 +76,6 @@
             this.labelNome.Size = new System.Drawing.Size(43, 15);
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "Nome:";
-            
             // 
             // labelDataAdesao
             // 
@@ -125,7 +125,7 @@
             // labelPet
             // 
             this.labelPet.AutoSize = true;
-            this.labelPet.Location = new System.Drawing.Point(407, 381);
+            this.labelPet.Location = new System.Drawing.Point(407, 446);
             this.labelPet.Name = "labelPet";
             this.labelPet.Size = new System.Drawing.Size(24, 15);
             this.labelPet.TabIndex = 9;
@@ -166,7 +166,6 @@
             this.dataGridViewClientes.RowTemplate.Height = 25;
             this.dataGridViewClientes.Size = new System.Drawing.Size(850, 216);
             this.dataGridViewClientes.TabIndex = 19;
-           
             // 
             // ColumnNome
             // 
@@ -232,6 +231,7 @@
             this.buttonEditar.TabIndex = 21;
             this.buttonEditar.Text = "EDITAR";
             this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonApagar
             // 
@@ -241,6 +241,7 @@
             this.buttonApagar.TabIndex = 22;
             this.buttonApagar.Text = "APAGAR";
             this.buttonApagar.UseVisualStyleBackColor = true;
+            this.buttonApagar.Click += new System.EventHandler(this.buttonApagar_Click);
             // 
             // buttonCancelar
             // 
@@ -250,7 +251,6 @@
             this.buttonCancelar.TabIndex = 23;
             this.buttonCancelar.Text = "CANCELAR";
             this.buttonCancelar.UseVisualStyleBackColor = true;
-            
             // 
             // buttonSalvar
             // 
@@ -260,7 +260,6 @@
             this.buttonSalvar.TabIndex = 24;
             this.buttonSalvar.Text = "SALVAR";
             this.buttonSalvar.UseVisualStyleBackColor = true;
-            
             // 
             // maskedTextBoxCpf
             // 
@@ -281,7 +280,7 @@
             // comboBoxPet
             // 
             this.comboBoxPet.FormattingEnabled = true;
-            this.comboBoxPet.Location = new System.Drawing.Point(407, 478);
+            this.comboBoxPet.Location = new System.Drawing.Point(407, 464);
             this.comboBoxPet.Name = "comboBoxPet";
             this.comboBoxPet.Size = new System.Drawing.Size(121, 23);
             this.comboBoxPet.TabIndex = 27;
@@ -296,7 +295,6 @@
             this.radioButtonMasculino.TabStop = true;
             this.radioButtonMasculino.Text = "Masculino";
             this.radioButtonMasculino.UseVisualStyleBackColor = true;
-            
             // 
             // radioButtonFeminino
             // 
@@ -316,7 +314,6 @@
             this.comboBoxEndereco.Name = "comboBoxEndereco";
             this.comboBoxEndereco.Size = new System.Drawing.Size(329, 23);
             this.comboBoxEndereco.TabIndex = 30;
-            
             // 
             // checkBoxEmail
             // 
@@ -352,7 +349,7 @@
             // 
             this.groupBoxGenero.Controls.Add(this.radioButtonMasculino);
             this.groupBoxGenero.Controls.Add(this.radioButtonFeminino);
-            this.groupBoxGenero.Location = new System.Drawing.Point(407, 333);
+            this.groupBoxGenero.Location = new System.Drawing.Point(407, 327);
             this.groupBoxGenero.Name = "groupBoxGenero";
             this.groupBoxGenero.Size = new System.Drawing.Size(200, 100);
             this.groupBoxGenero.TabIndex = 35;
@@ -372,11 +369,22 @@
             this.groupBoxComoDeseja.TabStop = false;
             this.groupBoxComoDeseja.Text = "Como Deseja Receber as Informações";
             // 
+            // buttonMenu
+            // 
+            this.buttonMenu.Location = new System.Drawing.Point(407, 504);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(75, 23);
+            this.buttonMenu.TabIndex = 37;
+            this.buttonMenu.Text = "Menu";
+            this.buttonMenu.UseVisualStyleBackColor = true;
+           
+            // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 539);
+            this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.groupBoxComoDeseja);
             this.Controls.Add(this.groupBoxGenero);
             this.Controls.Add(this.comboBoxEndereco);
@@ -400,7 +408,6 @@
             this.Controls.Add(this.labelNome);
             this.Name = "ClientesForm";
             this.Text = "ClientesForm";
-            
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
             this.groupBoxGenero.ResumeLayout(false);
             this.groupBoxGenero.PerformLayout();
@@ -447,5 +454,6 @@
         private DataGridViewTextBoxColumn ColumnPet;
         private GroupBox groupBoxGenero;
         private GroupBox groupBoxComoDeseja;
+        private Button buttonMenu;
     }
 }

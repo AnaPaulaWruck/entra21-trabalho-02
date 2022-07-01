@@ -66,6 +66,20 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         {
             return clientes;
         }
+        public Cliente ObterPorNomeCliente(string nomeCliente)
+        {
+            for (int i = 0; i < clientes.Count; i++)
+            {
+                var cliente = clientes[i];
+
+                if (cliente.Nome == nomeCliente)
+                {
+                    return cliente;
+                }
+            }
+
+            return null;
+        }
         public Cliente ObterPorCodigo(int codigo)
         {
 
