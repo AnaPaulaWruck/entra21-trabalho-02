@@ -6,7 +6,7 @@
         public int Codigo;
         public DateTime Data;
         public DateTime Hora;
-        public string Pet;
+        public Pet Pet;
         public string Cliente;
         public Veterinario Veterinario;
         public string TipoConsulta;

@@ -152,7 +152,7 @@
         {
             var consultas = new Consultas();
             consultas.Codigo = consultasServico.ObterUltimoCodigo() + 1;
-            consultas.Pet = pet;
+            //consultas.Pet = pet;
             consultas.Cliente = cliente;
             consultas.Veterinario = veterinarioServico.ObterPorNomeVeterinario(veterinario);
             consultas.TipoConsulta = tipoConsulta;
