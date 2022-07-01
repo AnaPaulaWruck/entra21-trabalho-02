@@ -14,6 +14,3 @@
         public Alergia Alergia;
     }
 }
-
-//DateTimePicker1.Format = DateTimePickerFormat.Custom
-//DateTimePicker1.CustomFormat = "dd/MM/yyyy"
