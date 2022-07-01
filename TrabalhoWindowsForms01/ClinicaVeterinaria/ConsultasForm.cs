@@ -14,12 +14,13 @@
             clienteServico = new ClienteServico();
             petServico = new PetServico();
             veterinarioServico = new VeterinarioServico();
+            consultaServico = new ConsultasServico();
 
             PreencherDataGridViewComConsultas();
 
             PreencherNomePet();
 
-            //PreencherNomeCliente()
+            PreencherNomeCliente();
 
             PreencherNomeVeterinario();
 
@@ -60,7 +61,13 @@
         }
         public void PreencherNomeCliente()
         {
-            //var clientes = clienteServico.ObterTodos();
+            var clientes = clienteServico.ObterTodos();
+
+            for (int i = 0; i < clientes.Count; i++)
+            {
+                var cliente = clientes[i];
+                comboBoxCliente.Items.Add(cliente.Nome);
+            }
 
         }
         public void PreencherNomeVeterinario()
@@ -82,6 +89,7 @@
             comboBoxPet.SelectedIndex = -1;
             //comboBoxCliente.SelectedIndex = -1;
             comboBoxVeterinario.SelectedIndex = -1;
+            
 
             dataGridViewConsultas.ClearSelection();
         }
@@ -124,6 +132,7 @@
             comboBoxPet.SelectedItem = consulta.Pet.Nome;
             comboBoxCliente.SelectedItem = consulta.Cliente.Nome;
             comboBoxVeterinario.SelectedItem = consulta.Veterinatio.NomeVeterinario;
+            
         }
         private void buttonApagar_Click(object sender, EventArgs e)
         {

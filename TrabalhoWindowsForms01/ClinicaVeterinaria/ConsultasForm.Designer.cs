@@ -71,19 +71,11 @@
             "Halitose",
             "Coceira intensa",
             "Desnutrição",
-            "Obesidade",
-            "Anorexia",
-            "Palidez de mucosas",
-            "Febre",
-            "Dor ",
-            "Poliúria (urinar demais)",
-            "Polidipsia (beber muita água)",
-            "Secreção ocular",
-            "Abdômen distendido"});
+            "Outros"});
             this.checkedListBoxSintomas.Location = new System.Drawing.Point(272, 32);
             this.checkedListBoxSintomas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkedListBoxSintomas.Name = "checkedListBoxSintomas";
-            this.checkedListBoxSintomas.Size = new System.Drawing.Size(224, 292);
+            this.checkedListBoxSintomas.Size = new System.Drawing.Size(224, 184);
             this.checkedListBoxSintomas.TabIndex = 0;
             // 
             // radioButtonUrgente
@@ -308,7 +300,7 @@
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Location = new System.Drawing.Point(11, 310);
+            this.buttonCancelar.Location = new System.Drawing.Point(260, 236);
             this.buttonCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(106, 22);
@@ -319,7 +311,7 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(122, 310);
+            this.buttonSalvar.Location = new System.Drawing.Point(383, 236);
             this.buttonSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(113, 22);

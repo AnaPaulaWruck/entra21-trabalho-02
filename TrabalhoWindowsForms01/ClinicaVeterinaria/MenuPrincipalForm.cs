@@ -9,8 +9,8 @@
 
         private void buttonConsultas_Click(object sender, EventArgs e)
         {
-            //var consultasForm = new ConsultasForm();
-            //consultasForm.ShowDialog();
+            var consultasForm = new ConsultasForm();
+            consultasForm.ShowDialog();
         }
 
         private void buttonPets_Click(object sender, EventArgs e)
