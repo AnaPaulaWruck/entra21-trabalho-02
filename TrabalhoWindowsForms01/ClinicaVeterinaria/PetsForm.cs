@@ -6,7 +6,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
     {
         private PetServico petServico;
         private AlergiaServico alergiaServico;
-        //private ClienteServico clienteServico;
+        private ClienteServico clienteServico;
 
         public PetsForm()
         {
@@ -20,7 +20,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
             PreencherComboBoxcomOsNomesDasAlergias();
 
-            //PreencherComboBoxcomOsNomesDosClientes();
+            PreencherComboBoxcomOsNomesDosClientes();
         }
 
         private void PreencherComboBoxcomOsNomesDasAlergias()
@@ -34,16 +34,16 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             }
         }
 
-        //private void PreencherComboBoxcomOsNomesDosClientes()
-        //{
-        //    var clientes = clienteServico.ObterTodos();
+        private void PreencherComboBoxcomOsNomesDosClientes()
+        {
+            var clientes = clienteServico.ObterTodos();
 
-        //    for (int i = 0; i < clientes.Count; i++)
-        //    {
-        //        var cliente = clientes[i];
-        //        comboBoxCliente.Items.Add(cliente.Nome);
-        //    }
-        //}
+            for (int i = 0; i < clientes.Count; i++)
+            {
+                var cliente = clientes[i];
+                comboBoxCliente.Items.Add(cliente.Nome);
+            }
+        }
 
         private void PreencherDataGridViewComPets()
         {

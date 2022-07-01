@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             this.dataGridViewPets = new System.Windows.Forms.DataGridView();
+            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEspecie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnVacinas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAlergias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelListaPets = new System.Windows.Forms.Label();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonApagar = new System.Windows.Forms.Button();
@@ -61,16 +71,6 @@
             this.checkBoxVacinaGiardiase = new System.Windows.Forms.CheckBox();
             this.checkBoxVacinaQuadrupla = new System.Windows.Forms.CheckBox();
             this.buttonVoltarParaMenu = new System.Windows.Forms.Button();
-            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEspecie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnVacinas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAlergias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPets)).BeginInit();
             this.groupBoxSexo.SuspendLayout();
             this.groupBoxEspecie.SuspendLayout();
@@ -99,6 +99,75 @@
             this.dataGridViewPets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPets.Size = new System.Drawing.Size(660, 418);
             this.dataGridViewPets.TabIndex = 0;
+            // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.HeaderText = "COD";
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
+            this.ColumnCodigo.Width = 40;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "NOME";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            this.ColumnNome.Width = 150;
+            // 
+            // ColumnTutor
+            // 
+            this.ColumnTutor.HeaderText = "TUTOR";
+            this.ColumnTutor.Name = "ColumnTutor";
+            this.ColumnTutor.ReadOnly = true;
+            this.ColumnTutor.Width = 150;
+            // 
+            // ColumnEspecie
+            // 
+            this.ColumnEspecie.HeaderText = "ESPÉCIE";
+            this.ColumnEspecie.Name = "ColumnEspecie";
+            this.ColumnEspecie.ReadOnly = true;
+            // 
+            // ColumnSexo
+            // 
+            this.ColumnSexo.HeaderText = "SEXO";
+            this.ColumnSexo.Name = "ColumnSexo";
+            this.ColumnSexo.ReadOnly = true;
+            this.ColumnSexo.Width = 90;
+            // 
+            // ColumnRaca
+            // 
+            this.ColumnRaca.HeaderText = "RAÇA";
+            this.ColumnRaca.Name = "ColumnRaca";
+            this.ColumnRaca.ReadOnly = true;
+            this.ColumnRaca.Width = 150;
+            // 
+            // ColumnDataNascimento
+            // 
+            this.ColumnDataNascimento.HeaderText = "DATA NASCIMENTO";
+            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
+            this.ColumnDataNascimento.ReadOnly = true;
+            this.ColumnDataNascimento.Width = 150;
+            // 
+            // ColumnPeso
+            // 
+            this.ColumnPeso.HeaderText = "PESO";
+            this.ColumnPeso.Name = "ColumnPeso";
+            this.ColumnPeso.ReadOnly = true;
+            this.ColumnPeso.Width = 75;
+            // 
+            // ColumnVacinas
+            // 
+            this.ColumnVacinas.HeaderText = "VACINAS";
+            this.ColumnVacinas.Name = "ColumnVacinas";
+            this.ColumnVacinas.ReadOnly = true;
+            this.ColumnVacinas.Width = 150;
+            // 
+            // ColumnAlergias
+            // 
+            this.ColumnAlergias.HeaderText = "ALERGIAS";
+            this.ColumnAlergias.Name = "ColumnAlergias";
+            this.ColumnAlergias.ReadOnly = true;
+            this.ColumnAlergias.Width = 150;
             // 
             // labelListaPets
             // 
@@ -164,10 +233,6 @@
             // 
             this.comboBoxCliente.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxCliente.FormattingEnabled = true;
-            this.comboBoxCliente.Items.AddRange(new object[] {
-            "Cliente 1",
-            "Cliente 2",
-            "Cliente 3"});
             this.comboBoxCliente.Location = new System.Drawing.Point(689, 86);
             this.comboBoxCliente.Name = "comboBoxCliente";
             this.comboBoxCliente.Size = new System.Drawing.Size(282, 23);
@@ -438,75 +503,6 @@
             this.buttonVoltarParaMenu.Text = "Voltar ao Menu";
             this.buttonVoltarParaMenu.UseVisualStyleBackColor = true;
             this.buttonVoltarParaMenu.Click += new System.EventHandler(this.buttonVoltarParaMenu_Click);
-            // 
-            // ColumnCodigo
-            // 
-            this.ColumnCodigo.HeaderText = "COD";
-            this.ColumnCodigo.Name = "ColumnCodigo";
-            this.ColumnCodigo.ReadOnly = true;
-            this.ColumnCodigo.Width = 40;
-            // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "NOME";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
-            this.ColumnNome.Width = 150;
-            // 
-            // ColumnTutor
-            // 
-            this.ColumnTutor.HeaderText = "TUTOR";
-            this.ColumnTutor.Name = "ColumnTutor";
-            this.ColumnTutor.ReadOnly = true;
-            this.ColumnTutor.Width = 150;
-            // 
-            // ColumnEspecie
-            // 
-            this.ColumnEspecie.HeaderText = "ESPÉCIE";
-            this.ColumnEspecie.Name = "ColumnEspecie";
-            this.ColumnEspecie.ReadOnly = true;
-            // 
-            // ColumnSexo
-            // 
-            this.ColumnSexo.HeaderText = "SEXO";
-            this.ColumnSexo.Name = "ColumnSexo";
-            this.ColumnSexo.ReadOnly = true;
-            this.ColumnSexo.Width = 90;
-            // 
-            // ColumnRaca
-            // 
-            this.ColumnRaca.HeaderText = "RAÇA";
-            this.ColumnRaca.Name = "ColumnRaca";
-            this.ColumnRaca.ReadOnly = true;
-            this.ColumnRaca.Width = 150;
-            // 
-            // ColumnDataNascimento
-            // 
-            this.ColumnDataNascimento.HeaderText = "DATA NASCIMENTO";
-            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
-            this.ColumnDataNascimento.ReadOnly = true;
-            this.ColumnDataNascimento.Width = 150;
-            // 
-            // ColumnPeso
-            // 
-            this.ColumnPeso.HeaderText = "PESO";
-            this.ColumnPeso.Name = "ColumnPeso";
-            this.ColumnPeso.ReadOnly = true;
-            this.ColumnPeso.Width = 75;
-            // 
-            // ColumnVacinas
-            // 
-            this.ColumnVacinas.HeaderText = "VACINAS";
-            this.ColumnVacinas.Name = "ColumnVacinas";
-            this.ColumnVacinas.ReadOnly = true;
-            this.ColumnVacinas.Width = 150;
-            // 
-            // ColumnAlergias
-            // 
-            this.ColumnAlergias.HeaderText = "ALERGIAS";
-            this.ColumnAlergias.Name = "ColumnAlergias";
-            this.ColumnAlergias.ReadOnly = true;
-            this.ColumnAlergias.Width = 150;
             // 
             // PetsForm
             // 
