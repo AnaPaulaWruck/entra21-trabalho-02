@@ -80,7 +80,12 @@
             var causa = textBoxCausa.Text.Trim();
             var codigoTratamento = maskedTextBoxCodigoTratamento.Text.Trim();
 
-            // TODO Validar dados
+            var dadosValidos = ValidarDados(nome, causa, codigoTratamento);
+
+            if (dadosValidos == false)
+            {
+                return;
+            }
 
             if (dataGridViewAlergias.SelectedRows.Count == 0)
             {
@@ -147,6 +152,38 @@
         private void AlergiasForm_Load(object sender, EventArgs e)
         {
             ListarAlergias();
+        }
+
+        private bool ValidarDados(string nome, string causa, string codigoTratamento)
+        {
+            if (nome.Trim().Length < 5)
+            {
+                MessageBox.Show("Nome da alergia inválido");
+
+                textBoxNome.Focus();
+
+                return false;
+            }
+
+            if (causa.Trim().Length < 5)
+            {
+                MessageBox.Show("Causa da alergia inválida");
+
+                textBoxCausa.Focus();
+
+                return false;
+            }
+
+            if (codigoTratamento.Replace(".", "").Replace("-", "").Trim().Length != 8)
+            {
+                MessageBox.Show("Digite um código válido.");
+
+                maskedTextBoxCodigoTratamento.Focus();
+
+                return false;
+            }
+
+            return true;
         }
     }
 }

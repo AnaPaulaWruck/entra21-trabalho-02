@@ -60,6 +60,7 @@
             this.checkBoxVacinaQuintupla = new System.Windows.Forms.CheckBox();
             this.checkBoxVacinaGiardiase = new System.Windows.Forms.CheckBox();
             this.checkBoxVacinaQuadrupla = new System.Windows.Forms.CheckBox();
+            this.buttonVoltarParaMenu = new System.Windows.Forms.Button();
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,8 +112,8 @@
             // 
             // buttonEditar
             // 
-            this.buttonEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonEditar.Location = new System.Drawing.Point(486, 462);
+            this.buttonEditar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonEditar.Location = new System.Drawing.Point(486, 463);
             this.buttonEditar.Name = "buttonEditar";
             this.buttonEditar.Size = new System.Drawing.Size(90, 26);
             this.buttonEditar.TabIndex = 2;
@@ -122,8 +123,8 @@
             // 
             // buttonApagar
             // 
-            this.buttonApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonApagar.Location = new System.Drawing.Point(582, 462);
+            this.buttonApagar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonApagar.Location = new System.Drawing.Point(582, 463);
             this.buttonApagar.Name = "buttonApagar";
             this.buttonApagar.Size = new System.Drawing.Size(90, 26);
             this.buttonApagar.TabIndex = 3;
@@ -134,10 +135,10 @@
             // labelNome
             // 
             this.labelNome.AutoSize = true;
-            this.labelNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelNome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelNome.Location = new System.Drawing.Point(689, 13);
             this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(35, 13);
+            this.labelNome.Size = new System.Drawing.Size(40, 15);
             this.labelNome.TabIndex = 4;
             this.labelNome.Text = "Nome";
             // 
@@ -175,10 +176,10 @@
             // radioButtonFemea
             // 
             this.radioButtonFemea.AutoSize = true;
-            this.radioButtonFemea.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonFemea.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButtonFemea.Location = new System.Drawing.Point(22, 24);
             this.radioButtonFemea.Name = "radioButtonFemea";
-            this.radioButtonFemea.Size = new System.Drawing.Size(57, 17);
+            this.radioButtonFemea.Size = new System.Drawing.Size(60, 19);
             this.radioButtonFemea.TabIndex = 12;
             this.radioButtonFemea.TabStop = true;
             this.radioButtonFemea.Text = "Fêmea";
@@ -187,10 +188,10 @@
             // radioButtonMacho
             // 
             this.radioButtonMacho.AutoSize = true;
-            this.radioButtonMacho.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonMacho.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButtonMacho.Location = new System.Drawing.Point(22, 48);
             this.radioButtonMacho.Name = "radioButtonMacho";
-            this.radioButtonMacho.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonMacho.Size = new System.Drawing.Size(62, 19);
             this.radioButtonMacho.TabIndex = 13;
             this.radioButtonMacho.TabStop = true;
             this.radioButtonMacho.Text = "Macho";
@@ -199,61 +200,61 @@
             // labelRaca
             // 
             this.labelRaca.AutoSize = true;
-            this.labelRaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelRaca.Location = new System.Drawing.Point(689, 201);
+            this.labelRaca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelRaca.Location = new System.Drawing.Point(689, 199);
             this.labelRaca.Name = "labelRaca";
-            this.labelRaca.Size = new System.Drawing.Size(33, 13);
+            this.labelRaca.Size = new System.Drawing.Size(32, 15);
             this.labelRaca.TabIndex = 14;
             this.labelRaca.Text = "Raça";
             // 
             // dateTimePickerDataNascimento
             // 
             this.dateTimePickerDataNascimento.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePickerDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePickerDataNascimento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(813, 252);
+            this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(813, 250);
             this.dateTimePickerDataNascimento.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
-            this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(158, 20);
+            this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(158, 23);
             this.dateTimePickerDataNascimento.TabIndex = 16;
             // 
             // labelDataNascimento
             // 
             this.labelDataNascimento.AutoSize = true;
-            this.labelDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelDataNascimento.Location = new System.Drawing.Point(689, 256);
+            this.labelDataNascimento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelDataNascimento.Location = new System.Drawing.Point(689, 254);
             this.labelDataNascimento.Name = "labelDataNascimento";
-            this.labelDataNascimento.Size = new System.Drawing.Size(107, 13);
+            this.labelDataNascimento.Size = new System.Drawing.Size(117, 15);
             this.labelDataNascimento.TabIndex = 17;
             this.labelDataNascimento.Text = "Data de Nascimento:";
             // 
             // labelPeso
             // 
             this.labelPeso.AutoSize = true;
-            this.labelPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPeso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelPeso.Location = new System.Drawing.Point(689, 284);
             this.labelPeso.Name = "labelPeso";
-            this.labelPeso.Size = new System.Drawing.Size(34, 13);
+            this.labelPeso.Size = new System.Drawing.Size(35, 15);
             this.labelPeso.TabIndex = 18;
             this.labelPeso.Text = "Peso:";
             // 
             // labelVacinas
             // 
             this.labelVacinas.AutoSize = true;
-            this.labelVacinas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelVacinas.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelVacinas.Location = new System.Drawing.Point(689, 311);
             this.labelVacinas.Name = "labelVacinas";
-            this.labelVacinas.Size = new System.Drawing.Size(48, 13);
+            this.labelVacinas.Size = new System.Drawing.Size(49, 15);
             this.labelVacinas.TabIndex = 20;
             this.labelVacinas.Text = "Vacinas:";
             // 
             // checkBoxVacinaAntirrabica
             // 
             this.checkBoxVacinaAntirrabica.AutoSize = true;
-            this.checkBoxVacinaAntirrabica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxVacinaAntirrabica.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBoxVacinaAntirrabica.Location = new System.Drawing.Point(704, 334);
             this.checkBoxVacinaAntirrabica.Name = "checkBoxVacinaAntirrabica";
-            this.checkBoxVacinaAntirrabica.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxVacinaAntirrabica.Size = new System.Drawing.Size(84, 19);
             this.checkBoxVacinaAntirrabica.TabIndex = 21;
             this.checkBoxVacinaAntirrabica.Text = "Antirrábica";
             this.checkBoxVacinaAntirrabica.UseVisualStyleBackColor = true;
@@ -261,10 +262,10 @@
             // checkBoxVacinaV8
             // 
             this.checkBoxVacinaV8.AutoSize = true;
-            this.checkBoxVacinaV8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxVacinaV8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBoxVacinaV8.Location = new System.Drawing.Point(704, 359);
             this.checkBoxVacinaV8.Name = "checkBoxVacinaV8";
-            this.checkBoxVacinaV8.Size = new System.Drawing.Size(39, 17);
+            this.checkBoxVacinaV8.Size = new System.Drawing.Size(39, 19);
             this.checkBoxVacinaV8.TabIndex = 22;
             this.checkBoxVacinaV8.Text = "V8";
             this.checkBoxVacinaV8.UseVisualStyleBackColor = true;
@@ -272,10 +273,10 @@
             // checkBoxVacinaV10
             // 
             this.checkBoxVacinaV10.AutoSize = true;
-            this.checkBoxVacinaV10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxVacinaV10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBoxVacinaV10.Location = new System.Drawing.Point(704, 384);
             this.checkBoxVacinaV10.Name = "checkBoxVacinaV10";
-            this.checkBoxVacinaV10.Size = new System.Drawing.Size(45, 17);
+            this.checkBoxVacinaV10.Size = new System.Drawing.Size(45, 19);
             this.checkBoxVacinaV10.TabIndex = 23;
             this.checkBoxVacinaV10.Text = "V10";
             this.checkBoxVacinaV10.UseVisualStyleBackColor = true;
@@ -283,26 +284,26 @@
             // labelAlergia
             // 
             this.labelAlergia.AutoSize = true;
-            this.labelAlergia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAlergia.Location = new System.Drawing.Point(689, 410);
+            this.labelAlergia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelAlergia.Location = new System.Drawing.Point(689, 408);
             this.labelAlergia.Name = "labelAlergia";
-            this.labelAlergia.Size = new System.Drawing.Size(39, 13);
+            this.labelAlergia.Size = new System.Drawing.Size(44, 15);
             this.labelAlergia.TabIndex = 24;
             this.labelAlergia.Text = "Alergia";
             // 
             // comboBoxAlergia
             // 
-            this.comboBoxAlergia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxAlergia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxAlergia.FormattingEnabled = true;
-            this.comboBoxAlergia.Location = new System.Drawing.Point(689, 430);
+            this.comboBoxAlergia.Location = new System.Drawing.Point(689, 428);
             this.comboBoxAlergia.Name = "comboBoxAlergia";
-            this.comboBoxAlergia.Size = new System.Drawing.Size(282, 21);
+            this.comboBoxAlergia.Size = new System.Drawing.Size(282, 23);
             this.comboBoxAlergia.TabIndex = 25;
             // 
             // buttonCancelar
             // 
-            this.buttonCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCancelar.Location = new System.Drawing.Point(786, 462);
+            this.buttonCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCancelar.Location = new System.Drawing.Point(785, 463);
             this.buttonCancelar.Name = "buttonCancelar";
             this.buttonCancelar.Size = new System.Drawing.Size(90, 26);
             this.buttonCancelar.TabIndex = 26;
@@ -312,8 +313,8 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonSalvar.Location = new System.Drawing.Point(882, 462);
+            this.buttonSalvar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSalvar.Location = new System.Drawing.Point(881, 463);
             this.buttonSalvar.Name = "buttonSalvar";
             this.buttonSalvar.Size = new System.Drawing.Size(90, 26);
             this.buttonSalvar.TabIndex = 27;
@@ -323,29 +324,29 @@
             // 
             // textBoxPeso
             // 
-            this.textBoxPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPeso.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxPeso.Location = new System.Drawing.Point(740, 281);
             this.textBoxPeso.Name = "textBoxPeso";
-            this.textBoxPeso.Size = new System.Drawing.Size(204, 20);
+            this.textBoxPeso.Size = new System.Drawing.Size(204, 23);
             this.textBoxPeso.TabIndex = 32;
             // 
             // labelKg
             // 
             this.labelKg.AutoSize = true;
-            this.labelKg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelKg.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelKg.Location = new System.Drawing.Point(950, 284);
             this.labelKg.Name = "labelKg";
-            this.labelKg.Size = new System.Drawing.Size(20, 13);
+            this.labelKg.Size = new System.Drawing.Size(21, 15);
             this.labelKg.TabIndex = 33;
             this.labelKg.Text = "Kg";
             // 
             // radioButtonGato
             // 
             this.radioButtonGato.AutoSize = true;
-            this.radioButtonGato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.radioButtonGato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.radioButtonGato.Location = new System.Drawing.Point(21, 47);
             this.radioButtonGato.Name = "radioButtonGato";
-            this.radioButtonGato.Size = new System.Drawing.Size(48, 17);
+            this.radioButtonGato.Size = new System.Drawing.Size(51, 19);
             this.radioButtonGato.TabIndex = 9;
             this.radioButtonGato.TabStop = true;
             this.radioButtonGato.Text = "Gato";
@@ -388,7 +389,8 @@
             // 
             // textBoxRaca
             // 
-            this.textBoxRaca.Location = new System.Drawing.Point(689, 221);
+            this.textBoxRaca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxRaca.Location = new System.Drawing.Point(689, 219);
             this.textBoxRaca.Name = "textBoxRaca";
             this.textBoxRaca.Size = new System.Drawing.Size(282, 23);
             this.textBoxRaca.TabIndex = 38;
@@ -396,10 +398,10 @@
             // checkBoxVacinaQuintupla
             // 
             this.checkBoxVacinaQuintupla.AutoSize = true;
-            this.checkBoxVacinaQuintupla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxVacinaQuintupla.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBoxVacinaQuintupla.Location = new System.Drawing.Point(831, 390);
             this.checkBoxVacinaQuintupla.Name = "checkBoxVacinaQuintupla";
-            this.checkBoxVacinaQuintupla.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxVacinaQuintupla.Size = new System.Drawing.Size(111, 19);
             this.checkBoxVacinaQuintupla.TabIndex = 28;
             this.checkBoxVacinaQuintupla.Text = "Quintupla felina";
             this.checkBoxVacinaQuintupla.UseVisualStyleBackColor = true;
@@ -407,10 +409,10 @@
             // checkBoxVacinaGiardiase
             // 
             this.checkBoxVacinaGiardiase.AutoSize = true;
-            this.checkBoxVacinaGiardiase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxVacinaGiardiase.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBoxVacinaGiardiase.Location = new System.Drawing.Point(831, 334);
             this.checkBoxVacinaGiardiase.Name = "checkBoxVacinaGiardiase";
-            this.checkBoxVacinaGiardiase.Size = new System.Drawing.Size(72, 17);
+            this.checkBoxVacinaGiardiase.Size = new System.Drawing.Size(74, 19);
             this.checkBoxVacinaGiardiase.TabIndex = 29;
             this.checkBoxVacinaGiardiase.Text = "Giardíase";
             this.checkBoxVacinaGiardiase.UseVisualStyleBackColor = true;
@@ -418,20 +420,31 @@
             // checkBoxVacinaQuadrupla
             // 
             this.checkBoxVacinaQuadrupla.AutoSize = true;
-            this.checkBoxVacinaQuadrupla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxVacinaQuadrupla.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.checkBoxVacinaQuadrupla.Location = new System.Drawing.Point(831, 362);
             this.checkBoxVacinaQuadrupla.Name = "checkBoxVacinaQuadrupla";
-            this.checkBoxVacinaQuadrupla.Size = new System.Drawing.Size(103, 17);
+            this.checkBoxVacinaQuadrupla.Size = new System.Drawing.Size(114, 19);
             this.checkBoxVacinaQuadrupla.TabIndex = 30;
             this.checkBoxVacinaQuadrupla.Text = "Quádrupla felina";
             this.checkBoxVacinaQuadrupla.UseVisualStyleBackColor = true;
+            // 
+            // buttonVoltarParaMenu
+            // 
+            this.buttonVoltarParaMenu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonVoltarParaMenu.Location = new System.Drawing.Point(12, 465);
+            this.buttonVoltarParaMenu.Name = "buttonVoltarParaMenu";
+            this.buttonVoltarParaMenu.Size = new System.Drawing.Size(115, 23);
+            this.buttonVoltarParaMenu.TabIndex = 39;
+            this.buttonVoltarParaMenu.Text = "Voltar ao Menu";
+            this.buttonVoltarParaMenu.UseVisualStyleBackColor = true;
+            this.buttonVoltarParaMenu.Click += new System.EventHandler(this.buttonVoltarParaMenu_Click);
             // 
             // ColumnCodigo
             // 
             this.ColumnCodigo.HeaderText = "COD";
             this.ColumnCodigo.Name = "ColumnCodigo";
             this.ColumnCodigo.ReadOnly = true;
-            this.ColumnCodigo.Width = 50;
+            this.ColumnCodigo.Width = 40;
             // 
             // ColumnNome
             // 
@@ -500,6 +513,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 500);
+            this.Controls.Add(this.buttonVoltarParaMenu);
             this.Controls.Add(this.textBoxRaca);
             this.Controls.Add(this.groupBoxEspecie);
             this.Controls.Add(this.groupBoxSexo);
@@ -531,6 +545,7 @@
             this.Name = "PetsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pets";
+            this.Load += new System.EventHandler(this.PetsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPets)).EndInit();
             this.groupBoxSexo.ResumeLayout(false);
             this.groupBoxSexo.PerformLayout();
@@ -575,6 +590,7 @@
         private CheckBox checkBoxVacinaQuintupla;
         private CheckBox checkBoxVacinaGiardiase;
         private CheckBox checkBoxVacinaQuadrupla;
+        private Button buttonVoltarParaMenu;
         private DataGridViewTextBoxColumn ColumnCodigo;
         private DataGridViewTextBoxColumn ColumnNome;
         private DataGridViewTextBoxColumn ColumnTutor;

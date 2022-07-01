@@ -97,10 +97,10 @@
             // labelListaAlergias
             // 
             this.labelListaAlergias.AutoSize = true;
-            this.labelListaAlergias.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelListaAlergias.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelListaAlergias.Location = new System.Drawing.Point(12, 12);
             this.labelListaAlergias.Name = "labelListaAlergias";
-            this.labelListaAlergias.Size = new System.Drawing.Size(84, 13);
+            this.labelListaAlergias.Size = new System.Drawing.Size(92, 15);
             this.labelListaAlergias.TabIndex = 1;
             this.labelListaAlergias.Text = "Lista de Alergias";
             // 
@@ -129,47 +129,47 @@
             // labelNome
             // 
             this.labelNome.AutoSize = true;
-            this.labelNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelNome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelNome.Location = new System.Drawing.Point(689, 12);
             this.labelNome.Name = "labelNome";
-            this.labelNome.Size = new System.Drawing.Size(35, 13);
+            this.labelNome.Size = new System.Drawing.Size(40, 15);
             this.labelNome.TabIndex = 4;
             this.labelNome.Text = "Nome";
             // 
             // labelCodigoTratamento
             // 
             this.labelCodigoTratamento.AutoSize = true;
-            this.labelCodigoTratamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCodigoTratamento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelCodigoTratamento.Location = new System.Drawing.Point(689, 118);
             this.labelCodigoTratamento.Name = "labelCodigoTratamento";
-            this.labelCodigoTratamento.Size = new System.Drawing.Size(112, 13);
+            this.labelCodigoTratamento.Size = new System.Drawing.Size(126, 15);
             this.labelCodigoTratamento.TabIndex = 5;
             this.labelCodigoTratamento.Text = "Código do Tratamento";
             // 
             // labelCausa
             // 
             this.labelCausa.AutoSize = true;
-            this.labelCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCausa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelCausa.Location = new System.Drawing.Point(689, 64);
             this.labelCausa.Name = "labelCausa";
-            this.labelCausa.Size = new System.Drawing.Size(87, 13);
+            this.labelCausa.Size = new System.Drawing.Size(95, 15);
             this.labelCausa.TabIndex = 6;
             this.labelCausa.Text = "Causa da Alergia";
             // 
             // textBoxNome
             // 
-            this.textBoxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxNome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxNome.Location = new System.Drawing.Point(689, 33);
             this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(282, 20);
+            this.textBoxNome.Size = new System.Drawing.Size(282, 23);
             this.textBoxNome.TabIndex = 7;
             // 
             // textBoxCausa
             // 
-            this.textBoxCausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxCausa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxCausa.Location = new System.Drawing.Point(689, 86);
             this.textBoxCausa.Name = "textBoxCausa";
-            this.textBoxCausa.Size = new System.Drawing.Size(282, 20);
+            this.textBoxCausa.Size = new System.Drawing.Size(282, 23);
             this.textBoxCausa.TabIndex = 9;
             // 
             // buttonCancelar
@@ -196,11 +196,11 @@
             // 
             // maskedTextBoxCodigoTratamento
             // 
-            this.maskedTextBoxCodigoTratamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maskedTextBoxCodigoTratamento.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.maskedTextBoxCodigoTratamento.Location = new System.Drawing.Point(689, 140);
             this.maskedTextBoxCodigoTratamento.Mask = "9.99.99.99-9";
             this.maskedTextBoxCodigoTratamento.Name = "maskedTextBoxCodigoTratamento";
-            this.maskedTextBoxCodigoTratamento.Size = new System.Drawing.Size(282, 20);
+            this.maskedTextBoxCodigoTratamento.Size = new System.Drawing.Size(282, 23);
             this.maskedTextBoxCodigoTratamento.TabIndex = 12;
             // 
             // buttonVoltarParaMenu

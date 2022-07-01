@@ -343,7 +343,14 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 return false;
             }
 
-            // TODO dataNascimento
+            if (dateTimePickerDataNascimento.Value > DateTime.Now)
+            {
+                MessageBox.Show("Data inválida.");
+
+                dateTimePickerDataNascimento.Focus();
+
+                return false;
+            }
 
             return true;
         }
@@ -393,6 +400,16 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 vacinas.Add(checkBoxVacinaV8.Text);
 
             return vacinas;
+        }
+
+        private void buttonVoltarParaMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void PetsForm_Load(object sender, EventArgs e)
+        {
+            PreencherDataGridViewComPets();
         }
     }
 }
