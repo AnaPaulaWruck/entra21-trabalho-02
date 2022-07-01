@@ -32,7 +32,6 @@
             this.labelDataAdesao = new System.Windows.Forms.Label();
             this.labelEndereco = new System.Windows.Forms.Label();
             this.labelDataNascimento = new System.Windows.Forms.Label();
-            this.labelGenero = new System.Windows.Forms.Label();
             this.labelCPF = new System.Windows.Forms.Label();
             this.labelTelefone = new System.Windows.Forms.Label();
             this.labelPet = new System.Windows.Forms.Label();
@@ -61,8 +60,11 @@
             this.checkBoxEmail = new System.Windows.Forms.CheckBox();
             this.checkBoxSms = new System.Windows.Forms.CheckBox();
             this.checkBoxWhatsApp = new System.Windows.Forms.CheckBox();
-            this.labelComoDeseja = new System.Windows.Forms.Label();
+            this.groupBoxGenero = new System.Windows.Forms.GroupBox();
+            this.groupBoxComoDeseja = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
+            this.groupBoxGenero.SuspendLayout();
+            this.groupBoxComoDeseja.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelNome
@@ -73,7 +75,7 @@
             this.labelNome.Size = new System.Drawing.Size(43, 15);
             this.labelNome.TabIndex = 0;
             this.labelNome.Text = "Nome:";
-            this.labelNome.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // labelDataAdesao
             // 
@@ -101,16 +103,6 @@
             this.labelDataNascimento.Size = new System.Drawing.Size(117, 15);
             this.labelDataNascimento.TabIndex = 3;
             this.labelDataNascimento.Text = "Data de Nascimento:";
-            // 
-            // labelGenero
-            // 
-            this.labelGenero.AutoSize = true;
-            this.labelGenero.Location = new System.Drawing.Point(407, 305);
-            this.labelGenero.Name = "labelGenero";
-            this.labelGenero.Size = new System.Drawing.Size(45, 15);
-            this.labelGenero.TabIndex = 4;
-            this.labelGenero.Text = "Genêro";
-            this.labelGenero.Click += new System.EventHandler(this.labelGenero_Click);
             // 
             // labelCPF
             // 
@@ -174,7 +166,7 @@
             this.dataGridViewClientes.RowTemplate.Height = 25;
             this.dataGridViewClientes.Size = new System.Drawing.Size(850, 216);
             this.dataGridViewClientes.TabIndex = 19;
-            this.dataGridViewClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+           
             // 
             // ColumnNome
             // 
@@ -258,6 +250,7 @@
             this.buttonCancelar.TabIndex = 23;
             this.buttonCancelar.Text = "CANCELAR";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            
             // 
             // buttonSalvar
             // 
@@ -267,6 +260,7 @@
             this.buttonSalvar.TabIndex = 24;
             this.buttonSalvar.Text = "SALVAR";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            
             // 
             // maskedTextBoxCpf
             // 
@@ -287,7 +281,7 @@
             // comboBoxPet
             // 
             this.comboBoxPet.FormattingEnabled = true;
-            this.comboBoxPet.Location = new System.Drawing.Point(407, 399);
+            this.comboBoxPet.Location = new System.Drawing.Point(407, 478);
             this.comboBoxPet.Name = "comboBoxPet";
             this.comboBoxPet.Size = new System.Drawing.Size(121, 23);
             this.comboBoxPet.TabIndex = 27;
@@ -295,19 +289,19 @@
             // radioButtonMasculino
             // 
             this.radioButtonMasculino.AutoSize = true;
-            this.radioButtonMasculino.Location = new System.Drawing.Point(407, 323);
+            this.radioButtonMasculino.Location = new System.Drawing.Point(12, 38);
             this.radioButtonMasculino.Name = "radioButtonMasculino";
             this.radioButtonMasculino.Size = new System.Drawing.Size(80, 19);
             this.radioButtonMasculino.TabIndex = 28;
             this.radioButtonMasculino.TabStop = true;
             this.radioButtonMasculino.Text = "Masculino";
             this.radioButtonMasculino.UseVisualStyleBackColor = true;
-            this.radioButtonMasculino.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            
             // 
             // radioButtonFeminino
             // 
             this.radioButtonFeminino.AutoSize = true;
-            this.radioButtonFeminino.Location = new System.Drawing.Point(407, 341);
+            this.radioButtonFeminino.Location = new System.Drawing.Point(12, 75);
             this.radioButtonFeminino.Name = "radioButtonFeminino";
             this.radioButtonFeminino.Size = new System.Drawing.Size(75, 19);
             this.radioButtonFeminino.TabIndex = 29;
@@ -322,12 +316,12 @@
             this.comboBoxEndereco.Name = "comboBoxEndereco";
             this.comboBoxEndereco.Size = new System.Drawing.Size(329, 23);
             this.comboBoxEndereco.TabIndex = 30;
-            this.comboBoxEndereco.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            
             // 
             // checkBoxEmail
             // 
             this.checkBoxEmail.AutoSize = true;
-            this.checkBoxEmail.Location = new System.Drawing.Point(635, 288);
+            this.checkBoxEmail.Location = new System.Drawing.Point(0, 34);
             this.checkBoxEmail.Name = "checkBoxEmail";
             this.checkBoxEmail.Size = new System.Drawing.Size(79, 19);
             this.checkBoxEmail.TabIndex = 31;
@@ -337,7 +331,7 @@
             // checkBoxSms
             // 
             this.checkBoxSms.AutoSize = true;
-            this.checkBoxSms.Location = new System.Drawing.Point(635, 309);
+            this.checkBoxSms.Location = new System.Drawing.Point(0, 82);
             this.checkBoxSms.Name = "checkBoxSms";
             this.checkBoxSms.Size = new System.Drawing.Size(68, 19);
             this.checkBoxSms.TabIndex = 32;
@@ -347,34 +341,45 @@
             // checkBoxWhatsApp
             // 
             this.checkBoxWhatsApp.AutoSize = true;
-            this.checkBoxWhatsApp.Location = new System.Drawing.Point(635, 334);
+            this.checkBoxWhatsApp.Location = new System.Drawing.Point(0, 59);
             this.checkBoxWhatsApp.Name = "checkBoxWhatsApp";
             this.checkBoxWhatsApp.Size = new System.Drawing.Size(100, 19);
             this.checkBoxWhatsApp.TabIndex = 33;
             this.checkBoxWhatsApp.Text = "Via WhatsApp";
             this.checkBoxWhatsApp.UseVisualStyleBackColor = true;
             // 
-            // labelComoDeseja
+            // groupBoxGenero
             // 
-            this.labelComoDeseja.AutoSize = true;
-            this.labelComoDeseja.Location = new System.Drawing.Point(635, 270);
-            this.labelComoDeseja.Name = "labelComoDeseja";
-            this.labelComoDeseja.Size = new System.Drawing.Size(215, 15);
-            this.labelComoDeseja.TabIndex = 34;
-            this.labelComoDeseja.Text = "Como Deseja Receber está Informacao?";
+            this.groupBoxGenero.Controls.Add(this.radioButtonMasculino);
+            this.groupBoxGenero.Controls.Add(this.radioButtonFeminino);
+            this.groupBoxGenero.Location = new System.Drawing.Point(407, 333);
+            this.groupBoxGenero.Name = "groupBoxGenero";
+            this.groupBoxGenero.Size = new System.Drawing.Size(200, 100);
+            this.groupBoxGenero.TabIndex = 35;
+            this.groupBoxGenero.TabStop = false;
+            this.groupBoxGenero.Text = "Genêro";
+            // 
+            // groupBoxComoDeseja
+            // 
+            this.groupBoxComoDeseja.Controls.Add(this.checkBoxEmail);
+            this.groupBoxComoDeseja.Controls.Add(this.checkBoxWhatsApp);
+            this.groupBoxComoDeseja.Controls.Add(this.checkBoxSms);
+            this.groupBoxComoDeseja.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBoxComoDeseja.Location = new System.Drawing.Point(623, 326);
+            this.groupBoxComoDeseja.Name = "groupBoxComoDeseja";
+            this.groupBoxComoDeseja.Size = new System.Drawing.Size(200, 107);
+            this.groupBoxComoDeseja.TabIndex = 36;
+            this.groupBoxComoDeseja.TabStop = false;
+            this.groupBoxComoDeseja.Text = "Como Deseja Receber as Informações";
             // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 539);
-            this.Controls.Add(this.labelComoDeseja);
-            this.Controls.Add(this.checkBoxWhatsApp);
-            this.Controls.Add(this.checkBoxSms);
-            this.Controls.Add(this.checkBoxEmail);
+            this.Controls.Add(this.groupBoxComoDeseja);
+            this.Controls.Add(this.groupBoxGenero);
             this.Controls.Add(this.comboBoxEndereco);
-            this.Controls.Add(this.radioButtonFeminino);
-            this.Controls.Add(this.radioButtonMasculino);
             this.Controls.Add(this.comboBoxPet);
             this.Controls.Add(this.maskedTextBoxTelefone);
             this.Controls.Add(this.maskedTextBoxCpf);
@@ -389,15 +394,18 @@
             this.Controls.Add(this.labelPet);
             this.Controls.Add(this.labelTelefone);
             this.Controls.Add(this.labelCPF);
-            this.Controls.Add(this.labelGenero);
             this.Controls.Add(this.labelDataNascimento);
             this.Controls.Add(this.labelEndereco);
             this.Controls.Add(this.labelDataAdesao);
             this.Controls.Add(this.labelNome);
             this.Name = "ClientesForm";
             this.Text = "ClientesForm";
-            this.Load += new System.EventHandler(this.ClientesForm_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
+            this.groupBoxGenero.ResumeLayout(false);
+            this.groupBoxGenero.PerformLayout();
+            this.groupBoxComoDeseja.ResumeLayout(false);
+            this.groupBoxComoDeseja.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,7 +417,6 @@
         private Label labelDataAdesao;
         private Label labelEndereco;
         private Label labelDataNascimento;
-        private Label labelGenero;
         private Label labelCPF;
         private Label labelTelefone;
         private Label labelPet;
@@ -430,7 +437,6 @@
         private CheckBox checkBoxEmail;
         private CheckBox checkBoxSms;
         private CheckBox checkBoxWhatsApp;
-        private Label labelComoDeseja;
         private DataGridViewTextBoxColumn ColumnNome;
         private DataGridViewTextBoxColumn ColumnDataNascimento;
         private DataGridViewTextBoxColumn ColumnGenero;
@@ -439,5 +445,7 @@
         private DataGridViewTextBoxColumn ColumnTelefone;
         private DataGridViewTextBoxColumn ColumnDataAdesao;
         private DataGridViewTextBoxColumn ColumnPet;
+        private GroupBox groupBoxGenero;
+        private GroupBox groupBoxComoDeseja;
     }
 }
