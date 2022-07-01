@@ -93,6 +93,21 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             return ultimoCodigo;
         }
 
+        public Pet ObterPorNomePet(string nomePet)
+        {
+            for (int i = 0; i < pets.Count; i++)
+            {
+                var pet = pets[i];
+
+                if (pet.Nome == nomePet)
+                {
+                    return pet;
+                }
+            }
+
+            return null;
+        }
+
         public void SalvarArquivo()
         {
             var petsEmJson = JsonConvert.SerializeObject(pets);
