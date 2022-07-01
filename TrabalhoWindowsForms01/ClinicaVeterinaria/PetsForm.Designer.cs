@@ -208,7 +208,6 @@
             this.labelNome.Size = new System.Drawing.Size(35, 13);
             this.labelNome.TabIndex = 4;
             this.labelNome.Text = "Nome";
-            this.labelNome.Click += new System.EventHandler(this.labelNome_Click);
             // 
             // textBoxNome
             // 
@@ -232,6 +231,10 @@
             // 
             this.comboBoxCliente.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comboBoxCliente.FormattingEnabled = true;
+            this.comboBoxCliente.Items.AddRange(new object[] {
+            "Cliente 1",
+            "Cliente 2",
+            "Cliente 3"});
             this.comboBoxCliente.Location = new System.Drawing.Point(689, 86);
             this.comboBoxCliente.Name = "comboBoxCliente";
             this.comboBoxCliente.Size = new System.Drawing.Size(282, 23);
