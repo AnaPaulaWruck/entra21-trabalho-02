@@ -87,10 +87,13 @@
         private void LimparCampos()
         {
             comboBoxPet.SelectedIndex = -1;
-            //comboBoxCliente.SelectedIndex = -1;
+            comboBoxCliente.SelectedIndex = -1;
             comboBoxVeterinario.SelectedIndex = -1;
-            
-
+            radioButtonUrgente.Checked = false;
+            radioButtonRotina.Checked = false;
+            dateTimePickerDia.ResetText();
+            dateTimePickerHorario.ResetText();
+            checkedListBoxSintomas.ClearSelected();
             dataGridViewConsultas.ClearSelection();
         }
         private void buttonSalvar_Click(object sender, EventArgs e)
@@ -161,5 +164,7 @@
 
             dataGridViewConsultas.ClearSelection();
         }
+
+        //Criar o método Validar dados.
     }
 }
