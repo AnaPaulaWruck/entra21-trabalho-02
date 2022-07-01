@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             this.dataGridViewPets = new System.Windows.Forms.DataGridView();
+            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEspecie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnRaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnVacinas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAlergias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelListaPets = new System.Windows.Forms.Label();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonApagar = new System.Windows.Forms.Button();
@@ -50,9 +60,6 @@
             this.comboBoxAlergia = new System.Windows.Forms.ComboBox();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
-            this.checkBoxVacinaQuintupla = new System.Windows.Forms.CheckBox();
-            this.checkBoxVacinaGiardiase = new System.Windows.Forms.CheckBox();
-            this.checkBoxVacinaQuadrupla = new System.Windows.Forms.CheckBox();
             this.textBoxPeso = new System.Windows.Forms.TextBox();
             this.labelKg = new System.Windows.Forms.Label();
             this.radioButtonGato = new System.Windows.Forms.RadioButton();
@@ -60,16 +67,9 @@
             this.groupBoxSexo = new System.Windows.Forms.GroupBox();
             this.groupBoxEspecie = new System.Windows.Forms.GroupBox();
             this.textBoxRaca = new System.Windows.Forms.TextBox();
-            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEspecie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnRaca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPeso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnVacinas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnAlergias = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBoxVacinaQuintupla = new System.Windows.Forms.CheckBox();
+            this.checkBoxVacinaGiardiase = new System.Windows.Forms.CheckBox();
+            this.checkBoxVacinaQuadrupla = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPets)).BeginInit();
             this.groupBoxSexo.SuspendLayout();
             this.groupBoxEspecie.SuspendLayout();
@@ -98,6 +98,75 @@
             this.dataGridViewPets.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPets.Size = new System.Drawing.Size(660, 418);
             this.dataGridViewPets.TabIndex = 0;
+            // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.HeaderText = "COD";
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
+            this.ColumnCodigo.Visible = false;
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "NOME";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            this.ColumnNome.Width = 150;
+            // 
+            // ColumnTutor
+            // 
+            this.ColumnTutor.HeaderText = "TUTOR";
+            this.ColumnTutor.Name = "ColumnTutor";
+            this.ColumnTutor.ReadOnly = true;
+            this.ColumnTutor.Width = 150;
+            // 
+            // ColumnEspecie
+            // 
+            this.ColumnEspecie.HeaderText = "ESPÉCIE";
+            this.ColumnEspecie.Name = "ColumnEspecie";
+            this.ColumnEspecie.ReadOnly = true;
+            // 
+            // ColumnSexo
+            // 
+            this.ColumnSexo.HeaderText = "SEXO";
+            this.ColumnSexo.Name = "ColumnSexo";
+            this.ColumnSexo.ReadOnly = true;
+            this.ColumnSexo.Width = 90;
+            // 
+            // ColumnRaca
+            // 
+            this.ColumnRaca.HeaderText = "RAÇA";
+            this.ColumnRaca.Name = "ColumnRaca";
+            this.ColumnRaca.ReadOnly = true;
+            this.ColumnRaca.Width = 150;
+            // 
+            // ColumnDataNascimento
+            // 
+            this.ColumnDataNascimento.HeaderText = "DATA NASCIMENTO";
+            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
+            this.ColumnDataNascimento.ReadOnly = true;
+            this.ColumnDataNascimento.Width = 150;
+            // 
+            // ColumnPeso
+            // 
+            this.ColumnPeso.HeaderText = "PESO";
+            this.ColumnPeso.Name = "ColumnPeso";
+            this.ColumnPeso.ReadOnly = true;
+            this.ColumnPeso.Width = 75;
+            // 
+            // ColumnVacinas
+            // 
+            this.ColumnVacinas.HeaderText = "VACINAS";
+            this.ColumnVacinas.Name = "ColumnVacinas";
+            this.ColumnVacinas.ReadOnly = true;
+            this.ColumnVacinas.Width = 150;
+            // 
+            // ColumnAlergias
+            // 
+            this.ColumnAlergias.HeaderText = "ALERGIAS";
+            this.ColumnAlergias.Name = "ColumnAlergias";
+            this.ColumnAlergias.ReadOnly = true;
+            this.ColumnAlergias.Width = 150;
             // 
             // labelListaPets
             // 
@@ -315,39 +384,6 @@
             this.buttonSalvar.UseVisualStyleBackColor = true;
             this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
-            // checkBoxVacinaQuintupla
-            // 
-            this.checkBoxVacinaQuintupla.AutoSize = true;
-            this.checkBoxVacinaQuintupla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxVacinaQuintupla.Location = new System.Drawing.Point(831, 390);
-            this.checkBoxVacinaQuintupla.Name = "checkBoxVacinaQuintupla";
-            this.checkBoxVacinaQuintupla.Size = new System.Drawing.Size(99, 17);
-            this.checkBoxVacinaQuintupla.TabIndex = 28;
-            this.checkBoxVacinaQuintupla.Text = "Quintupla felina";
-            this.checkBoxVacinaQuintupla.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxVacinaGiardiase
-            // 
-            this.checkBoxVacinaGiardiase.AutoSize = true;
-            this.checkBoxVacinaGiardiase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxVacinaGiardiase.Location = new System.Drawing.Point(831, 334);
-            this.checkBoxVacinaGiardiase.Name = "checkBoxVacinaGiardiase";
-            this.checkBoxVacinaGiardiase.Size = new System.Drawing.Size(72, 17);
-            this.checkBoxVacinaGiardiase.TabIndex = 29;
-            this.checkBoxVacinaGiardiase.Text = "Giardíase";
-            this.checkBoxVacinaGiardiase.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxVacinaQuadrupla
-            // 
-            this.checkBoxVacinaQuadrupla.AutoSize = true;
-            this.checkBoxVacinaQuadrupla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBoxVacinaQuadrupla.Location = new System.Drawing.Point(831, 362);
-            this.checkBoxVacinaQuadrupla.Name = "checkBoxVacinaQuadrupla";
-            this.checkBoxVacinaQuadrupla.Size = new System.Drawing.Size(103, 17);
-            this.checkBoxVacinaQuadrupla.TabIndex = 30;
-            this.checkBoxVacinaQuadrupla.Text = "Quádrupla felina";
-            this.checkBoxVacinaQuadrupla.UseVisualStyleBackColor = true;
-            // 
             // textBoxPeso
             // 
             this.textBoxPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -392,6 +428,7 @@
             // 
             // groupBoxSexo
             // 
+            this.groupBoxSexo.AccessibleRole = System.Windows.Forms.AccessibleRole.RadioButton;
             this.groupBoxSexo.Controls.Add(this.radioButtonMacho);
             this.groupBoxSexo.Controls.Add(this.radioButtonFemea);
             this.groupBoxSexo.Location = new System.Drawing.Point(833, 119);
@@ -419,74 +456,38 @@
             this.textBoxRaca.Size = new System.Drawing.Size(282, 23);
             this.textBoxRaca.TabIndex = 38;
             // 
-            // ColumnCodigo
+            // checkBoxVacinaQuintupla
             // 
-            this.ColumnCodigo.HeaderText = "COD";
-            this.ColumnCodigo.Name = "ColumnCodigo";
-            this.ColumnCodigo.ReadOnly = true;
-            this.ColumnCodigo.Visible = false;
+            this.checkBoxVacinaQuintupla.AutoSize = true;
+            this.checkBoxVacinaQuintupla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxVacinaQuintupla.Location = new System.Drawing.Point(831, 390);
+            this.checkBoxVacinaQuintupla.Name = "checkBoxVacinaQuintupla";
+            this.checkBoxVacinaQuintupla.Size = new System.Drawing.Size(99, 17);
+            this.checkBoxVacinaQuintupla.TabIndex = 28;
+            this.checkBoxVacinaQuintupla.Text = "Quintupla felina";
+            this.checkBoxVacinaQuintupla.UseVisualStyleBackColor = true;
             // 
-            // ColumnNome
+            // checkBoxVacinaGiardiase
             // 
-            this.ColumnNome.HeaderText = "NOME";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
-            this.ColumnNome.Width = 150;
+            this.checkBoxVacinaGiardiase.AutoSize = true;
+            this.checkBoxVacinaGiardiase.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxVacinaGiardiase.Location = new System.Drawing.Point(831, 334);
+            this.checkBoxVacinaGiardiase.Name = "checkBoxVacinaGiardiase";
+            this.checkBoxVacinaGiardiase.Size = new System.Drawing.Size(72, 17);
+            this.checkBoxVacinaGiardiase.TabIndex = 29;
+            this.checkBoxVacinaGiardiase.Text = "Giardíase";
+            this.checkBoxVacinaGiardiase.UseVisualStyleBackColor = true;
             // 
-            // ColumnTutor
+            // checkBoxVacinaQuadrupla
             // 
-            this.ColumnTutor.HeaderText = "TUTOR";
-            this.ColumnTutor.Name = "ColumnTutor";
-            this.ColumnTutor.ReadOnly = true;
-            this.ColumnTutor.Width = 150;
-            // 
-            // ColumnEspecie
-            // 
-            this.ColumnEspecie.HeaderText = "ESPÉCIE";
-            this.ColumnEspecie.Name = "ColumnEspecie";
-            this.ColumnEspecie.ReadOnly = true;
-            // 
-            // ColumnSexo
-            // 
-            this.ColumnSexo.HeaderText = "SEXO";
-            this.ColumnSexo.Name = "ColumnSexo";
-            this.ColumnSexo.ReadOnly = true;
-            this.ColumnSexo.Width = 90;
-            // 
-            // ColumnRaca
-            // 
-            this.ColumnRaca.HeaderText = "RAÇA";
-            this.ColumnRaca.Name = "ColumnRaca";
-            this.ColumnRaca.ReadOnly = true;
-            this.ColumnRaca.Width = 150;
-            // 
-            // ColumnDataNascimento
-            // 
-            this.ColumnDataNascimento.HeaderText = "DATA NASCIMENTO";
-            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
-            this.ColumnDataNascimento.ReadOnly = true;
-            this.ColumnDataNascimento.Width = 150;
-            // 
-            // ColumnPeso
-            // 
-            this.ColumnPeso.HeaderText = "PESO";
-            this.ColumnPeso.Name = "ColumnPeso";
-            this.ColumnPeso.ReadOnly = true;
-            this.ColumnPeso.Width = 75;
-            // 
-            // ColumnVacinas
-            // 
-            this.ColumnVacinas.HeaderText = "VACINAS";
-            this.ColumnVacinas.Name = "ColumnVacinas";
-            this.ColumnVacinas.ReadOnly = true;
-            this.ColumnVacinas.Width = 150;
-            // 
-            // ColumnAlergias
-            // 
-            this.ColumnAlergias.HeaderText = "ALERGIAS";
-            this.ColumnAlergias.Name = "ColumnAlergias";
-            this.ColumnAlergias.ReadOnly = true;
-            this.ColumnAlergias.Width = 150;
+            this.checkBoxVacinaQuadrupla.AutoSize = true;
+            this.checkBoxVacinaQuadrupla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxVacinaQuadrupla.Location = new System.Drawing.Point(831, 362);
+            this.checkBoxVacinaQuadrupla.Name = "checkBoxVacinaQuadrupla";
+            this.checkBoxVacinaQuadrupla.Size = new System.Drawing.Size(103, 17);
+            this.checkBoxVacinaQuadrupla.TabIndex = 30;
+            this.checkBoxVacinaQuadrupla.Text = "Quádrupla felina";
+            this.checkBoxVacinaQuadrupla.UseVisualStyleBackColor = true;
             // 
             // PetsForm
             // 
@@ -558,9 +559,6 @@
         private ComboBox comboBoxAlergia;
         private Button buttonCancelar;
         private Button buttonSalvar;
-        private CheckBox checkBoxVacinaQuintupla;
-        private CheckBox checkBoxVacinaGiardiase;
-        private CheckBox checkBoxVacinaQuadrupla;
         private TextBox textBoxPeso;
         private Label labelKg;
         private RadioButton radioButtonGato;
@@ -578,5 +576,8 @@
         private DataGridViewTextBoxColumn ColumnPeso;
         private DataGridViewTextBoxColumn ColumnVacinas;
         private DataGridViewTextBoxColumn ColumnAlergias;
+        private CheckBox checkBoxVacinaQuintupla;
+        private CheckBox checkBoxVacinaGiardiase;
+        private CheckBox checkBoxVacinaQuadrupla;
     }
 }
