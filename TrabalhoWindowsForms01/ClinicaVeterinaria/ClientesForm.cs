@@ -122,17 +122,28 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             textBoxNome.Text = cliente.Nome;
 
             if (cliente.Genero == radioButtonMasculino.Text)
+            {
                 radioButtonMasculino.Checked = true;
+            }
             else
+            {
                 radioButtonFeminino.Checked = true;
+            } 
 
             if (cliente.ComoDeseja == checkBoxEmail.Text)
+            {
                 checkBoxEmail.Checked = true;
-            //else 
-                 //checkBoxWhatsApp.Checked = true;
-            else
-                checkBoxSms.Checked = true;
+            }              
 
+            if (cliente.ComoDeseja == checkBoxWhatsApp.Text)
+            {
+                checkBoxWhatsApp.Checked = true;
+            }
+              
+            if (cliente.ComoDeseja == checkBoxSms.Text)
+            {
+                checkBoxSms.Checked = true;
+            }       
         }
         private void EditarCliente(string Nome, DateTime DataAdesao, string Endereco, DateTime DataNascimento
                                       , string Genero, int Cpf, string Pet, int Telefone, string ComoDeseja, int Codigo)
@@ -176,57 +187,220 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
 
             //var dadosValidos = ValidarDados(nome, dataAdesao,dataNascimento,endereco,cpf
-                //,telefone,pet,genero,comoDeseja);
+            //    ,telefone,pet,genero,comoDeseja);
 
             //if (dadosValidos == false)
+            //{
+            //    return;
+            //}
+
+            //if (dataGridViewClientes.SelectedRows.Count == 0)
+            //{
+            //    AdicionarCliente(nome, dataAdesao, dataNascimento, endereco, cpf
+            //   , telefone, pet, genero, comoDeseja);
+            //}
+            //else
+            //{
+            //    EditarCliente(nome, dataAdesao, dataNascimento, endereco, cpf
+            //  , telefone, pet, genero, comoDeseja);
+
+            //    PreencherDataGridViewComClientes();
+
+            //    LimparCampos();
+            //}
+       
+           
+
+            
+        }
+
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewClientes.SelectedRows.Count == 0)
             {
+                MessageBox.Show("Selecione um Cliente  para remover");
+
                 return;
             }
 
-            if (dataGridViewClientes.SelectedRows.Count == 0)
-                //AdicionarCliente(nome, dataAdesao, dataNascimento, endereco, cpf
-                //, telefone, pet, genero, comoDeseja);
-           // else
-                //EditarCliente(nome, dataAdesao, dataNascimento, endereco, cpf
-               // , telefone, pet, genero, comoDeseja);
-            //PreencherDataGridViewClientes();
+            var resposta = MessageBox.Show(
+                "Deseja realmente apagar o registro?", "Aviso",
+                MessageBoxButtons.YesNo);
 
-            LimparCampos();
+            if (resposta != DialogResult.Yes)
+            {
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Registro apagado com sucesso!");
+            }
+
+            var linhaSelecionada = dataGridViewClientes.SelectedRows[0];
+
+            var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
+
+            var cliente = clienteServico.ObterPorCodigo(codigo);
+
+            clienteServico.Apagar(cliente);
+
+            PreencherDataGridViewComClientes();
+
+            dataGridViewClientes.ClearSelection();
         }
-    }
+
+        private void buttonEditar_Click(object sender, EventArgs e)
+        {
+            ApresentarDadosParaEdicao();
+        }
+
+    //    private bool ValidarDados(string Nome, DateTime DataAdesao, string Endereco, DateTime DataNascimento
+    //                                  , string Genero, int Cpf, string Pet, int Telefone, string ComoDeseja, int Codigo)
+    //    {
+    //        if (Nome.Trim().Length < 2)
+    //        {
+    //            MessageBox.Show("Nome de Cliente Invalido");
+
+    //            textBoxNome.Focus();
+
+    //            return false;
+    //        }
+    //        if (dateTimePickerDataNascimento.Value > DateTime.Now)
+    //        {
+    //            MessageBox.Show("Data inválida.");
+
+    //            dateTimePickerDataNascimento.Focus();
+
+    //            return false;
+    //        }
+
+    //        if (comboBoxEndereco.SelectedIndex == -1)
+    //        {
+    //            MessageBox.Show("Escolha um Endereço");
+
+    //            comboBoxEndereco.DroppedDown = true;
+
+    //            return false;
+    //        }
+    //        if (dateTimePickerDataAdesao.Value > DateTime.Now)
+    //        {
+    //            MessageBox.Show("Data inválida.");
+
+    //            dateTimePickerDataAdesao.Focus();
+
+    //            return false;
+    //        }
+    //        if (comboBoxPet.SelectedIndex == -1)
+    //        {
+    //            MessageBox.Show("Pet");
+
+    //            comboBoxEndereco.DroppedDown = true;
+
+    //            return false;
+
+    //        if (raca.Trim().Length < 5)
+    //        {
+    //            MessageBox.Show("Digite um valor válido para Raça do animal");
+
+    //            textBoxRaca.Focus();
+
+    //            return false;
+    //        }
+
+    //        try
+    //        {
+    //            if (peso <= 0)
+    //            {
+    //                MessageBox.Show("Peso não pode ser um valor menor ou igual a zero.");
+
+    //                textBoxRaca.Focus();
+
+    //                return false;
+    //            }
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            MessageBox.Show("Digite um valor válido para peso.");
+
+    //            textBoxRaca.Focus();
+
+    //            return false;
+    //        }
+
+    //        if (comboBoxAlergia.SelectedIndex == -1)
+    //        {
+    //            var resposta = MessageBox.Show(
+    //            "O animal possui alguma alergia?", "Aviso",
+    //            MessageBoxButtons.YesNo);
+
+    //            if (resposta != DialogResult.No)
+    //            {
+    //                MessageBox.Show("Escolha a Alergia");
+
+    //                comboBoxAlergia.DroppedDown = true;
+
+    //                return false;
+    //            }
+    //        }
+
+    //        if (checkBoxEmail.Checked == false && checkBoxSms.Checked == false && checkBoxWhatsApp == false)
+    //        {
+    //            MessageBox.Show("Selecione a forma de Envio.");
+
+    //            groupBoxComoDeseja.Focus();
+
+    //            return false;
+    //        }
+
+    //        if (radioButtonMasculino.Checked == false && radioButtonFeminino.Checked == false)
+    //        {
+    //            MessageBox.Show("Selecione o sexo do Cliente.");
+
+    //            groupBoxGenero.Focus();
+
+    //            return false;
+    //        }
+
+    //    }
+
+    //    private void buttonMenu_Click(object sender, EventArgs e)
+    //    {
+    //        this.Close();
+    //    }
+    //}
 
 
 
-        //private void label1_Click(object sender, EventArgs e)
-       // {
+    //private void label1_Click(object sender, EventArgs e)
+    // {
 
-        //}
+    //}
 
-       // private void ClientesForm_Load(object sender, EventArgs e)
-       // {
+    // private void ClientesForm_Load(object sender, EventArgs e)
+    // {
 
-       // }
+    // }
 
-       // private void radioButton1_CheckedChanged(object sender, EventArgs e)
-       // {
+    // private void radioButton1_CheckedChanged(object sender, EventArgs e)
+    // {
 
-       // }
+    // }
 
-       // private void labelGenero_Click(object sender, EventArgs e)
-       // {
+    // private void labelGenero_Click(object sender, EventArgs e)
+    // {
 
-       // }
+    // }
 
-        //private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        //{
+    //private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+    //{
 
-        //}
+    //}
 
-        //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
+    //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    //{
 
-        //}
+    //}
 
-        
-    }
-//}
+
+}
+}
