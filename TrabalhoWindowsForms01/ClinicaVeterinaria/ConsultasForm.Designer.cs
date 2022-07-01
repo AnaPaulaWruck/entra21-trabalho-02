@@ -128,6 +128,9 @@
             // comboBoxCliente
             // 
             this.comboBoxCliente.FormattingEnabled = true;
+            this.comboBoxCliente.Items.AddRange(new object[] {
+            "Cliente 1",
+            "Cliente 2"});
             this.comboBoxCliente.Location = new System.Drawing.Point(13, 99);
             this.comboBoxCliente.Name = "comboBoxCliente";
             this.comboBoxCliente.Size = new System.Drawing.Size(255, 28);

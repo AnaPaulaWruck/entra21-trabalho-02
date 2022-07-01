@@ -185,6 +185,11 @@
             comboBoxCliente.SelectedItem = consulta.Cliente;//.Nome
             comboBoxVeterinario.SelectedItem = consulta.Veterinario.NomeVeterinario;
 
+            if (consulta.TipoConsulta == radioButtonUrgente.Text)
+                radioButtonUrgente.Checked = true;
+            else
+                radioButtonRotina.Checked = true;
+            
         }
         private void buttonApagar_Click(object sender, EventArgs e)
         {

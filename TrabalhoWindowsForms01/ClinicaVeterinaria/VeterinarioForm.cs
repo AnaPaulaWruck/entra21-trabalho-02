@@ -18,6 +18,13 @@
             var especializacao = textBoxEspecializacao.Text.Trim();
             var crmv = Convert.ToInt32(textBoxCrmv.Text.Trim());
 
+            var dadosValidos = ValidarDados(nomeVeterinario, especializacao, crmv);
+
+            if (dadosValidos == false)
+            {
+                return;
+            }
+
             if (dataGridView1.SelectedRows.Count == 0)
             {
                 AdicionarVeterinario(nomeVeterinario, especializacao, crmv);
@@ -134,6 +141,37 @@
         private void buttonCancelar_Click(object sender, EventArgs e)
         {
             LimparCampos();
+        }
+        private bool ValidarDados(string nomeVeterinario, string especializacao, int crmv)
+        {
+            if (textBoxNomeCompleto.Text == "")
+            {
+                MessageBox.Show("Digite o nome do veterinário.");
+
+                textBoxNomeCompleto.Focus();
+
+                return false;
+            }
+
+            if (textBoxEspecializacao.Text == "")
+            {
+                MessageBox.Show("Digite a especialização do veterinário.");
+
+                textBoxEspecializacao.Focus();
+
+                return false;
+            }
+
+            if (textBoxCrmv.Text == "")
+            {
+                MessageBox.Show("Digite o CRMV do veterinário.");
+
+                textBoxCrmv.Focus();
+
+                return false;
+            }
+
+            return true;
         }
     }
 }
