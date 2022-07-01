@@ -7,7 +7,7 @@
         public DateTime Data;
         public DateTime Hora;
         public Pet Pet;
-        public string Cliente;
+        public Cliente Cliente;
         public Veterinario Veterinario;
         public string TipoConsulta;
         public List<string> Sintomas;

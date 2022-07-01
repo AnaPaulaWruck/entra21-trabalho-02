@@ -16,6 +16,8 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
 
             alergiaServico = new AlergiaServico();
 
+            clienteServico = new ClienteServico(); 
+
             PreencherDataGridViewComPets();
 
             PreencherComboBoxcomOsNomesDasAlergias();
@@ -59,7 +61,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 {
                     pet.Codigo,
                     pet.Nome,
-                    pet.Cliente, // pet.Cliente.Nome // TODO
+                    pet.Cliente.Nome,
                     pet.Especie,
                     pet.Sexo,
                     pet.Raca,
@@ -102,7 +104,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             var pet = new Pet();
             pet.Codigo = petServico.ObterUltimoCodigo() + 1;
             pet.Nome = nome;
-            pet.Cliente = nomeCliente; // clienteServico.ObterPorNomeCliente(nomeCliente); TODO
+            pet.Cliente = clienteServico.ObterPorNomeCliente(nomeCliente);
             pet.Especie = especie;
             pet.Raca = raca;
             pet.Sexo = sexo;
@@ -130,7 +132,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             var pet = petServico.ObterPorCodigo(codigo);
 
             textBoxNome.Text = pet.Nome;
-            comboBoxCliente.SelectedItem = pet.Cliente; //comboBoxCliente.SelectedItem = pet.Cliente.Nome; // TODO
+            comboBoxCliente.SelectedItem = pet.Cliente.Nome;
 
             if (pet.Especie == radioButtonCao.Text)
                 radioButtonCao.Checked = true;
@@ -174,7 +176,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             var pet = new Pet();
             pet.Codigo = codigoSelecionado;
             pet.Nome = nome;
-            pet.Cliente = nomeCliente; // pet.Cliente = clienteServico.ObterPorNomeCliente(nomeCliente); TODO
+            pet.Cliente = clienteServico.ObterPorNomeCliente(nomeCliente);
             pet.Especie = especie;
             pet.Raca = raca;
             pet.Sexo = sexo;

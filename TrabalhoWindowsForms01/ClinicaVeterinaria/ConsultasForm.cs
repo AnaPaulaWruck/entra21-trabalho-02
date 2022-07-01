@@ -23,7 +23,6 @@
             PreencherNomeCliente();
 
             PreencherNomeVeterinario();
-
         }
         private void PreencherDataGridViewComConsultas()
         {
@@ -39,7 +38,7 @@
                 {
                     consulta.Codigo,
                     consulta.Pet.Nome,
-                    consulta.Cliente, //.Nome
+                    consulta.Cliente.Nome,
                     consulta.Veterinario.NomeVeterinario,
                     consulta.TipoConsulta,
                     consulta.Data,
@@ -68,7 +67,6 @@
                 var cliente = clientes[i];
                 comboBoxCliente.Items.Add(cliente.Nome);
             }
-
         }
         public void PreencherNomeVeterinario()
         {
@@ -118,7 +116,7 @@
             var dadosValidos = ValidarDados(pet, cliente, veterinario, data);
 
             if (dadosValidos == false)
-            { 
+            {
                 return;
             }
             if (dataGridViewConsultas.SelectedRows.Count == 0)
@@ -133,7 +131,6 @@
             PreencherDataGridViewComConsultas();
 
             LimparCampos();
-
         }
         private void EditarConsultas(string pet, string cliente, string veterinario, string tipoConsulta, DateTime data, DateTime hora)
         {
@@ -144,7 +141,7 @@
             var consultas = new Consultas();
             consultas.Codigo = codigoSelecionado;
             consultas.Pet = petServico.ObterPorNomePet(pet);
-            consultas.Cliente = cliente;
+            consultas.Cliente = clienteServico.ObterPorNomeCliente(cliente);
             consultas.Veterinario = veterinarioServico.ObterPorNomeVeterinario(veterinario);
             consultas.TipoConsulta = tipoConsulta;
             consultas.Data = data;
@@ -157,15 +154,13 @@
             var consultas = new Consultas();
             consultas.Codigo = consultasServico.ObterUltimoCodigo() + 1;
             consultas.Pet = petServico.ObterPorNomePet(pet);
-            consultas.Cliente = cliente;
+            consultas.Cliente = clienteServico.ObterPorNomeCliente(cliente);
             consultas.Veterinario = veterinarioServico.ObterPorNomeVeterinario(veterinario);
             consultas.TipoConsulta = tipoConsulta;
             consultas.Data = data;
             consultas.Hora = horario;
 
             consultasServico.Adicionar(consultas);
-
-
         }
         private void buttonEditar_Click(object sender, EventArgs e)
         {
@@ -186,14 +181,13 @@
             var consulta = consultasServico.ObterPorCodigo(codigo);
 
             comboBoxPet.SelectedItem = consulta.Pet.Nome;
-            comboBoxCliente.SelectedItem = consulta.Cliente;//.Nome
+            comboBoxCliente.SelectedItem = consulta.Cliente.Nome;
             comboBoxVeterinario.SelectedItem = consulta.Veterinario.NomeVeterinario;
 
             if (consulta.TipoConsulta == radioButtonUrgente.Text)
                 radioButtonUrgente.Checked = true;
             else
                 radioButtonRotina.Checked = true;
-            
         }
         private void buttonApagar_Click(object sender, EventArgs e)
         {
@@ -257,7 +251,7 @@
                 return false;
             }
 
-            if(dateTimePickerDia.Value < DateTime.Today)
+            if (dateTimePickerDia.Value < DateTime.Today)
             {
                 MessageBox.Show("Data invalida.");
 
