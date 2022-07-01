@@ -16,12 +16,6 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         public int Cpf;
         public string Pet;
         public int Telefone;
-
-        internal void Add(Cliente cliente)
-        {
-            throw new NotImplementedException();
-        }
-
         public string ComoDeseja;
         public int Codigo;
         

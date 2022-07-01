@@ -18,7 +18,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
         }
         public void Adicionar(Cliente cliente)
         {
-            cliente.Add(cliente);
+            clientes.Add(cliente);
 
             SalvarArquivo();
         }

@@ -36,9 +36,17 @@
             this.labelCPF = new System.Windows.Forms.Label();
             this.labelTelefone = new System.Windows.Forms.Label();
             this.labelPet = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
             this.dateTimePickerDataNascimento = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
+            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDataAdesao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePickerDataAdesao = new System.Windows.Forms.DateTimePicker();
             this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonApagar = new System.Windows.Forms.Button();
@@ -54,15 +62,7 @@
             this.checkBoxSms = new System.Windows.Forms.CheckBox();
             this.checkBoxWhatsApp = new System.Windows.Forms.CheckBox();
             this.labelComoDeseja = new System.Windows.Forms.Label();
-            this.ColumnNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnDataAdesao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNome
@@ -139,26 +139,27 @@
             this.labelPet.TabIndex = 9;
             this.labelPet.Text = "Pet";
             // 
-            // textBox1
+            // textBoxNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 252);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(329, 23);
-            this.textBox1.TabIndex = 10;
+            this.textBoxNome.Location = new System.Drawing.Point(3, 252);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(329, 23);
+            this.textBoxNome.TabIndex = 10;
             // 
             // dateTimePickerDataNascimento
             // 
+            this.dateTimePickerDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDataNascimento.Location = new System.Drawing.Point(3, 305);
             this.dateTimePickerDataNascimento.Name = "dateTimePickerDataNascimento";
             this.dateTimePickerDataNascimento.Size = new System.Drawing.Size(143, 23);
             this.dateTimePickerDataNascimento.TabIndex = 18;
             // 
-            // dataGridView1
+            // dataGridViewClientes
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewClientes.AllowUserToAddRows = false;
+            this.dataGridViewClientes.AllowUserToDeleteRows = false;
+            this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNome,
             this.ColumnDataNascimento,
             this.ColumnGenero,
@@ -167,15 +168,65 @@
             this.ColumnTelefone,
             this.ColumnDataAdesao,
             this.ColumnPet});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(850, 216);
-            this.dataGridView1.TabIndex = 19;
+            this.dataGridViewClientes.Location = new System.Drawing.Point(3, 2);
+            this.dataGridViewClientes.Name = "dataGridViewClientes";
+            this.dataGridViewClientes.ReadOnly = true;
+            this.dataGridViewClientes.RowTemplate.Height = 25;
+            this.dataGridViewClientes.Size = new System.Drawing.Size(850, 216);
+            this.dataGridViewClientes.TabIndex = 19;
+            this.dataGridViewClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ColumnNome
+            // 
+            this.ColumnNome.HeaderText = "Nome";
+            this.ColumnNome.Name = "ColumnNome";
+            this.ColumnNome.ReadOnly = true;
+            // 
+            // ColumnDataNascimento
+            // 
+            this.ColumnDataNascimento.HeaderText = "Data Nascimento";
+            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
+            this.ColumnDataNascimento.ReadOnly = true;
+            // 
+            // ColumnGenero
+            // 
+            this.ColumnGenero.HeaderText = "Genêro";
+            this.ColumnGenero.Name = "ColumnGenero";
+            this.ColumnGenero.ReadOnly = true;
+            // 
+            // ColumnCpf
+            // 
+            this.ColumnCpf.HeaderText = "CPF";
+            this.ColumnCpf.Name = "ColumnCpf";
+            this.ColumnCpf.ReadOnly = true;
+            // 
+            // ColumnEndereco
+            // 
+            this.ColumnEndereco.HeaderText = "Endereço";
+            this.ColumnEndereco.Name = "ColumnEndereco";
+            this.ColumnEndereco.ReadOnly = true;
+            // 
+            // ColumnTelefone
+            // 
+            this.ColumnTelefone.HeaderText = "Telefone";
+            this.ColumnTelefone.Name = "ColumnTelefone";
+            this.ColumnTelefone.ReadOnly = true;
+            // 
+            // ColumnDataAdesao
+            // 
+            this.ColumnDataAdesao.HeaderText = "Data Adesão";
+            this.ColumnDataAdesao.Name = "ColumnDataAdesao";
+            this.ColumnDataAdesao.ReadOnly = true;
+            // 
+            // ColumnPet
+            // 
+            this.ColumnPet.HeaderText = "PET";
+            this.ColumnPet.Name = "ColumnPet";
+            this.ColumnPet.ReadOnly = true;
             // 
             // dateTimePickerDataAdesao
             // 
+            this.dateTimePickerDataAdesao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDataAdesao.Location = new System.Drawing.Point(407, 270);
             this.dateTimePickerDataAdesao.Name = "dateTimePickerDataAdesao";
             this.dateTimePickerDataAdesao.Size = new System.Drawing.Size(164, 23);
@@ -312,54 +363,6 @@
             this.labelComoDeseja.TabIndex = 34;
             this.labelComoDeseja.Text = "Como Deseja Receber está Informacao?";
             // 
-            // ColumnNome
-            // 
-            this.ColumnNome.HeaderText = "Nome";
-            this.ColumnNome.Name = "ColumnNome";
-            this.ColumnNome.ReadOnly = true;
-            // 
-            // ColumnDataNascimento
-            // 
-            this.ColumnDataNascimento.HeaderText = "Data Nascimento";
-            this.ColumnDataNascimento.Name = "ColumnDataNascimento";
-            this.ColumnDataNascimento.ReadOnly = true;
-            // 
-            // ColumnGenero
-            // 
-            this.ColumnGenero.HeaderText = "Genêro";
-            this.ColumnGenero.Name = "ColumnGenero";
-            this.ColumnGenero.ReadOnly = true;
-            // 
-            // ColumnCpf
-            // 
-            this.ColumnCpf.HeaderText = "CPF";
-            this.ColumnCpf.Name = "ColumnCpf";
-            this.ColumnCpf.ReadOnly = true;
-            // 
-            // ColumnEndereco
-            // 
-            this.ColumnEndereco.HeaderText = "Endereço";
-            this.ColumnEndereco.Name = "ColumnEndereco";
-            this.ColumnEndereco.ReadOnly = true;
-            // 
-            // ColumnTelefone
-            // 
-            this.ColumnTelefone.HeaderText = "Telefone";
-            this.ColumnTelefone.Name = "ColumnTelefone";
-            this.ColumnTelefone.ReadOnly = true;
-            // 
-            // ColumnDataAdesao
-            // 
-            this.ColumnDataAdesao.HeaderText = "Data Adesão";
-            this.ColumnDataAdesao.Name = "ColumnDataAdesao";
-            this.ColumnDataAdesao.ReadOnly = true;
-            // 
-            // ColumnPet
-            // 
-            this.ColumnPet.HeaderText = "PET";
-            this.ColumnPet.Name = "ColumnPet";
-            this.ColumnPet.ReadOnly = true;
-            // 
             // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -380,9 +383,9 @@
             this.Controls.Add(this.buttonApagar);
             this.Controls.Add(this.buttonEditar);
             this.Controls.Add(this.dateTimePickerDataAdesao);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewClientes);
             this.Controls.Add(this.dateTimePickerDataNascimento);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.labelPet);
             this.Controls.Add(this.labelTelefone);
             this.Controls.Add(this.labelCPF);
@@ -394,7 +397,7 @@
             this.Name = "ClientesForm";
             this.Text = "ClientesForm";
             this.Load += new System.EventHandler(this.ClientesForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,9 +413,9 @@
         private Label labelCPF;
         private Label labelTelefone;
         private Label labelPet;
-        private TextBox textBox1;
+        private TextBox textBoxNome;
         private DateTimePicker dateTimePickerDataNascimento;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewClientes;
         private DateTimePicker dateTimePickerDataAdesao;
         private Button buttonEditar;
         private Button buttonApagar;

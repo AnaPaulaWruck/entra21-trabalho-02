@@ -113,6 +113,7 @@
             this.dataGridViewEnderecoCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewEnderecoCliente.Size = new System.Drawing.Size(491, 219);
             this.dataGridViewEnderecoCliente.TabIndex = 6;
+            this.dataGridViewEnderecoCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEnderecoCliente_CellContentClick);
             // 
             // ColumnCodigo
             // 

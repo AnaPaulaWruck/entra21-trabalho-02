@@ -154,5 +154,9 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             this.Close();
         }
 
+        private void dataGridViewEnderecoCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

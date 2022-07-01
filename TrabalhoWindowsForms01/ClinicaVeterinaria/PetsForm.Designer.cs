@@ -208,6 +208,7 @@
             this.labelNome.Size = new System.Drawing.Size(35, 13);
             this.labelNome.TabIndex = 4;
             this.labelNome.Text = "Nome";
+            this.labelNome.Click += new System.EventHandler(this.labelNome_Click);
             // 
             // textBoxNome
             // 
