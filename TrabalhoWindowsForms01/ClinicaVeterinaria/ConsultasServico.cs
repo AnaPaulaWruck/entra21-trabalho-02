@@ -25,7 +25,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
             var consultaJson = File.ReadAllText("consulta.json");
             consulta = JsonConvert.DeserializeObject<List<Consultas>>(consultaJson);
         }
-        private void Adicionar(Consultas consultas)
+        public void Adicionar(Consultas consultas)
         {
             consulta.Add(consultas);
 
@@ -77,7 +77,7 @@ namespace TrabalhoWindowsForms01.ClinicaVeterinaria
                 {
                     consultas.Pet.Nome = consultaParaAlterar.Pet.Nome;
                     consultas.Cliente.Nome = consultaParaAlterar.Cliente.Nome;
-                    consultas.Veterinatio.NomeVeterinario = consultaParaAlterar.Veterinatio.NomeVeterinario;
+                    consultas.Veterinario.NomeVeterinario = consultaParaAlterar.Veterinario.NomeVeterinario;
                     consultas.TipoConsulta = consultaParaAlterar.TipoConsulta;
                     consultas.Data = consultaParaAlterar.Data;
                     consultas.Hora = consultaParaAlterar.Hora;

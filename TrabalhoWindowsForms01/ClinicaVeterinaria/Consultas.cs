@@ -6,9 +6,9 @@
         public int Codigo;
         public DateTime Data;
         public DateTime Hora;
-        public Pet Pet;
-        public Cliente Cliente;
-        public Veterinario Veterinatio;
+        public string Pet;
+        public string Cliente;
+        public Veterinario Veterinario;
         public string TipoConsulta;
         public List<string> Sintomas;
     }
