@@ -4,7 +4,7 @@
     {
         public int Codigo;
         public string Nome;
-        public string Cliente; // public Cliente Cliente; // Conforme classe Cliente
+        public Cliente Cliente;
         public string Especie;
         public string Raca;
         public string Sexo;

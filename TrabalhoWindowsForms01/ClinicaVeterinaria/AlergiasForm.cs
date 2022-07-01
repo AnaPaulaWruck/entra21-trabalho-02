@@ -174,7 +174,7 @@
                 return false;
             }
 
-            if (codigoTratamento.Replace(".", "").Replace("-", "").Trim().Length != 8)
+            if (codigoTratamento.Replace(".", "").Replace(",","").Replace("-", "").Trim().Length != 8)
             {
                 MessageBox.Show("Digite um código válido.");
 

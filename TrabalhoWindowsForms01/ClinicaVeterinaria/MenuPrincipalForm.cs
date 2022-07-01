@@ -21,8 +21,8 @@
 
         private void buttonClientes_Click(object sender, EventArgs e)
         {
-            //var clientesForm = new ClientesForm();
-            //clientesForm.ShowDialog();
+            var clientesForm = new ClientesForm();
+            clientesForm.ShowDialog();
         }
 
         private void buttonVeterinarios_Click(object sender, EventArgs e)
