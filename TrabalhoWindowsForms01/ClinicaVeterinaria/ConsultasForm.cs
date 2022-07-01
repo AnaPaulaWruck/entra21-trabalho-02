@@ -130,6 +130,10 @@
                 EditarConsultas(pet, cliente, veterinario, tipoConsulta, data, horario);
             }
 
+            PreencherDataGridViewComConsultas();
+
+            LimparCampos();
+
         }
         private void EditarConsultas(string pet, string cliente, string veterinario, string tipoConsulta, DateTime data, DateTime hora)
         {
@@ -208,11 +212,17 @@
 
                 return;
             }
+            else
+            {
+                MessageBox.Show("Registro apagado com sucesso!");
+            }
 
             var linhaSelecionada = dataGridViewConsultas.SelectedRows[0];
             var codigo = Convert.ToInt32(linhaSelecionada.Cells[0].Value);
 
             var consulta = consultasServico.ObterPorCodigo(codigo);
+
+            consultasServico.Apagar(consulta);
 
             PreencherDataGridViewComConsultas();
 
@@ -247,7 +257,7 @@
                 return false;
             }
 
-            if(dateTimePickerDia.Value < DateTime.Now)
+            if(dateTimePickerDia.Value < DateTime.Today)
             {
                 MessageBox.Show("Data invalida.");
 
